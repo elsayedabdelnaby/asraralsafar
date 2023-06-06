@@ -1,0 +1,75 @@
+"FooterSection model which handles the footer section."
+type FooterSection {
+    "Id is primary key"
+    id: ID
+
+    "The name of the footer section"
+    footer_section_name: String!
+
+    "Footer Links of the section"
+    footerlinks: [FooterLink!]!
+        @hasMany(scopes: ["active"])
+        @orderBy(column: "display_order")
+
+    "get specific translation"
+    translations(
+        "Filters by the language id"
+        language_id: Int @where(operator: "=")
+    ): [FooterSectionTranslation!]! @hasMany
+}
+
+"The translations of the footer section"
+type FooterSectionTranslation {
+    id: ID!
+    name: String!
+    language: Language! @belongsTo
+    footersection: FooterSection! @belongsTo
+}
+
+"The footer links of the section"
+type FooterLink {
+    "Id is a primary key"
+    id: ID
+
+    "The type of the footer link"
+    type: String!
+
+    "The name of the footer link"
+    footer_link_name: String!
+
+    "The full url of the footer url"
+    full_url: String
+
+    "get the translations of the footer link"
+    translations(
+        "Fitler by the language id"
+        language_id: Int @where(operator: "=")
+    ): [FooterLinkTranslation!]! @hasMany
+}
+
+"The translations of the footer link"
+type FooterLinkTranslation {
+    id: ID!
+    name: String!
+    language: Language! @belongsTo
+    footerlink: FooterLink! @belongsTo
+}
+
+extend type Query {
+    "Listing all footersections"
+    footersections(
+        "Filters by id."
+        id: Int @where(operator: "=")
+    ): [FooterSection!]!
+        @field(
+            model: "Modules\\Website\\Entities\\FooterSection"
+            resolver: "Modules\\Website\\GraphQL\\Queries\\FooterSectionsResolver"
+        )
+
+    "Find a single footer section by a id."
+    footersection("Search by a contact type." id: Int! @eq): FooterSection
+        @find(
+            scopes: ["active"]
+            model: "Modules\\Website\\Entities\\FooterSection"
+        )
+}

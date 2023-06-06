@@ -1,0 +1,32 @@
+"Contact information model which handles the contact informations."
+type ContactInformation {
+    "Unique primary key."
+    id: ID!
+
+    "Type is enum"
+    type: String!
+
+    "Value is a string"
+    value: String!
+
+    is_active: Boolean!
+}
+
+extend type Query {
+    "Listing all contact informations"
+    contactinformations(
+        "Filters by type. Accepts SQL LIKE wildcards `%` and `_`."
+        type: String @where(operator: "like")
+    ): [ContactInformation!]!
+        @all(
+            scopes: ["active"]
+            model: "Modules\\Website\\Entities\\ContactInformation"
+        )
+
+    "Find a single contact information by a type."
+    contactinformation(
+        "Search by a contact type."
+        id: Int! @eq
+    ): ContactInformation
+        @find(model: "Modules\\Website\\Entities\\ContactInformation")
+}

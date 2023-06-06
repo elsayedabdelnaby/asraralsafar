@@ -1,0 +1,16 @@
+"Avatar model which handles the avatars of the app."
+type Avatar {
+    "Id is primary key"
+    id: Int!
+
+    image_url: String!
+}
+
+extend type Query {
+    "Listing all avatars"
+    avatars: [Avatar!]!
+        @all(
+            scopes: ["active"]
+            model: "Modules\\UsersManagement\\Entities\\Avatar"
+        )
+}

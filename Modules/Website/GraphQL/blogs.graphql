@@ -1,0 +1,74 @@
+"Blog model which handles the blogs of the app."
+type Blog {
+    "Id is primary key"
+    id: Int!
+
+    image_url: String!
+
+    blog_title: String!
+
+    blog_slug: String
+
+    blog_short_description: String!
+
+    blog_description: String!
+
+    meta_title: String
+
+    meta_description: String
+
+    category: Category!
+
+    "Statistics of blogs"
+    likes_number: Int
+    views_number: Int
+    sharings_number: Int
+
+    "get all translations of the blogs"
+    translations(
+        "Filters by the language id"
+        language_id: Int @where(operator: "=")
+    ): [BlogTranslation!]! @hasMany
+
+    comments: [Comment] @morphMany
+}
+
+"The translations of the blog model"
+type BlogTranslation {
+    id: ID!
+    title: String!
+    slug: String
+    short_description: String!
+    description: String!
+    meta_title: String
+    meta_description: String
+    language: Language! @belongsTo
+    Blog: Blog! @belongsTo
+}
+
+extend type Mutation {
+    incrementBlogViews(id: ID! @rules(apply: ["exists:blogs,id"])): Blog
+        @field(
+            resolver: "Modules\\Website\\GraphQL\\Mutations\\IncrementBlogViewsMutation"
+        )
+    incrementBlogSharing(id: ID! @rules(apply: ["exists:blogs,id"])): Blog
+        @field(
+            resolver: "Modules\\Website\\GraphQL\\Mutations\\IncrementBlogSharingMutation"
+        )
+
+    addCommentToBlog(blog_id: ID!, body: String!, author_id: ID): Comment
+        @field(
+            resolver: "Modules\\Website\\GraphQL\\Mutations\\AddCommentToBlogMutation"
+        )
+}
+
+extend type Query {
+    "Listing all blogs"
+    blogs("Filters by category." category_id: Int): [Blog!]!
+        @field(
+            scopes: ["active"]
+            model: "Modules\\Website\\Entities\\Blog"
+            resolver: "Modules\\Website\\GraphQL\\Queries\\BlogsResolver"
+        )
+        @orderBy(column: "display_order")
+}

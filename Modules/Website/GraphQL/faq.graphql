@@ -1,0 +1,39 @@
+"FAQ model which handles the faqs of the app."
+type FAQ {
+    "Id is primary key"
+    id: Int!
+
+    faq_question: String!
+
+    faq_answer: String!
+
+    display_order: Int
+
+    category: Category!
+
+    "get all translations of the faqs"
+    translations(
+        "Filters by the language id"
+        language_id: Int @where(operator: "=")
+    ): [FAQTranslation!]! @hasMany
+}
+
+"The translations of the privacy policy model"
+type FAQTranslation {
+    id: ID!
+    question: String!
+    answer: String!
+    language: Language! @belongsTo
+    FAQ: FAQ! @belongsTo
+}
+
+extend type Query {
+    "Listing all faqs"
+    faqs("Filters by category." category_id: Int): [FAQ!]!
+        @field(
+            scopes: ["active"]
+            model: "Modules\\Website\\Entities\\FAQ"
+            resolver: "Modules\\Website\\GraphQL\\Queries\\FAQsResolver"
+        )
+        @orderBy(column: "display_order")
+}

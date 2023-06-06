@@ -1,0 +1,36 @@
+"Contact Us Message"
+type ContactUs {
+    "Unique primary key."
+    id: ID!
+
+    "Non-unique name."
+    name: String!
+
+    "Unique email address."
+    email: Email
+
+    "Phone number."
+    phone: String!
+
+    "title"
+    title: String!
+
+    "message"
+    message: String!
+}
+
+extend type Mutation {
+    "Send Contact Us Message"
+    createContactUsMessage(
+        input: CreateContactUsMessageInput!
+            @create(model: "Modules\\Operations\\Entities\\ContactUs")
+    ): ContactUs! @create(model: "Modules\\Operations\\Entities\\ContactUs")
+}
+
+input CreateContactUsMessageInput {
+    name: String!
+    email: String
+    phone: String!
+    title: String!
+    message: String!
+}

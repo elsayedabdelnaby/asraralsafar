@@ -1,0 +1,148 @@
+"Category Types model which handles the category types."
+type CategoryType {
+    "Id is primary key"
+    id: ID
+
+    "Name of the category type"
+    type_name: String!
+
+    "Categories of the type"
+    categories(
+        "Fitlers by display options"
+        is_active_in_website: Boolean @where(operator: "=")
+        is_active_in_mobile: Boolean @where(operator: "=")
+        is_display_home_page_of_mobile: Boolean @where(operator: "=")
+        is_display_home_page_of_website: Boolean @where(operator: "=")
+        is_display_in_fav_category_of_webite: Boolean @where(operator: "=")
+        is_display_in_fav_category_of_mobile: Boolean @where(operator: "=")
+        orderBy: [OrderByClause!] @orderBy
+    ): [Category] @hasMany
+
+    "get all/specific translation"
+    translations(
+        "Filters by the language id"
+        language_id: Int @where(operator: "=")
+    ): [CategoryTypeTranslation!]! @hasMany
+}
+
+"The translations of the category type"
+type CategoryTypeTranslation {
+    id: ID!
+    name: String!
+    language: Language! @belongsTo
+    categorytype: CategoryType! @belongsTo
+}
+
+"The categories of the type"
+type Category {
+    "Id is a primary key"
+    id: ID
+
+    "Name of the category"
+    category_name: String!
+
+    "Slug of the category"
+    category_slug: String!
+
+    "Description of the category"
+    category_description: String
+
+    "Image of the category"
+    image_url: String
+
+    "Mobile Image of the category"
+    mobile_image_url: String
+
+    "Meta information"
+    meta_title: String
+    meta_description: String
+
+    "The type of the category"
+    type: CategoryType @belongsTo
+
+    "The parent of the category if this is a child category"
+    parent: Category @belongsTo
+
+    "The subcategories of the this category"
+    subcategories(
+        is_active_in_website: Boolean @where(operator: "=")
+        is_active_in_mobile: Boolean @where(operator: "=")
+        is_display_home_page_of_mobile: Boolean @where(operator: "=")
+        is_display_home_page_of_website: Boolean @where(operator: "=")
+        is_display_in_fav_category_of_webite: Boolean @where(operator: "=")
+        is_display_in_fav_category_of_mobile: Boolean @where(operator: "=")
+        orderBy: [OrderByClause!] @orderBy
+    ): [Category] @hasMany
+
+    "Options of display the category"
+    is_active_in_mobile: Boolean
+
+    display_order_in_mobile: Int
+
+    is_active_in_website: Boolean
+
+    display_order_in_website: Int
+
+    is_display_home_page_of_mobile: Boolean
+
+    display_order_in_home_page_of_mobile: Int
+
+    is_display_home_page_of_website: Boolean
+
+    display_order_in_home_page_of_website: Int
+
+    is_display_in_fav_category_of_mobile: Boolean
+
+    is_display_in_fav_category_of_webite: Boolean
+
+    "get all/specific translation"
+    translations(
+        "Filters by the language id"
+        language_id: Int @where(operator: "=")
+    ): [CategoryTranslation!]! @hasMany
+}
+
+"The category translation of the category"
+type CategoryTranslation {
+    id: ID!
+    name: String!
+    slug: String
+    description: String
+    meta_title: String
+    meta_description: String
+    language: Language! @belongsTo
+}
+
+extend type Query {
+    "Listing all categorytypes"
+    categorytypes(
+        "Filters by id."
+        id: Int @where(operator: "=")
+    ): [CategoryType!]! @all(model: "Modules\\Settings\\Entities\\CategoryType")
+
+    "Find a single category type by a id."
+    categorytype("Search by an id." id: Int! @eq): CategoryType
+        @find(
+            scopes: ["active"]
+            model: "Modules\\Settings\\Entities\\CategoryType"
+        )
+    "categories"
+    categories(
+        "Fitlers by display options"
+        is_active_in_website: Boolean @where(operator: "=")
+        is_active_in_mobile: Boolean @where(operator: "=")
+        is_display_home_page_of_mobile: Boolean @where(operator: "=")
+        is_display_home_page_of_website: Boolean @where(operator: "=")
+        is_display_in_fav_category_of_webite: Boolean @where(operator: "=")
+        is_display_in_fav_category_of_mobile: Boolean @where(operator: "=")
+        orderBy: [OrderByClause!] @orderBy
+        category_type_id: Int @where(operator: "=")
+    ): [Category]!
+        @all(
+            scopes: ["parentsOnly"]
+            model: "Modules\\Settings\\Entities\\Category"
+        )
+
+    category("Fitler by id" id: Int @where(operator: "=")): Category!
+        @find(model: "Modules\\Settings\\Entities\\Category")
+}

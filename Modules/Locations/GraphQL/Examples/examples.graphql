@@ -1,0 +1,42 @@
+################################
+####### Countries ##########
+################################
+{
+    countries{
+        id
+        country_name
+        phone_code
+        currency{
+            id
+            currency_name
+        },
+        translations{
+            id
+            name,
+            language{
+                id
+                code
+            }
+        }
+    }
+}
+
+{
+    country(id: 1){
+        id
+        country_name
+        phone_code
+        currency{
+            id
+            currency_name
+        },
+        translations{
+            id
+            name,
+            language{
+                id
+                code
+            }
+        }
+    }
+}

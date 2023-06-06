@@ -1,0 +1,38 @@
+"The countries"
+type Country {
+    "Id is a primary key"
+    id: ID
+
+    "Name of the country"
+    country_name: String!
+
+    "Phone code of the country"
+    phone_code: String!
+
+    "Currency of the country"
+    currency: Currency @belongsTo
+
+    "States of the country"
+    states: [State] @hasMany
+
+    translations(
+        "Filters by the language id"
+        language_id: Int @where(operator: "=")
+    ): [CountryTranslation!]! @hasMany
+}
+
+"The country translation of the country"
+type CountryTranslation {
+    id: ID!
+    name: String!
+    language: Language! @belongsTo
+}
+
+extend type Query {
+    "Listing all countries"
+    countries("Filters by id." id: Int): [Country!]!
+        @all(scopes: ["active"], model: "Modules\\Locations\\Entities\\Country")
+
+    country("Fitler by id" id: Int! @where(operator: "=")): Country!
+        @find(model: "Modules\\Locations\\Entities\\Country")
+}

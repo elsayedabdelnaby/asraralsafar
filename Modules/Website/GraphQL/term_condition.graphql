@@ -1,0 +1,36 @@
+"TermCondition model which handles the terms & conditions of the app."
+type TermCondition {
+    "Id is primary key"
+    id: Int!
+
+    "TermCondition title"
+    term_condition_title: String!
+
+    "TermCondition description"
+    term_condition_description: String!
+
+    "get all transations of the terms & conditions"
+    translations(
+        "Filters by the language id"
+        language_id: Int @where(operator: "=")
+    ): [TermConditionTranslation!]! @hasMany
+}
+
+"The translations of the term condition model"
+type TermConditionTranslation {
+    id: ID!
+    title: String!
+    description: String!
+    language: Language! @belongsTo
+    termcondition: TermCondition! @belongsTo
+}
+
+extend type Query {
+    "Listing all terms and conditions"
+    termsconditions: [TermCondition!]!
+        @all(
+            scopes: ["active"]
+            model: "Modules\\Website\\Entities\\TermCondition"
+        )
+        @orderBy(column: "display_order")
+}

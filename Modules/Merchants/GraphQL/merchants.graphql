@@ -1,0 +1,82 @@
+"The merchants"
+type Merchant {
+    "Id is a primary key"
+    id: ID
+
+    "Name of the merchant"
+    merchant_name: String!
+
+    "Slug of the merchant"
+    merchant_slug: String
+
+    "Description of the merchant"
+    merchant_description: String
+
+    "Logo of the merchant"
+    logo_url: String
+
+    "Meta information"
+    meta_title: String
+    meta_description: String
+
+    average_delivery_time: Int
+
+    rush_time_status: Boolean
+
+    rush_time_additional_fees: Float
+
+    hot_line: String
+
+    "social links of the merchant"
+    socials: MerchantSocial @hasMany
+
+    "The merchant working type (bakery, restaurant, supermarket, etc.)"
+    workingAs: [Category] @hasManyThrough
+
+    "product categories"
+    productCategories: [Category] @hasManyThrough
+
+    "Meals of the restaurant"
+    mealCategories: [Category] @hasManyThrough
+
+    "Cuisines of the restaurant"
+    cuisineCategories: [Category] @hasManyThrough
+
+    "get all/specific translation"
+    translations(
+        "Filters by the language id"
+        language_id: Int @where(operator: "=")
+    ): [MerchantTranslation!]! @hasMany
+}
+
+"The merchant translation of the merchant"
+type MerchantTranslation {
+    id: ID!
+    name: String!
+    slug: String
+    description: String
+    meta_title: String
+    meta_description: String
+    language: Language! @belongsTo
+}
+
+extend type Query {
+    merchant("Fitler by id" id: Int @where(operator: "=")): Merchant!
+        @find(model: "Modules\\Merchants\\Entities\\Merchant")
+
+    merchants(
+        "fitler merchants by working category ids"
+        working_category_ids: [Int!]
+        "fitler merchants by product category ids"
+        product_category_ids: [Int!]
+        "fitler merchants by meal category ids"
+        meal_category_ids: [Int!]
+        "fitler merchants by cuisine category ids"
+        cuisine_category_ids: [Int!]
+    ): [Merchant!]!
+        @field(
+            scopes: ["active"]
+            model: "Modules\\Merchants\\Entities\\Merchant"
+            resolver: "Modules\\Merchants\\GraphQL\\Queries\\MerchantsResolver"
+        )
+}

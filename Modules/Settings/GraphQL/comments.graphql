@@ -1,0 +1,40 @@
+"Comment model which handles the comments of the app."
+type Comment {
+    "Id is primary key"
+    id: Int!
+
+    "The body of the comment"
+    body: String!
+
+    "Number of likes of the comment"
+    likes_number: Int
+
+    author: User!
+
+    parent_id: Int
+
+    commentable: Commentable! @morphTo
+
+    "get all replys of the comment"
+    replies: [Comment!] @hasMany
+}
+
+union Commentable = Blog
+
+extend type Mutation {
+    createComment(
+        commentable_id: ID!
+        commentable_type: String!
+        body: String!
+    ): Comment! @create
+
+    addReplyToComment(comment_id: ID!, body: String!, author_id: Int): Comment!
+        @field(
+            resolver: "Modules\\Settings\\GraphQL\\Mutations\\AddReplyToCommentMutation"
+        )
+}
+
+extend type Query {
+    comment(id: ID! @eq): Comment
+        @find(model: "Modules\\Settings\\Entities\\Comment")
+}

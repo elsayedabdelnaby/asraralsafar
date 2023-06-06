@@ -1,0 +1,41 @@
+"Metapage model which handles the meta data of basic pages."
+type MetaPage {
+    "Page is enum"
+    page: String!
+
+    "Meta Ttile"
+    meta_page_title: String!
+
+    "Meta Description"
+    meta_page_description: String!
+
+    "image_url of the meta data"
+    image_url: String
+
+    "get specific translation"
+    translations(
+        "Filters by the language id"
+        language_id: Int @where(operator: "=")
+    ): [MetaPageTranslation!]! @hasMany
+}
+
+extend type Query {
+    "Listing all metapages"
+    metapages(
+        "Filters by page."
+        page: String @where(operator: "=")
+    ): [MetaPage!]! @all(model: "Modules\\Website\\Entities\\MetaPage")
+
+    "Find a single metapage by a type."
+    metapage("Search by a contact type." page: String! @eq): MetaPage
+        @find(model: "Modules\\Website\\Entities\\MetaPage")
+}
+
+"The translations of the meta data of the page"
+type MetaPageTranslation {
+    id: ID!
+    title: String!
+    description: String!
+    language: Language! @belongsTo
+    metapage: MetaPage! @belongsTo
+}

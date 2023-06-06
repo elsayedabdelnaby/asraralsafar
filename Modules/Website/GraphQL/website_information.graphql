@@ -1,0 +1,42 @@
+"Website information model which handles the main information of the app."
+type WebsiteInformation {
+    "The app name"
+    name: String!
+
+    "The Main logo of the app"
+    main_logo_url: String
+
+    "The footer logo of the app"
+    footer_logo_url: String
+
+    "The facebook pixle code"
+    facebook_pixel_code: String
+
+    "The google analytics code"
+    google_analytics_code: String
+
+    # "The translations of the website information"
+    # translations(
+    #     language_id: Int @where(operator: "=")
+    # ): [WebsiteInformationTranslation!]! @hasMany
+
+    "get specific translation"
+    translations(
+        "Filters by name. Accepts SQL LIKE wildcards `%` and `_`."
+        language_id: Int @where(operator: "=")
+    ): [WebsiteInformationTranslation!]! @hasMany
+}
+
+"The translations of the website information"
+type WebsiteInformationTranslation {
+    id: ID!
+    name: String!
+    language: Language! @belongsTo
+    websiteinformation: WebsiteInformation! @belongsTo
+}
+
+extend type Query {
+    "returns the website information"
+    websiteinformation(id: ID = 1): WebsiteInformation
+        @first(model: "Modules\\Website\\Entities\\WebsiteInformation")
+}

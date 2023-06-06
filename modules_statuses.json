@@ -1,0 +1,9 @@
+{
+    "UsersManagement": true,
+    "Website": true,
+    "Settings": true,
+    "Locations": true,
+    "Merchants": true,
+    "Sales": true,
+    "Operations": true
+}

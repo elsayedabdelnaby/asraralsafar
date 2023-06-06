@@ -1,0 +1,215 @@
+################################
+#### Contact Informations ######
+################################
+
+{
+    contactinformations {
+        type
+        value
+    }
+}
+
+{
+    contactinformations(type: "phone") {
+        type
+        value
+    }
+}
+
+{
+    contactinformation(id: 1) {
+        type
+        value
+    }
+}
+
+################################
+#### Website Information #######
+################################
+
+{
+    websiteinformation {
+        name
+        main_logo_url
+        footer_logo_url
+        google_analytics_code
+        translations(language_id: 2) {
+            id
+            name
+            language {
+                id
+                name
+                code
+            }
+        }
+    }
+}
+
+{
+    websiteinformation {
+        name
+        main_logo_url
+        footer_logo_url
+        google_analytics_code
+        translations {
+            id
+            name
+            language {
+                id
+                name
+                code
+            }
+        }
+    }
+}
+
+################################
+####### Social Links ##########
+################################
+
+{
+    metapages {
+        page
+        image_url
+        translations {
+            title
+            keywords
+            description
+            language {
+                code
+            }
+        }
+    }
+}
+
+{
+    metapage(page: "contact_us") {
+        page
+        image_url
+        translations(language_id: 1) {
+            title
+            keywords
+            description
+            language {
+                code
+            }
+        }
+    }
+}
+
+################################
+####### Terms Conditions #######
+################################
+
+{
+    termsconditions {
+        id
+        translations(language_id: 1) {
+            title
+            description
+            language {
+                code
+            }
+        }
+    }
+}
+
+################################
+############# FAQs #############
+################################
+
+{
+    faqs(category_id: 7) {
+        id
+        faq_question
+        faq_answer
+        category {
+            id
+            category_name
+            category_slug
+        }
+        translations {
+            language {
+                id
+                code
+            }
+            question
+            answer
+        }
+    }
+}
+
+################################
+############# Blogs #############
+################################
+
+{
+    blogs(category_id: 2) {
+        id
+        image_url
+        blog_title
+        blog_slug
+        blog_short_description
+        blog_description
+        meta_title
+        meta_description
+        category {
+            id
+            category_name
+        }
+        translations {
+            language {
+                id
+                code
+            }
+            slug
+        }
+    }
+}
+
+################################
+##### Add Comment to a Blog ####
+################################
+
+mutation {
+    addCommentToBlog(blog_id: 1, body: "Hassan abo ali", author_id: 1) {
+        id
+        author {
+            id
+            email
+        }
+    }
+}
+
+mutation {
+    addReplyToComment(comment_id: 1, body: "replying two", author_id: 1) {
+        id
+        body
+        author {
+            id
+            email
+        }
+    }
+}
+################################
+##### Blogs with Comments ######
+################################
+{
+    blogs(category_id: 1) {
+        id
+        blog_title
+        category {
+            id
+            category_name
+        }
+        comments {
+            id
+            body
+            parent_id
+            replies {
+                id
+                body
+            }
+        }
+    }
+}

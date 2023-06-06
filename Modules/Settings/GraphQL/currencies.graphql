@@ -1,0 +1,50 @@
+"Currency model which handles the currencies."
+type Currency {
+    "Id is primary key"
+    id: ID
+
+    "iso code"
+    iso_code: String!
+
+    "Name of the currency"
+    currency_name: String!
+
+    "Is Main"
+    is_main: Boolean
+
+    "Symbol First"
+    is_symbol_first: Boolean
+
+    "Symbol"
+    symbol: String
+
+    "html entity"
+    html_entity: String
+
+    "get all/specific translation"
+    translations(
+        "Filters by the language id"
+        language_id: Int @where(operator: "=")
+    ): [CurrencyTranslation!]! @hasMany
+}
+
+"The translations of the currency"
+type CurrencyTranslation {
+    id: ID!
+    name: String!
+    language: Language! @belongsTo
+    currency: Currency! @belongsTo
+}
+
+extend type Query {
+    "Listing all currencies"
+    currencies("Filters by id." id: Int @where(operator: "=")): [Currency!]!
+        @all(model: "Modules\\Settings\\Entities\\Currency")
+
+    "Find a single currency by a id."
+    currency("Search by an id." id: Int! @eq): Currency
+        @find(
+            scopes: ["active"]
+            model: "Modules\\Settings\\Entities\\Currency"
+        )
+}

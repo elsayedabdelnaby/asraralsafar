@@ -1,0 +1,51 @@
+################################
+####### Category Type ##########
+################################
+{
+  categorytypes {
+    id
+    translations {
+      id
+      name
+    }
+    categories(
+      is_display_home_page_of_website: true
+      orderBy: [{column: "display_order_in_mobile", order: DESC}]
+    ) {
+      id
+      is_active_in_mobile
+      display_order_in_mobile
+      is_active_in_website
+      is_display_home_page_of_mobile
+      translations {
+        id
+        name
+        slug
+        description
+        meta_title
+        meta_description
+      }
+    }
+  }
+}
+
+
+
+{
+  categories(category_type_id: 1) {
+    id
+    is_active_in_mobile
+    is_active_in_website
+    is_display_home_page_of_mobile
+    type {
+      id
+      translations {
+        name
+      }
+    }
+    translations {
+      id
+      name
+    }
+  }
+}

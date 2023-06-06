@@ -1,0 +1,36 @@
+"return all users"
+{
+    users {
+        data {
+            name
+        }
+    }
+}
+
+"get the specific user"
+{
+  user(id: 1) {
+    name
+  }
+}
+
+
+"Customer registration"
+mutation {
+  register(
+    input: {phone: "123456789", password: "123456", device_name: "desktop"}
+  ) {
+    id
+    name
+    phone_number
+    email
+    phone_verified_at
+    email_verified_at
+  }
+}
+
+mutation {
+  verifiyOTP(otp: "3281") {
+    token
+  }
+}

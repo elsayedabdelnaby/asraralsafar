@@ -1,0 +1,38 @@
+"The states"
+type State {
+    "Id is a primary key"
+    id: ID
+
+    "Name of the state"
+    state_name: String!
+
+    "Country of the state"
+    country: Country! @belongsTo
+
+    "Cities of the state"
+    cities: [City] @hasMany
+
+    translations(
+        "Filters by the language id"
+        language_id: Int @where(operator: "=")
+    ): [StateTranslation!]! @hasMany
+}
+
+"The translation of the state"
+type StateTranslation {
+    id: ID!
+    name: String!
+    language: Language! @belongsTo
+}
+
+extend type Query {
+    "Listing all states"
+    states(
+        "Filters by country_id."
+        country_id: Int! @where(operator: "=")
+    ): [State!]!
+        @all(scopes: ["active"], model: "Modules\\Locations\\Entities\\State")
+
+    state("Fitler by id" id: Int! @where(operator: "=")): State!
+        @find(model: "Modules\\Locations\\Entities\\State")
+}
