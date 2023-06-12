@@ -18,7 +18,7 @@ class DefaultCurrenciesTableSeeder extends Seeder
         Currency::insert([
             [
                 'id' => 1,
-                'iso_code' => 'YER',
+                'iso_code' => 'SAR',
                 'symbol' => '﷼',
                 'is_main' => true,
                 'created_at' => now(),
@@ -39,8 +39,8 @@ class DefaultCurrenciesTableSeeder extends Seeder
         ]);
 
         CurrencyTranslation::insert([
-            ['currency_id' => 1, 'language_id' => 1, 'name' => 'Yemen Rial',            'created_at' => now(), 'updated_at' => now()],
-            ['currency_id' => 1, 'language_id' => 2, 'name' => 'ريال يمنى',             'created_at' => now(), 'updated_at' => now()],
+            ['currency_id' => 1, 'language_id' => 1, 'name' => 'Saudi Rial',            'created_at' => now(), 'updated_at' => now()],
+            ['currency_id' => 1, 'language_id' => 2, 'name' => 'ريال سعودى',             'created_at' => now(), 'updated_at' => now()],
             ['currency_id' => 2, 'language_id' => 1, 'name' => 'United States Dollar',  'created_at' => now(), 'updated_at' => now()],
             ['currency_id' => 2, 'language_id' => 2, 'name' => 'دولار امريكى',          'created_at' => now(), 'updated_at' => now()]
         ]);

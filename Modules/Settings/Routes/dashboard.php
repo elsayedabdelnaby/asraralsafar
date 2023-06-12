@@ -78,17 +78,5 @@ Route::name('dashboard.')->middleware(['isAdmin'])->prefix("dashboard")->group(f
             Route::delete('{id}', 'destroy')->middleware('hasPermission:delete-currency')->name('destroy');
             Route::put('{id}/toggle', 'toggle')->middleware('hasPermission:update-currency')->name('toggle-status');
         });
-
-        // routes of deliveries
-        Route::prefix('delivery_fees')->name('delivery_fees.')->controller(DeliveryFeeController::class)->group(function () {
-            Route::get('', 'index')->middleware('hasPermission:listing-delivery_fees')->name('index');
-            Route::get('create', 'create')->middleware('hasPermission:create-delivery_fee')->name('create');
-            Route::post('', 'store')->middleware('hasPermission:create-delivery_fee')->name('store');
-            Route::get('{id}/edit', 'edit')->middleware('hasPermission:update-delivery_fee')->name('edit');
-            Route::put('{id}', 'update')->middleware('hasPermission:update-delivery_fee')->name('update');
-            Route::put('{id}/toggle', 'toggle')->middleware('hasPermission:update-delivery_fee')->name('toggle-status');
-            Route::delete('{id}/delete', 'delete')->middleware('hasPermission:delete-delivery_fee')->name('delete');
-
-        });
     });
 });

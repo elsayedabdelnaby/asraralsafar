@@ -36,7 +36,6 @@ class OperationsPermissionSeederTableSeeder extends Seeder
             $modelService = new ModelService();
 
             //Create Operations  Delivery Guy
-            $this->createOperationsDeliveryGuyPermissions($module->id, $modelService);
             $modelService->createModelAndAssignPermissions(
                 'Activity Log',
                 $module->id,
@@ -59,21 +58,5 @@ class OperationsPermissionSeederTableSeeder extends Seeder
         $profile_service = new ProfileService();
         $profile_service->assigndModulePermissionsToProfile(1, 'Operations');
         $profile_service->clearUsersProfilePermissionsCache(1);
-    }
-
-
-    private function createOperationsDeliveryGuyPermissions($module_id, ModelService $modelService)
-    {
-        $modelService->createModelAndAssignPermissions(
-            'Delivery Guy',
-            $module_id,
-            [
-                'listing-delivery-guys',
-                'create-delivery-guys',
-                'update-delivery-guys',
-                'delete-delivery-guys',
-                'view-delivery-guys'
-            ]
-        );
     }
 }

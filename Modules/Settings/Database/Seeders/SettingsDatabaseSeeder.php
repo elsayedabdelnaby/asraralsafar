@@ -16,8 +16,6 @@ class SettingsDatabaseSeeder extends Seeder
     {
         $this->call(SettingsPermissionsSeeder::class);
         $this->call(DefaultCategoryTypesTableSeeder::class);
-        $this->call(DefaultCategoriesTableSeeder::class);
         $this->call(DefaultCurrenciesTableSeeder::class);
-        $this->call(CuisinesCategoriesSeeder::class);
     }
 }

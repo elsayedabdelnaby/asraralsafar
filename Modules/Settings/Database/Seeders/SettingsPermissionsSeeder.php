@@ -107,19 +107,6 @@ class SettingsPermissionsSeeder extends Seeder
                 ]
             );
 
-            // create the delivery model and insert basics permissions of it
-            $model_service->createModelAndAssignPermissions(
-                'Delivery',
-                $module->id,
-                [
-                    'listing-delivery_fees',
-                    'create-delivery_fee',
-                    'update-delivery_fee',
-                    'delete-delivery_fee',
-                    'view-delivery_fee'
-                ]
-            );
-
             // assign all permissions to the administrator profile
             $profile_service = new ProfileService();
             $profile_service->assigndModulePermissionsToProfile(1, 'Settings');
