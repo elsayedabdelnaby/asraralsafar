@@ -87,19 +87,6 @@
                     @include('dashboard.layouts.partials.sidebar.website')
                 @endif
                 <!-- End Website Module -->
-
-                <!-- Website Module -->
-                @if (Auth()->user()->hasPermission('access-merchants'))
-                    @include('dashboard.layouts.partials.sidebar.merchants')
-                @endif
-                <!-- End Website Module -->
-
-                <!-- Sales Module -->
-                @if (Auth()->user()->hasPermission('access-sales'))
-                    @include('dashboard.layouts.partials.sidebar.sales')
-                @endif
-                <!-- End Sales Module -->
-
                 <!-- Operations -->
                 @if (Auth()->user()->hasPermission('access-operations'))
                     @include('dashboard.layouts.partials.sidebar.operations')

@@ -25,15 +25,6 @@
                     <span class="menu-text">{{ __('dashboard.operations') }}</span>
                 </span>
             </li>
-            <li class="menu-item {{ request()->routeIs('dashboard.operations.delivery-guy.index') ? 'menu-item-active' : null }}"
-                aria-haspopup="true">
-                <a href="{{ route('dashboard.operations.delivery-guys.index') }}" class="menu-link">
-                    <i class="menu-bullet menu-bullet-line">
-                        <span></span>
-                    </i>
-                    <span class="menu-text">{{ __('dashboard.delivery_guy') }}</span>
-                </a>
-            </li>
             <li class="menu-item {{ request()->routeIs('dashboard.operations.activity-logs.index') ? 'menu-item-active' : null }}"
                 aria-haspopup="true">
                 <a href="{{ route('dashboard.operations.activity-logs.index') }}" class="menu-link">
@@ -52,19 +43,6 @@
                     <span class="menu-text">{{ __('dashboard.contact_us') }}</span>
                 </a>
             </li>
-
-
-            <li class="menu-item {{ request()->routeIs('dashboard.operations.orders-monitoring.index') ? 'menu-item-active' : null }}"
-                aria-haspopup="true">
-                <a href="{{ route('dashboard.operations.orders-monitoring.index') }}" class="menu-link">
-                    <i class="menu-bullet menu-bullet-line">
-                        <span></span>
-                    </i>
-                    <span class="menu-text">{{ __('dashboard.orders_monitoring') }}</span>
-                </a>
-            </li>
-
-
         </ul>
     </div>
 </li>

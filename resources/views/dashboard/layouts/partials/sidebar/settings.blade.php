@@ -82,15 +82,6 @@
                     <span class="menu-text">{{ __('dashboard.currencies') }}</span>
                 </a>
             </li>
-            <li class="menu-item {{ request()->routeIs('dashboard.settings.delivery_fees.*') ? 'menu-item-active' : null }}"
-                aria-haspopup="true">
-                <a href="{{ route('dashboard.settings.delivery_fees.index') }}" class="menu-link">
-                    <i class="menu-bullet menu-bullet-dot">
-                        <span></span>
-                    </i>
-                    <span class="menu-text">{{ __('dashboard.delivery_fees') }}</span>
-                </a>
-            </li>
             <li class="menu-item {{ request()->routeIs('dashboard.languages.*') ? 'menu-item-active' : null }}"
                 aria-haspopup="true">
                 <a href="{{ route('dashboard.languages.index') }}" class="menu-link">
