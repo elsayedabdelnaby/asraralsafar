@@ -14,6 +14,5 @@ class OperationsDatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(OperationsPermissionSeederTableSeeder::class);
-        $this->call(WorkingSettingsTableSeeder::class);
     }
 }
