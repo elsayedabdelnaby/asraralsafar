@@ -30,6 +30,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
     Route::get('/blog', [BlogController::class, 'index'])->name('website.blog.index');
     Route::get('/blog/{id}', [BlogController::class, 'show'])->name('blog.show');
     Route::get('/contact-us', [ContactController::class, 'index']);
+    Route::post('/contact-us', [ContactController::class, 'store'])->name('website.contact-us.store');
     Route::get('/faq', [FaqController::class, 'index']);
     Route::get('/flight', [FlightController::class, 'index']);
     Route::get('set-locale', function () {

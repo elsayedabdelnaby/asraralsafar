@@ -9,4 +9,5 @@ enum ContactInformationType: string
     case ContactUs = 'contactus';
     case Careers = 'careers';
     case WhatsApp = 'whatsapp';
+    case Location = 'location';
 }

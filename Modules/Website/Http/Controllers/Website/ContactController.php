@@ -2,9 +2,11 @@
 
 namespace Modules\Website\Http\Controllers\Website;
 
-use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Contracts\Support\Renderable;
+use Modules\Operations\Entities\ContactUs;
+use Modules\Website\Actions\ContactInformations\GetAllContactInformationsAction;
 
 class ContactController extends Controller
 {
@@ -14,16 +16,24 @@ class ContactController extends Controller
      */
     public function index()
     {
-        return view('website::index');
-    }
+        $contactInformations = (new GetAllContactInformationsAction)->handle();
+        $locationInfo = $contactInformations->filter(function ($model) {
+            return $model->type == 'location';
+        })->pluck('value')->toArray();
 
-    /**
-     * Show the form for creating a new resource.
-     * @return Renderable
-     */
-    public function create()
-    {
-        return view('website::create');
+        $phoneInfo = $contactInformations->filter(function ($model) {
+            return $model->type == 'phone';
+        })->pluck('value')->toArray();
+
+        $emailInfo = $contactInformations->filter(function ($model) {
+            return $model->type == 'email';
+        })->pluck('value')->toArray();
+
+        return view('website::website.contact_us.index', [
+            'locationInfo' => $locationInfo,
+            'phoneInfo' => $phoneInfo,
+            'emailInfo' => $emailInfo,
+        ]);
     }
 
     /**
@@ -33,7 +43,23 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+            'message' => 'required',
+        ]);
+
+        ContactUs::create([
+            'name' => $request->first_name . ' ' . $request->last_name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'message' => $request->message,
+            'title' => 'msg'
+        ]);
+
+        return redirect()->back()->with('success', 'we will contac you soon');
     }
 
     /**

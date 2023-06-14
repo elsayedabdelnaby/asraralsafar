@@ -1,10 +1,11 @@
 @extends('website::website.layouts.master')
 
 @section('content')
-<div class="tet"></div>
+    <div class="tet"></div>
 
-<!-- banner starts -->
-<section class="banner pt-10 pb-0 overflow-hidden" style="
+    <!-- banner starts -->
+    <section class="banner pt-10 pb-0 overflow-hidden"
+        style="
     background: linear-gradient(
         to bottom left,
         #ffffffc6,
@@ -15,132 +16,144 @@
     background-size: cover;
     background-repeat: no-repeat;
   ">
-  <div class="container">
-    <div class="banner-in">
-      <div class="row align-items-center">
-        <div class="col-lg-6 mb-4">
-          <div class="banner-content text-lg-start text-center">
-            <h4 class="theme mb-0">Explore The World</h4>
-            <h1>Start Planning Your Dream Trip Today!</h1>
-            <p class="mb-4">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-              do eiusmod tempor incididunt ut labore
-            </p>
-            <div class="book-form">
-              <div class="row d-flex align-items-center justify-content-between">
-                <div class="col-lg-6 mb-2">
-                  <div class="form-group">
-                    <div class="input-box">
-                      <select class="niceSelect">
-                        <option value="1">Destination</option>
-                        <option value="2">Argentina</option>
-                        <option value="3">Belgium</option>
-                        <option value="4">Canada</option>
-                        <option value="5">Denmark</option>
-                      </select>
+        <div class="container">
+            <div class="banner-in">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-4">
+                        <div class="banner-content text-lg-start text-center">
+                            <h4 class="theme mb-0">Explore The World</h4>
+                            <h1>Start Planning Your Dream Trip Today!</h1>
+                            <p class="mb-4">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                do eiusmod tempor incididunt ut labore
+                            </p>
+                            <div class="book-form">
+                                <div class="row d-flex align-items-center justify-content-between">
+                                    <div class="col-lg-6 mb-2">
+                                        <div class="form-group">
+                                            <div class="input-box">
+                                                <select class="niceSelect">
+                                                    <option value="1">Destination</option>
+                                                    <option value="2">Argentina</option>
+                                                    <option value="3">Belgium</option>
+                                                    <option value="4">Canada</option>
+                                                    <option value="5">Denmark</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 mb-2">
+                                        <div class="form-group">
+                                            <div class="input-box">
+                                                <input class="form-control" type="datetime-local" name="date"
+                                                    placeholder="Select Date" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 mb-2">
+                                        <div class="form-group">
+                                            <div class="input-box">
+                                                <select class="niceSelect">
+                                                    <option value="1">Travel Type</option>
+                                                    <option value="2">City Tour</option>
+                                                    <option value="3">Family Tour</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 mb-2">
+                                        <div class="form-group">
+                                            <div class="input-box">
+                                                <select class="niceSelect">
+                                                    <option value="1">Tour Duration</option>
+                                                    <option value="2">5 days</option>
+                                                    <option value="3">7 Days</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="form-group mb-0 text-center">
+                                            <a href="./packages.rtl.html" class="nir-btn w-100"><i
+                                                    class="fa fa-search me-2"></i> Search
+                                                Now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                </div>
-                <div class="col-lg-6 mb-2">
-                  <div class="form-group">
-                    <div class="input-box">
-                      <input class="form-control" type="datetime-local" name="date" placeholder="Select Date" />
+                    <div class="col-lg-6 mb-4">
+                        <div class="banner-image">
+                            <img src="{{ asset('website') }}/images/travel.png" alt="travel" />
+                        </div>
                     </div>
-                  </div>
                 </div>
-                <div class="col-lg-6 mb-2">
-                  <div class="form-group">
-                    <div class="input-box">
-                      <select class="niceSelect">
-                        <option value="1">Travel Type</option>
-                        <option value="2">City Tour</option>
-                        <option value="3">Family Tour</option>
-                      </select>
+                <div class="category-main-inner border-t pt-1 mb-4">
+                    <div class="row g-4">
+                        <div class="col-xl-2 col-lg-4 col-md-6">
+                            <div
+                                class="category-item box-shadow p-3 py-4 text-center bg-white rounded overflow-hidden h-100">
+                                <div class="trending-topic-content">
+                                    <img width="20" src="{{ asset('website') }}/images/hotel.svg"
+                                        class="mb-1 d-inline-block" alt="Book Hotel" />
+                                    <h4 class="mb-0 fs-18">
+                                        <a href="#">Hotels</a>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-4 col-md-6">
+                            <div
+                                class="category-item box-shadow p-3 py-4 text-center bg-white rounded overflow-hidden h-100">
+                                <div class="trending-topic-content text-center">
+                                    <img src="{{ asset('website') }}/images/plane.svg" class="mb-1 d-inline-block"
+                                        alt="Flight" />
+                                    <h4 class="mb-0 fs-18">
+                                        <a href="#">Flights</a>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-4 col-md-6">
+                            <div
+                                class="category-item box-shadow p-3 py-4 text-center bg-white rounded overflow-hidden h-100">
+                                <div class="trending-topic-content">
+                                    <img src="{{ asset('website') }}/images/cruise.svg" class="mb-1 d-inline-block"
+                                        alt="Cruise" />
+                                    <h4 class="mb-0 fs-18">
+                                        <a href="#">Cruise</a>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-4 col-md-6">
+                            <div
+                                class="category-item box-shadow p-3 py-4 text-center bg-white rounded overflow-hidden h-100">
+                                <div class="trending-topic-content">
+                                    <img src="{{ asset('website') }}/images/boarding-pass.svg" class="mb-1 d-inline-block"
+                                        alt="Visa" />
+                                    <h4 class="mb-0 fs-18"><a href="./index.html">Visa</a></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-4 col-md-6">
+                            <div
+                                class="category-item box-shadow p-3 py-4 text-center bg-white rounded overflow-hidden h-100">
+                                <div class="trending-topic-content">
+                                    <img src="{{ asset('website') }}/images/icons/drivers-license.svg"
+                                        class="mb-1 d-inline-block" alt="license" />
+                                    <h4 class="mb-0 fs-18">
+                                        <a href="#">International License</a>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
                 </div>
-                <div class="col-lg-6 mb-2">
-                  <div class="form-group">
-                    <div class="input-box">
-                      <select class="niceSelect">
-                        <option value="1">Tour Duration</option>
-                        <option value="2">5 days</option>
-                        <option value="3">7 Days</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-12">
-                  <div class="form-group mb-0 text-center">
-                    <a href="./packages.rtl.html" class="nir-btn w-100"><i class="fa fa-search me-2"></i> Search
-                      Now</a>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
         </div>
-        <div class="col-lg-6 mb-4">
-          <div class="banner-image">
-            <img src="{{ asset('website') }}/images/travel.png" alt="travel" />
-          </div>
-        </div>
-      </div>
-      <div class="category-main-inner border-t pt-1 mb-4">
-        <div class="row g-4">
-          <div class="col-xl-2 col-lg-4 col-md-6">
-            <div class="category-item box-shadow p-3 py-4 text-center bg-white rounded overflow-hidden h-100">
-              <div class="trending-topic-content">
-                <img width="20" src="{{ asset('website') }}/images/hotel.svg" class="mb-1 d-inline-block" alt="Book Hotel" />
-                <h4 class="mb-0 fs-18">
-                  <a href="#">Hotels</a>
-                </h4>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-2 col-lg-4 col-md-6">
-            <div class="category-item box-shadow p-3 py-4 text-center bg-white rounded overflow-hidden h-100">
-              <div class="trending-topic-content text-center">
-                <img src="{{ asset('website') }}/images/plane.svg" class="mb-1 d-inline-block" alt="Flight" />
-                <h4 class="mb-0 fs-18">
-                  <a href="#">Flights</a>
-                </h4>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-2 col-lg-4 col-md-6">
-            <div class="category-item box-shadow p-3 py-4 text-center bg-white rounded overflow-hidden h-100">
-              <div class="trending-topic-content">
-                <img src="{{ asset('website') }}/images/cruise.svg" class="mb-1 d-inline-block" alt="Cruise" />
-                <h4 class="mb-0 fs-18">
-                  <a href="#">Cruise</a>
-                </h4>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-2 col-lg-4 col-md-6">
-            <div class="category-item box-shadow p-3 py-4 text-center bg-white rounded overflow-hidden h-100">
-              <div class="trending-topic-content">
-                <img src="{{ asset('website') }}/images/boarding-pass.svg" class="mb-1 d-inline-block" alt="Visa" />
-                <h4 class="mb-0 fs-18"><a href="./index.html">Visa</a></h4>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-2 col-lg-4 col-md-6">
-            <div class="category-item box-shadow p-3 py-4 text-center bg-white rounded overflow-hidden h-100">
-              <div class="trending-topic-content">
-                <img src="{{ asset('website') }}/images/icons/drivers-license.svg" class="mb-1 d-inline-block" alt="license" />
-                <h4 class="mb-0 fs-18">
-                  <a href="#">International License</a>
-                </h4>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
 
     <!-- about-us starts -->
@@ -202,8 +215,8 @@
                             <div class="why-us-item text-center p-4 py-5 border rounded bg-white h-100">
                                 <div class="why-us-content">
                                     <div class="why-us-icon mb-3">
-                                        <img src="{{ asset('website/') }}/images/icons/customer-review.svg"
-                                            alt="Review" width="70" />
+                                        <img src="{{ asset('website/') }}/images/icons/customer-review.svg" alt="Review"
+                                            width="70" />
                                     </div>
                                     <h4>
                                         <a href="#">Client Focus</a>
@@ -372,14 +385,16 @@
                             <div class="counter p-4 pb-0 box-shadow bg-white rounded">
                                 <div class="row">
                                     @foreach ($statistics as $statistic)
-                                    <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
-                                        <div class="counter-item border-end pe-4">
-                                            <div class="counter-content text-sm-start text-center"> 
-                                                <h2 class="value mb-0 theme">{{ $statistic->translations->first()->number }}</h2>
-                                                <span class="m-0">{{ $statistic->translations->first()->title }}</span>
+                                        <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
+                                            <div class="counter-item border-end pe-4">
+                                                <div class="counter-content text-sm-start text-center">
+                                                    <h2 class="value mb-0 theme">
+                                                        {{ $statistic->translations->first()->number }}</h2>
+                                                    <span
+                                                        class="m-0">{{ $statistic->translations->first()->title }}</span>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>  
                                     @endforeach
                                 </div>
                             </div>
@@ -1075,32 +1090,32 @@
             <div class="recent-articles-inner">
                 <div class="row">
                     @foreach ($blogs as $blog)
-                    <div class="col-lg-4 col-md-6">
-                        <div class="trend-item box-shadow bg-white mb-4 rounded overflow-hidden">
-                            <div class="trend-image">
-                                <img src="{{ $blog->image_url }}" alt="image" />
-                            </div>
-                            <div class="trend-content-main p-4 pb-2">
-                                <div class="trend-content">
-                                    <h5 class="mb-1 fs-14">{{ $blog->blog_title }}</h5>
-                                    <p class="mb-3">
-                                        {{ $blog->translation->description }}
-                                    </p>
-                                    <div class="entry-meta d-flex align-items-center justify-content-between">
-                                        <div class="entry-author mb-2">
-                                            <img src="{{ asset('website/') }}/images/og-icon.jpg" alt=""
-                                                class="rounded-circle me-1" />
-                                            <span>Asrar Altayar</span>
-                                        </div>
-                                        <div class="entry-button d-flex align-items-centermb-2">
-                                            <a href="{{ route('blog.show', $blog->id) }}" class="nir-btn">Read
-                                                More</a>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="trend-item box-shadow bg-white mb-4 rounded overflow-hidden">
+                                <div class="trend-image">
+                                    <img src="{{ $blog->image_url }}" alt="image" />
+                                </div>
+                                <div class="trend-content-main p-4 pb-2">
+                                    <div class="trend-content">
+                                        <h5 class="mb-1 fs-14">{{ $blog->blog_title }}</h5>
+                                        <p class="mb-3">
+                                            {{ $blog->translation->description }}
+                                        </p>
+                                        <div class="entry-meta d-flex align-items-center justify-content-between">
+                                            <div class="entry-author mb-2">
+                                                <img src="{{ asset('website/') }}/images/og-icon.jpg" alt=""
+                                                    class="rounded-circle me-1" />
+                                                <span>Asrar Altayar</span>
+                                            </div>
+                                            <div class="entry-button d-flex align-items-centermb-2">
+                                                <a href="{{ route('blog.show', $blog->id) }}" class="nir-btn">Read
+                                                    More</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div> 
                     @endforeach
                 </div>
             </div>
