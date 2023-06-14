@@ -1,0 +1,130 @@
+<header class="main_header_area">
+    <div class="header-content py-1 bg-theme">
+      <div class="container d-flex align-items-center justify-content-between">
+        <div class="links">
+          <ul>
+            <li>
+              <span class="text-white fs-12"><i class="icon-calendar text-white me-1"></i>Sat-Fri: 10.00
+                AM – 6.00 PM</span>
+            </li>
+            <li>
+              <a href="#" class="text-white fs-12"><i class="icon-location-pin white me-1"></i> Dokki, Egypt</a>
+            </li>
+            <!-- Render of these according to language. -->
+            <li>
+              <a href="{{ route('set-locale') }}" class="text-white fs-12"><img class="me-1" width="20" height="auto"
+                  src="{{ asset('website/images/egypt.svg')}}" alt="Arabic" />
+                {{ app()->getLocale() == 'en' ? 'Arabic' : 'English'}}</a>
+            </li>
+          </ul>
+        </div>
+        <div class="links float-right">
+          <ul>
+            <li>
+              <a href="#" class="white"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+            </li>
+            <li>
+              <a href="#" class="white"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+            </li>
+            <li>
+              <a href="#" class="white"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            </li>
+            <li>
+              <a href="#" class="white"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Navigation Bar -->
+    <div class="header_menu" id="header_menu">
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-flex d-flex align-items-center justify-content-between w-100 pb-3 pt-3">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#">
+                <img src="{{ asset('website/images/logo.jpg') }}" width="150" alt="image" />
+              </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="navbar-collapse1 d-flex align-items-center" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav" id="responsive-menu">
+                <li class="dropdown submenu active">
+                  <a href="./index.html" class="dropdown-toggle">Home</a>
+                </li>
+
+                <li class="submenu dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                    aria-expanded="false">Programs
+                    <i class="icon-arrow-down" aria-hidden="true"></i></a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="./packages.rtl.html">Offers</a>
+                    </li>
+                    <li>
+                      <a href="./packages.rtl.html">Packages</a>
+                    </li>
+                    <li>
+                      <a href="./package.rtl.html">Package / Offer Details</a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li class="submenu dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                    aria-expanded="false">Bookings
+                    <i class="icon-arrow-down" aria-hidden="true"></i></a>
+                  <ul class="dropdown-menu">
+                    <li class="submenu">
+                      <a href="./flights.rtl.html">Flights</a>
+                    </li>
+                    <li class="submenu">
+                      <a href="./flights.rtl.html">Hotels</a>
+                    </li>
+                    <li class="submenu">
+                      <a href="./cruise-list.rtl.html">Cruises</a>
+                    </li>
+                    <li class="submenu dropdown">
+                      <a href="index.rtl.html">International Licenses</a>
+                    </li>
+                    <li class="submenu dropdown">
+                      <a href="./index.rtl.html">Visa</a>
+                    </li>
+                    <li class="submenu dropdown">
+                      <a href="request.booking.rtl.html">Medical Tourism</a>
+                    </li>
+                    <li class="submenu dropdown">
+                      <a href="request.booking.rtl.html">
+                        Educational Tourism</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="submenu">
+                  <a href="{{ route('website.blog.index') }}">Blogs</a>
+                </li>
+                <li class="submenu">
+                  <a href="contact.rtl.html">Contact Us</a>
+                </li>
+                <li class="submenu">
+                  <a href="about.rtl.html">About Us</a>
+                </li>
+                <li class="search-main">
+                  <a href="#search1" class="mt_search"><i class="fa fa-search"></i></a>
+                </li>
+              </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+            <div class="register-login d-flex align-items-center">
+              <!-- <a href="#" class="nir-btn nir-btn-outline me-2">Book Now</a> -->
+              <a href="request.booking.rtl.html" class="nir-btn white">Book Now</a>
+            </div>
+
+            <div id="slicknav-mobile"></div>
+          </div>
+        </div>
+        <!-- /.container-fluid -->
+      </nav>
+    </div>
+    <!-- Navigation Bar Ends -->
+  </header>

@@ -17,6 +17,7 @@ class IsAdmin
      */
     public function handle(Request $request, Closure $next)
     {
+       
         if (!auth()->check()) {
             return redirect('dashboard/login');
         }

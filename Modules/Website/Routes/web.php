@@ -10,18 +10,37 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
+use Modules\Website\Http\Controllers\Website\FaqController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use Modules\Website\Http\Controllers\Website\BlogController;
+use Modules\Website\Http\Controllers\Website\FlightController;
+use Modules\Website\Http\Controllers\Website\AboutUsController;
+use Modules\Website\Http\Controllers\Website\ContactController;
+use Modules\Website\Http\Controllers\Website\PackageController;
+use Modules\Website\Http\Controllers\Website\IndexPageController;
 
+Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']], function () {
+    require __DIR__ . '/dashboard.php';
+    Route::get('/', [IndexPageController::class, 'index'])->name('soso');
+    Route::get('/package', [PackageController::class, 'index']);
+    Route::get('/about-us', [AboutUsController::class, 'index']);
+    Route::get('/blog', [BlogController::class, 'index'])->name('website.blog.index');
+    Route::get('/blog/{id}', [BlogController::class, 'show'])->name('blog.show');
+    Route::get('/contact-us', [ContactController::class, 'index']);
+    Route::get('/faq', [FaqController::class, 'index']);
+    Route::get('/flight', [FlightController::class, 'index']);
+    Route::get('set-locale', function () {
+        $url = url()->previous();
 
+        if (app()->getlocale() == 'en') {
+            $newUrl  = str_replace('/en', '/ar', $url);
+        } else {
+            $newUrl  = str_replace('/ar', '/en', $url);
+        }
 
-Route::group(
-    [
-        'prefix' => LaravelLocalization::setLocale(),
-        'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
-    ],
-    function () {
-
-        require __DIR__ . '/dashboard.php';
-    }
-);
+        return redirect($newUrl);
+    })->name('set-locale');
+});
