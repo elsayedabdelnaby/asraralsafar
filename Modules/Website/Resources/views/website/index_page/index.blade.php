@@ -381,41 +381,6 @@
                                         </div>
                                     </div>  
                                     @endforeach
-                                    <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
-                                        <div class="counter-item border-end pe-4">
-                                            <div class="counter-content text-sm-start text-center">
-                                                <h2 class="value mb-0 theme">20</h2>
-                                                <span class="m-0">Years Experiences</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
-                                        <div class="counter-item border-end pe-4">
-                                            <div class="counter-content text-sm-start text-center">
-                                                <h2 class="value mb-0 theme">530</h2>
-                                                <span class="m-0">Tour Packages</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
-                                        <div class="counter-item border-end pe-4">
-                                            <div class="counter-content text-sm-start text-center">
-                                                <h2 class="value mb-0 theme">850</h2>
-                                                <span class="m-0">Happy Customers</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
-                                        <div class="counter-item">
-                                            <div class="counter-content text-sm-start text-center">
-                                                <h2 class="value mb-0 theme">320</h2>
-                                                <span class="m-0">Award Winning</span>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1109,23 +1074,17 @@
             </div>
             <div class="recent-articles-inner">
                 <div class="row">
-                    <div class="col-lg-4">
+                    @foreach ($blogs as $blog)
+                    <div class="col-lg-4 col-md-6">
                         <div class="trend-item box-shadow bg-white mb-4 rounded overflow-hidden">
                             <div class="trend-image">
-                                <img src="{{ asset('website/') }}/images/blog/b1.jpg" alt="image" />
+                                <img src="{{ $blog->image_url }}" alt="image" />
                             </div>
                             <div class="trend-content-main p-4 pb-2">
                                 <div class="trend-content">
-                                    <h5 class="mb-1 fs-14">Flights</h5>
-                                    <h4>
-                                        <a href="{{ asset('website/') }}/blogs.details.rtl.html" class="text-dark">How a
-                                            developer duo at Deutsche Bank keep
-                                            remote
-                                            alive.</a>
-                                    </h4>
+                                    <h5 class="mb-1 fs-14">{{ $blog->blog_title }}</h5>
                                     <p class="mb-3">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                        sed do eiusmod
+                                        {{ $blog->translation->description }}
                                     </p>
                                     <div class="entry-meta d-flex align-items-center justify-content-between">
                                         <div class="entry-author mb-2">
@@ -1134,80 +1093,15 @@
                                             <span>Asrar Altayar</span>
                                         </div>
                                         <div class="entry-button d-flex align-items-centermb-2">
-                                            <a href="{{ asset('website/') }}/blogs.details.rtl.html" class="nir-btn">Read
+                                            <a href="{{ route('blog.show', $blog->id) }}" class="nir-btn">Read
                                                 More</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="trend-item box-shadow bg-white mb-4 rounded overflow-hidden">
-                            <div class="trend-image">
-                                <img src="{{ asset('website/') }}/images/blog/b2.jpg" alt="image" />
-                            </div>
-                            <div class="trend-content-main p-4 pb-2">
-                                <div class="trend-content">
-                                    <h5 class="fs-14 mb-1">Inspiration</h5>
-                                    <h4>
-                                        <a href="{{ asset('website/') }}/blogs.details.rtl.html"
-                                            class="text-dark">Inspire Runner with Autism Graces of Women's
-                                            Running</a>
-                                    </h4>
-                                    <p class="mb-3">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                        sed do eiusmod
-                                    </p>
-                                    <div class="entry-meta d-flex align-items-center justify-content-between">
-                                        <div class="entry-author mb-2">
-                                            <img src="{{ asset('website/') }}/images/og-icon.jpg" alt=""
-                                                class="rounded-circle me-1" />
-                                            <span>Asrar Altayar</span>
-                                        </div>
-                                        <div class="entry-button d-flex align-items-center mb-2">
-                                            <a href="{{ asset('website/') }}/blogs.details.rtl.html" class="nir-btn">Read
-                                                More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="trend-item box-shadow bg-white mb-4 rounded overflow-hidden">
-                            <div class="trend-image">
-                                <img src="{{ asset('website/') }}/images/blog/b3.jpg" alt="image" />
-                            </div>
-                            <div class="trend-content-main p-4 pb-2">
-                                <div class="trend-content">
-                                    <h5 class="fs-14 mb-1">Public</h5>
-                                    <h4>
-                                        <a href="{{ asset('website/') }}/blogs.details.rtl.html"
-                                            class="text-dark">Services To Grow Your Business Sell Affiliate
-                                            Products</a>
-                                    </h4>
-                                    <p class="mb-3">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                        sed do eiusmod
-                                    </p>
-                                    <div class="entry-meta d-flex align-items-center justify-content-between">
-                                        <div class="entry-author mb-2">
-                                            <img src="{{ asset('website/') }}/images/og-icon.jpg" alt="user"
-                                                class="rounded-circle me-1" />
-                                            <span>Asrar Altayar</span>
-                                        </div>
-                                        <div class="entry-button d-flex align-items-center mb-2">
-                                            <a href="{{ asset('website/') }}/blogs.details.rtl.html" class="nir-btn">Read
-                                                More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </div> 
+                    @endforeach
                 </div>
             </div>
         </div>

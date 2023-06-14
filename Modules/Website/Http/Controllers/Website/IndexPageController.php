@@ -2,11 +2,12 @@
 
 namespace Modules\Website\Http\Controllers\Website;
 
-use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Modules\Website\Entities\Blog;
 use Modules\Locations\Entities\Country;
 use Modules\Website\Entities\Statistic;
+use Illuminate\Contracts\Support\Renderable;
 
 class IndexPageController extends Controller
 {
@@ -17,7 +18,9 @@ class IndexPageController extends Controller
     public function index()
     {
         return view('website::website.index_page.index',[
-            'statistics' => Statistic::with('translations')->get()
+            'statistics' => Statistic::with('translations')->get(),
+            'blogs' => Blog::with('translations')->latest()->take(3)->get()
+
         ]);
     }
 
