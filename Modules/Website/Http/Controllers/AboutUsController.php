@@ -1,12 +1,10 @@
 <?php
 
-namespace Modules\Website\Http\Controllers\Website;
+namespace Modules\Website\Http\Controllers;
 
+use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Modules\Website\Entities\AboutUs;
-use Modules\Website\Entities\Statistic;
-use Illuminate\Contracts\Support\Renderable;
 
 class AboutUsController extends Controller
 {
@@ -16,12 +14,7 @@ class AboutUsController extends Controller
      */
     public function index()
     {
-        $aboutUs = AboutUs::with('translations')->get();
-        $statistics = Statistic::with('translations')->get();
-        return view('website::website.about_us.index', [
-            'about_ud' => $aboutUs,
-            'statistics' => $statistics
-        ]);
+        return view('website::index');
     }
 
     /**
