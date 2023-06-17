@@ -27,8 +27,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
     Route::get('/', [IndexPageController::class, 'index'])->name('soso');
     Route::get('/package', [PackageController::class, 'index']);
     Route::get('/about-us', [AboutUsController::class, 'index']);
-    Route::get('/blog', [BlogController::class, 'index'])->name('website.blog.index');
-    Route::get('/blog/{id}', [BlogController::class, 'show'])->name('blog.show');
+    Route::get('/blogs', [BlogController::class, 'index'])->name('website.blog.index');
+    Route::get('/blogs/{slug}', [BlogController::class, 'show'])->name('blog.show');
     Route::get('/contact-us', [ContactController::class, 'index']);
     Route::post('/contact-us', [ContactController::class, 'store'])->name('website.contact-us.store');
     Route::get('/faq', [FaqController::class, 'index']);

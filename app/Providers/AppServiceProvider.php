@@ -2,9 +2,11 @@
 
 namespace App\Providers;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\ServiceProvider;
+use Modules\Website\Entities\WebsiteInformation;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -28,5 +30,6 @@ class AppServiceProvider extends ServiceProvider
         Model::preventLazyLoading();
         Model::preventAccessingMissingAttributes();
         Schema::defaultStringLength(255);
+        View::share('websiteInfo', WebsiteInformation::with('translations')->first());
     }
 }

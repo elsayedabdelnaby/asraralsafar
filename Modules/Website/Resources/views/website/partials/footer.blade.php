@@ -4,7 +4,7 @@
         <div class="row">
           <div class="col-lg-4 col-md-6 col-sm-12 mb-4 pe-4">
             <div class="footer-about">
-              <img class="rounded-pill" src="{{ asset('website/images/logo.jpg') }}" width="200" alt="" />
+              <img class="rounded-pill" src="{{ asset("storage/website/$websiteInfo->footer_logo") }}" width="200" alt="" />
               <p class="mt-3 mb-3 white fs-14">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Odio
                 suspendisse leo neque iaculis molestie sagittis maecenas

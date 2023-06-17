@@ -5,6 +5,7 @@ namespace Modules\Website\Http\Controllers\Website;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Modules\Website\Entities\Blog;
+use Modules\Website\Entities\MetaPage;
 use Modules\Locations\Entities\Country;
 use Modules\Website\Entities\Statistic;
 use Illuminate\Contracts\Support\Renderable;
@@ -17,10 +18,16 @@ class IndexPageController extends Controller
      */
     public function index()
     {
-        return view('website::website.index_page.index',[
-            'statistics' => Statistic::with('translations')->get(),
-            'blogs' => Blog::with('translations')->latest()->take(3)->get()
+        $languageId = getCurrentLanguage()->id;
 
+        $metaPage = MetaPage::whereHas('translations', function ($query) use ($languageId) {
+            $query->where('language_id', $languageId);
+        })->where('page', 'home')->get();
+
+        return view('website::website.index_page.index', [
+            'statistics' => Statistic::with('translations')->get(),
+            'blogs' => Blog::with('translations')->latest()->take(3)->get(),
+            'metaPage' => $metaPage
         ]);
     }
 

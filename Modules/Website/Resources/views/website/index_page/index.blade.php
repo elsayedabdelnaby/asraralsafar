@@ -1,5 +1,20 @@
 @extends('website::website.layouts.master')
 
+@if (!empty($metaPage))
+    @php
+        $metaPageTitle = !empty($metaPage->first()->meta_page_title) ? $metaPage->first()->meta_page_title : '';
+        $metaPageDescription = !empty($metaPage->first()->meta_page_description) ? $metaPage->first()->meta_page_description : '';
+        $imageUrl = !empty($metaPage->first()->image_url) ? $metaPage->first()->image_url : '';
+        
+    @endphp
+    @section('meta_page')
+        <meta property="og:title" content="{{ $metaPageTitle }}">
+        <meta property="og:description" content="{{ $metaPageDescription }}">
+        <meta name="description" content="{{ $metaPageDescription }}">
+        <meta property="og:image" content="{{ $imageUrl }}">
+    @endsection
+@endif
+
 @section('content')
     <div class="tet"></div>
 
@@ -164,7 +179,8 @@
   ">
         <div class="container">
             <div class="section-title mb-6 w-50 mx-auto text-center">
-                <h4 class="mb-1 theme1">Asrar AlTayar</h4>
+                <h4 class="mb-1 theme1">
+                    {{ $websiteInfo->translations->where('language_id', getCurrentLanguage()->id)->first()->name }}</h4>
                 <h2 class="mb-1">
                     <span class="theme">Your Optimal Choice</span>
                 </h2>
@@ -215,8 +231,8 @@
                             <div class="why-us-item text-center p-4 py-5 border rounded bg-white h-100">
                                 <div class="why-us-content">
                                     <div class="why-us-icon mb-3">
-                                        <img src="{{ asset('website/') }}/images/icons/customer-review.svg" alt="Review"
-                                            width="70" />
+                                        <img src="{{ asset('website/') }}/images/icons/customer-review.svg"
+                                            alt="Review" width="70" />
                                     </div>
                                     <h4>
                                         <a href="#">Client Focus</a>

@@ -25,6 +25,7 @@
     <meta name="author" content="Ahmed Ali Mohamed" />
     <meta name="og:title" content="أسرار الطيار | حجز طيران تأشيرات و رحلات بحرية - رخص دولية - حجز الفنادق" />
     <meta name="og:description" content="أسرار الطيار | حجز طيران تأشيرات و رحلات بحرية - رخص دولية - حجز الفنادق" />
+    @yield('meta_page')
     <meta name="og:image" content="{{ asset('website/images/og-icon.jpg') }}" />
     @if (app()->getLocale() == 'ar')
         <!-- Bootstrap core CSS -->
@@ -45,6 +46,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
     <link rel="stylesheet" href="{{ asset('website/fonts/line-icons.css') }}" type="text/css" />
+    <script>
+        {{ $websiteInfo->facebook_pixel_code }}
+    </script>
+    <script>
+        {{ $websiteInfo->google_analytics_code }}
+    </script>
 </head>
 
 <body>
