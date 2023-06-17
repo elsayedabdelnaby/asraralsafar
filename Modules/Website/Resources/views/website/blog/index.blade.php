@@ -1,5 +1,20 @@
 @extends('website::website.layouts.master')
 
+@if (!empty($metaPage))
+    @php
+        $metaPageTitle = !empty($metaPage->first()->meta_page_title) ? $metaPage->first()->meta_page_title : '';
+        $metaPageDescription = !empty($metaPage->first()->meta_page_description) ? $metaPage->first()->meta_page_description : '';
+        $imageUrl = !empty($metaPage->first()->image_url) ? $metaPage->first()->image_url : '';
+        
+    @endphp
+    @section('meta_page')
+        <meta property="og:title" content="{{ $metaPageTitle }}">
+        <meta property="og:description" content="{{ $metaPageDescription }}">
+        <meta name="description" content="{{ $metaPageDescription }}">
+        <meta property="og:image" content="{{ $imageUrl }}">
+    @endsection
+@endif
+
 @section('content')
 <section class="blog">
     <div class="container">

@@ -44,7 +44,7 @@
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
               <a class="navbar-brand" href="#">
-                <img src="{{ asset('website/images/logo.jpg') }}" width="150" alt="image" />
+                <img src="{{ asset("storage/website/$websiteInfo->main_logo") }}" width="150" alt="image" />
               </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->

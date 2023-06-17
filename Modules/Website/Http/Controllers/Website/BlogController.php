@@ -5,6 +5,7 @@ namespace Modules\Website\Http\Controllers\Website;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Modules\Website\Entities\Blog;
+use Modules\Website\Entities\MetaPage;
 use Illuminate\Contracts\Support\Renderable;
 use Modules\Website\Actions\Blogs\GetBlogRowAction;
 use Modules\Website\Actions\Blogs\GetAllBlogsAction;
@@ -19,7 +20,12 @@ class BlogController extends Controller
     {
         $blogs = Blog::with('translations')->paginate(3);
 
-        return view('website::website.blog.index', compact('blogs'));
+        $languageId = getCurrentLanguage()->id;
+        $metaPage = MetaPage::whereHas('translations', function ($query) use ($languageId) {
+            $query->where('language_id', $languageId);
+        })->where('page', 'blogs')->get();
+
+        return view('website::website.blog.index', compact('blogs', 'metaPage'));
     }
 
     /**
@@ -46,9 +52,12 @@ class BlogController extends Controller
      * @param int $id
      * @return Renderable
      */
-    public function show($id)
+    public function show($slug)
     {
-        $blog = Blog::with('translations')->find($id);
+        $blog = Blog::whereHas('translations', function ($query) use ($slug) {
+            $query->where('slug', $slug);
+        })->first();
+
         return view('website::website.blog.show', compact('blog'));
     }
 

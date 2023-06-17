@@ -5,6 +5,7 @@ namespace Modules\Website\Http\Controllers\Website;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Modules\Website\Entities\AboutUs;
+use Modules\Website\Entities\MetaPage;
 use Modules\Website\Entities\Statistic;
 use Illuminate\Contracts\Support\Renderable;
 
@@ -18,9 +19,14 @@ class AboutUsController extends Controller
     {
         $aboutUs = AboutUs::with('translations')->get();
         $statistics = Statistic::with('translations')->get();
+        $languageId = getCurrentLanguage()->id;
+        $metaPage = MetaPage::whereHas('translations', function ($query) use ($languageId) {
+            $query->where('language_id', $languageId);
+        })->where('page', 'about')->get();
         return view('website::website.about_us.index', [
             'about_ud' => $aboutUs,
-            'statistics' => $statistics
+            'statistics' => $statistics,
+            'metaPage' => $metaPage
         ]);
     }
 

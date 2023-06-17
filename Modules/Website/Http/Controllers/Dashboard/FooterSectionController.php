@@ -30,14 +30,14 @@ class FooterSectionController extends Controller
         if ($request->ajax()) {
             $links_url = route('dashboard.website.footer-links.index', ['footer_section_id' => 'footer_section_id']);
             $footer_sections = (new GetAllFooterSectionsAction)->handle();
-            $footer_sections = $footer_sections->select(
+            $footer_sections = $footer_sections->select([
                 'footer_sections.id',
                 'name',
                 'is_active',
                 'display_order',
                 DB::raw("REPLACE('" . $links_url . "', 'footer_section_id', footer_sections.id) AS links"),
                 DB::raw('NULL AS actions')
-            )->get();
+            ])->get();
             $total = count($footer_sections);
             return [
                 'data' => $footer_sections,

@@ -7,6 +7,7 @@ use Illuminate\Routing\Controller;
 use Illuminate\Contracts\Support\Renderable;
 use Modules\Operations\Entities\ContactUs;
 use Modules\Website\Actions\ContactInformations\GetAllContactInformationsAction;
+use Modules\Website\Entities\MetaPage;
 
 class ContactController extends Controller
 {
@@ -29,10 +30,16 @@ class ContactController extends Controller
             return $model->type == 'email';
         })->pluck('value')->toArray();
 
+        $languageId = getCurrentLanguage()->id;
+        $metaPage = MetaPage::whereHas('translations', function ($query) use ($languageId) {
+            $query->where('language_id', $languageId);
+        })->where('page', 'contact_us')->get();
+
         return view('website::website.contact_us.index', [
             'locationInfo' => $locationInfo,
             'phoneInfo' => $phoneInfo,
             'emailInfo' => $emailInfo,
+            'metaPage' => $metaPage
         ]);
     }
 
