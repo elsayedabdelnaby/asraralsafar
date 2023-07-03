@@ -232,6 +232,7 @@
     <script src="{{ asset('website/js/main.js') }}"></script>
     <script src="{{ asset('website/js/custom-swiper.js') }}"></script>
     <script src="{{ asset('website/js/custom-nav.js') }}"></script>
+    @stack('js')
 </body>
 
 </html>

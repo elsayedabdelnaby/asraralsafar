@@ -2,13 +2,14 @@
 
 namespace Modules\Website\Http\Controllers\Website;
 
+use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Illuminate\Support\Facades\DB;
+use Modules\Locations\Entities\Country;
+use Modules\Package\Entities\Cruise;
 use Modules\Package\Entities\Package;
-use Illuminate\Contracts\Support\Renderable;
 
-class PackageController extends Controller
+class CruiseController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,38 +17,36 @@ class PackageController extends Controller
      */
     public function index(Request $request)
     {
-        $packages = Package::query();
+        $cruises = Cruise::query();
 
-        if ($request->input('country_ids') && !empty($request->input('country_ids'))) {
-            $packages->whereIn('country_id', $request->input('country_ids'));
+        if ($request->input('search') && !empty($request->input('search'))) {
+            $cruises->where('name', 'like', '%' . $request->input('search') . '%')
+                ->orWhere('description', 'like', '%' . $request->input('search') . '%');
         }
 
-        if ($request->input('period') && !empty($request->input('period'))) {
-            $packages->whereIn('period', $request->input('period'));
+        if ($request->input('date') && !empty($request->input('date'))){
+            $cruises->where('date', $request->input('date'));
         }
+
+        if ($request->input('country_id') && !empty($request->input('country_id'))){
+            $cruises->where('country_id', $request->input('country_id'));
+        }
+
 
         if ($request->input('min_price') || $request->input('max_price')) {
-            $packages->whereBetween('price', [$request->input('min_price'), $request->input('max_price')]);
+            $cruises->whereBetween('price', [$request->input('min_price'), $request->input('max_price')]);
         }
 
-        $packages = $packages->with(['country', 'translations'])->paginate(6);
-
-        $countryCounts = Package::with('country')
-            ->select('country_id', DB::raw('COUNT(*) as count'))
-            ->groupBy('country_id')
-            ->get()
-            ->mapWithKeys(function ($item) {
-                return [$item->country_id => $item->count];
-            })
-            ->toArray();
+        $cruises = $cruises->with(['translations'])->paginate(5);
 
         if ($request->ajax()) {
-            return response()->json([
-                'packages' => $packages,
-            ]);
+            return view('website::website.cruise.partial', compact('cruises'));
         }
 
-        return view('website::website.package.index', compact('packages', 'countryCounts'));
+        return view('website::website.cruise.index', [
+            'cruises' => $cruises,
+            'countries' => Country::all()
+        ]);
     }
 
     /**
@@ -76,8 +75,7 @@ class PackageController extends Controller
      */
     public function show($id)
     {
-        $package = Package::with(['translations', 'country'])->find($id);
-        return view('website::website.package.show', compact('package'));
+        return view('website::show');
     }
 
     /**

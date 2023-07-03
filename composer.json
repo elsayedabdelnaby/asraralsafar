@@ -22,6 +22,7 @@
         "mcamara/laravel-localization": "^1.7",
         "mll-lab/graphql-php-scalars": "*",
         "mll-lab/laravel-graphiql": "^1.2",
+        "nesbot/carbon": "^2.67",
         "nuwave/lighthouse": "^5.70",
         "nwidart/laravel-modules": "^9.0",
         "opcodesio/log-viewer": "^1.7",

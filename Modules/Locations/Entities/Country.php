@@ -40,6 +40,11 @@ class Country extends Model
         'flag'
     ];
 
+    protected $appends = ['display_name'];
+
+    protected $lazyRelations = ['translations'];
+
+
     /**
      * Return the name of the country dependent on the current app.
      *
@@ -54,6 +59,11 @@ class Country extends Model
                 return $country ? $country->name : null;
             }),
         );
+    }
+
+    public function getDisplayNameAttribute()
+    {
+        return $this->translations->where('language_id', getCurrentLanguage()->id)->where('country_id', $this->id)->first()->name;
     }
 
     /**
