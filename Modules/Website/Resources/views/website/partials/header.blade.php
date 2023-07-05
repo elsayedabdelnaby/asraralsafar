@@ -51,7 +51,7 @@
             <div class="navbar-collapse1 d-flex align-items-center" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav" id="responsive-menu">
                 <li class="dropdown submenu active">
-                  <a href="./index.html" class="dropdown-toggle">Home</a>
+                  <a href="{{ route('website.index') }}" class="dropdown-toggle">Home</a>
                 </li>
 
                 <li class="submenu dropdown">
@@ -60,13 +60,13 @@
                     <i class="icon-arrow-down" aria-hidden="true"></i></a>
                   <ul class="dropdown-menu">
                     <li>
-                      <a href="./packages.rtl.html">Offers</a>
+                      <a href="{{ route('package.index') }}">Offers</a> 
                     </li>
                     <li>
-                      <a href="./packages.rtl.html">Packages</a>
+                      <a href="{{ route('package.index') }}">Packages</a>
                     </li>
                     <li>
-                      <a href="./package.rtl.html">Package / Offer Details</a>
+                      <a href="{{ route('package.index') }}">Package / Offer Details</a>
                     </li>
                   </ul>
                 </li>
@@ -77,25 +77,19 @@
                     <i class="icon-arrow-down" aria-hidden="true"></i></a>
                   <ul class="dropdown-menu">
                     <li class="submenu">
-                      <a href="./flights.rtl.html">Flights</a>
+                      <a href="{{ route('flight.index') }}">Flights</a>
                     </li>
                     <li class="submenu">
-                      <a href="./flights.rtl.html">Hotels</a>
+                      <a href="{{ route('flight.index') }}">Hotels</a>
                     </li>
                     <li class="submenu">
-                      <a href="./cruise-list.rtl.html">Cruises</a>
+                      <a href="{{ route('cruise.index') }}">Cruises</a>
                     </li>
                     <li class="submenu dropdown">
-                      <a href="index.rtl.html">International Licenses</a>
+                      <a href="{{ route('request.index') }}">Medical Tourism</a>
                     </li>
                     <li class="submenu dropdown">
-                      <a href="./index.rtl.html">Visa</a>
-                    </li>
-                    <li class="submenu dropdown">
-                      <a href="request.booking.rtl.html">Medical Tourism</a>
-                    </li>
-                    <li class="submenu dropdown">
-                      <a href="request.booking.rtl.html">
+                      <a href="{{ route('request.index') }}">
                         Educational Tourism</a>
                     </li>
                   </ul>
@@ -104,10 +98,10 @@
                   <a href="{{ route('website.blog.index') }}">Blogs</a>
                 </li>
                 <li class="submenu">
-                  <a href="contact.rtl.html">Contact Us</a>
+                  <a href="{{ route('contact.index') }}">Contact Us</a>
                 </li>
                 <li class="submenu">
-                  <a href="about.rtl.html">About Us</a>
+                  <a href="{{ route('about-us.index') }}">About Us</a>
                 </li>
                 <li class="search-main">
                   <a href="#search1" class="mt_search"><i class="fa fa-search"></i></a>
@@ -117,7 +111,7 @@
             <!-- /.navbar-collapse -->
             <div class="register-login d-flex align-items-center">
               <!-- <a href="#" class="nir-btn nir-btn-outline me-2">Book Now</a> -->
-              <a href="request.booking.rtl.html" class="nir-btn white">Book Now</a>
+              <a href="{{ route('request.index') }}" class="nir-btn white">Book Now</a>
             </div>
 
             <div id="slicknav-mobile"></div>

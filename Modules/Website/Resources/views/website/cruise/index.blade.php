@@ -273,7 +273,7 @@ background-repeat: no-repeat;
                             الطيار خدمات الحجز الالكترونى للطيران والفنادق و الرحلات البحرية
                             و التأشيرات و الرخص الدولية بأفضل الأسعار
                         </p>
-                        <a href="#" class="nir-btn">المزيد عن الشركة</a>
+                        <a href="{{ route('website.index') }}" class="nir-btn">المزيد عن الشركة</a>
                     </div>
                 </div>
                 <div class="col-lg-6 mb-4">

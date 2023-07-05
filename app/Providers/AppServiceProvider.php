@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\ServiceProvider;
+use Modules\Website\Entities\FooterSection;
 use Modules\Website\Entities\WebsiteInformation;
 
 class AppServiceProvider extends ServiceProvider
@@ -31,5 +32,7 @@ class AppServiceProvider extends ServiceProvider
         Model::preventAccessingMissingAttributes();
         Schema::defaultStringLength(255);
         View::share('websiteInfo', WebsiteInformation::with('translations')->first());
+        $footerSections = FooterSection::with('translations')->get();
+        view()->share('footerSections', $footerSections);
     }
 }
