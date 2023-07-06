@@ -180,7 +180,7 @@
                         <div class="trend-content mb-4 px-md-5 px-4">
                             <h5 class="mb-1 theme">شركة أسرار الطيار</h5>
                             <h2>
-                                <a href="detail-fullwidth.html">اكتشف نفسك !!
+                                <a href="{{ route('website.index') }}">اكتشف نفسك !!
                                     <span class="theme1">
                                         سافر لأى مكان تريده حوال العالم</span></a>
                             </h2>

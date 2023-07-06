@@ -32,13 +32,13 @@
             <div class="footer-links">
               <h3 class="white">Quick link</h3>
               <ul>
-                <li><a href="packages.rtl.html">Packages</a></li>
-                <li><a href="packages.rtl.html">Offers</a></li>
-                <li><a href="cruise-list.rtl.html">Book A Cruise</a></li>
-                <li><a href="flights.rtl.html">Book A Flight</a></li>
-                <li><a href="index.html">International Licensing</a></li>
-                <li><a href="index.html">Visa</a></li>
-                <li><a href="index.html">Blogs & News</a></li>
+                <li><a href="{{ route('package.index') }}">Packages</a></li>
+                <li><a href="{{ route('package.index') }}">Offers</a></li>
+                <li><a href="{{ route('cruise.index') }}">Book A Cruise</a></li>
+                <li><a href="{{ route('flight.index') }}">Book A Flight</a></li>
+                <li><a href="{{ route('website.index') }}">International Licensing</a></li>
+                <li><a href="{{ route('website.index') }}">Visa</a></li>
+                <li><a href="{{ route('website.index') }}">Blogs & News</a></li>
               </ul>
             </div>
           </div>
@@ -46,12 +46,12 @@
             <div class="footer-links">
               <h3 class="white">Pages</h3>
               <ul>
-                <li><a href="about.rtl.html">About Us</a></li>
-                <li><a href="contact.rtl.html">Contact Us</a></li>
-                <li><a href="faq.rtl.html">FAQ</a></li>
-                <li><a href="index.html">Privacy Policy</a></li>
-                <li><a href="index.html">Terms & Conditions</a></li>
-                <li><a href="index.html">Testimonials</a></li>
+                <li><a href="{{ route('about-us.index') }}">About Us</a></li>
+                <li><a href="{{ route('contact.index') }}">Contact Us</a></li>
+                <li><a href="{{ route('website.index') }}">FAQ</a></li>
+                <li><a href="{{ route('website.index') }}">Privacy Policy</a></li>
+                <li><a href="{{ route('website.index') }}">Terms & Conditions</a></li>
+                <li><a href="{{ route('website.index') }}">Testimonials</a></li>
               </ul>
             </div>
           </div>

@@ -34,7 +34,7 @@
                     <div class="item-inner text-end">
                         <p class="theme2 fs-4 fw-bold fs-18">{{ $flight->price }}
                             {{ $flight->price_currency }}</p>
-                        <a href="flight-detail.html" class="nir-btn-black">احجز الآن</a>
+                        <a href="#" class="nir-btn-black">احجز الآن</a>
                     </div>
                 </div>
                 <div class="col-lg-12">

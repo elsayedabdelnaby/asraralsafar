@@ -89,7 +89,7 @@
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="form-group mb-0 text-center">
-                                            <a href="./packages.rtl.html" class="nir-btn w-100"><i
+                                            <a href="#" class="nir-btn w-100"><i
                                                     class="fa fa-search me-2"></i> Search
                                                 Now</a>
                                         </div>
@@ -148,7 +148,7 @@
                                 <div class="trending-topic-content">
                                     <img src="{{ asset('website') }}/images/boarding-pass.svg" class="mb-1 d-inline-block"
                                         alt="Visa" />
-                                    <h4 class="mb-0 fs-18"><a href="./index.html">Visa</a></h4>
+                                    <h4 class="mb-0 fs-18"><a href="#">Visa</a></h4>
                                 </div>
                             </div>
                         </div>
@@ -293,7 +293,7 @@
                                 class="trend-content d-flex flex-md-row flex-column align-items-md-center justify-content-md-between align-items-start position-absolute bottom-0 p-4 w-100 z-index">
                                 <div class="trend-content-title">
                                     <h4 class="mb-0">
-                                        <a href="{{ asset('website/') }}/packages.rtl.html" class="text-white">Italy</a>
+                                        <a href="#" class="text-white">Italy</a>
                                     </h4>
                                     <h3 class="mb-0 white">Caspian Valley</h3>
                                 </div>
@@ -313,7 +313,7 @@
                                 class="trend-content d-flex flex-md-row flex-column align-items-md-center justify-content-md-between align-items-start position-absolute bottom-0 p-4 w-100 z-index">
                                 <div class="trend-content-title">
                                     <h4 class="mb-0">
-                                        <a href="{{ asset('website/') }}/packages.rtl.html" class="text-white">Sweden</a>
+                                        <a href="#" class="text-white">Sweden</a>
                                     </h4>
                                     <h3 class="mb-0 white">Plant Valley</h3>
                                 </div>
@@ -333,7 +333,7 @@
                                 class="trend-content d-flex flex-md-row flex-column align-items-md-center justify-content-md-between align-items-start position-absolute bottom-0 p-4 w-100 z-index">
                                 <div class="trend-content-title">
                                     <h4 class="mb-0">
-                                        <a href="{{ asset('website/') }}/packages.rtl.html" class="text-white">Egypt</a>
+                                        <a href="#" class="text-white">Egypt</a>
                                     </h4>
                                     <h3 class="mb-0 white">The Pyramids</h3>
                                 </div>
@@ -346,7 +346,7 @@
                 </div>
             </div>
             <div class="action text-center mt-5">
-                <a class="nir-btn" href="{{ asset('website/') }}/packages.rtl.html">
+                <a class="nir-btn" href="#">
                     <i class="fa fa-plane me-1"></i>
                     View All Destinations
                 </a>
@@ -462,7 +462,7 @@
                                     <i class="flaticon-location-pin"></i> Egypt
                                 </h5>
                                 <h3 class="mb-1">
-                                    <a href="{{ asset('website/') }}/package.rtl.html">Sharm Elsheikh Resort</a>
+                                    <a href="#">Sharm Elsheikh Resort</a>
                                 </h3>
                                 <div class="rating-main d-flex align-items-center pb-2">
                                     <div class="rating">
@@ -507,7 +507,7 @@
                                     <i class="flaticon-location-pin"></i> Egypt
                                 </h5>
                                 <h3 class="mb-1">
-                                    <a href="{{ asset('website/') }}/package.rtl.html">Piazza Castello</a>
+                                    <a href="#">Piazza Castello</a>
                                 </h3>
                                 <div class="rating-main d-flex align-items-center pb-2">
                                     <div class="rating">
@@ -552,7 +552,7 @@
                                     <i class="flaticon-location-pin"></i> Spain
                                 </h5>
                                 <h3 class="mb-1">
-                                    <a href="{{ asset('website/') }}/package.rtl.html">Maldives Beach</a>
+                                    <a href="#">Maldives Beach</a>
                                 </h3>
                                 <div class="rating-main d-flex align-items-center pb-2">
                                     <div class="rating">
@@ -597,7 +597,7 @@
                                     <i class="flaticon-location-pin"></i> Egypt
                                 </h5>
                                 <h3 class="mb-1">
-                                    <a href="{{ asset('website/') }}/package.rtl.html">Piazza Castello</a>
+                                    <a href="#">Piazza Castello</a>
                                 </h3>
                                 <div class="rating-main d-flex align-items-center pb-2">
                                     <div class="rating">
@@ -626,7 +626,7 @@
                     </div>
                 </div>
                 <div class="action text-center mt-5">
-                    <a class="nir-btn" href="{{ asset('website/') }}/packages.rtl.html">
+                    <a class="nir-btn" href="#">
                         <i class="fa fa-plane me-1"></i>
                         View All Packages
                     </a>
@@ -814,7 +814,7 @@
                         <div class="trend-content mb-4 px-md-5 px-4">
                             <h5 class="mb-1 theme">Love Where Your're Going</h5>
                             <h2>
-                                <a href="detail-fullwidth.html">Explore Your Life,
+                                <a href="#">Explore Your Life,
                                     <span class="theme1"> Travel Where You Want!</span></a>
                             </h2>
                             <p>
@@ -824,7 +824,7 @@
                         </div>
                         <div class="video-button text-center position-relative">
                             <div class="text-center">
-                                <a href="{{ asset('website/') }}/packages.rtl.html" type="button"
+                                <a href="#" type="button"
                                     class="play-btn nir-btn">
                                     <i class="fa fa-plane me-1"></i>
                                     <span>Explore Offers</span>
@@ -923,7 +923,7 @@
                                     <i class="flaticon-location-pin"></i> Greece
                                 </h5>
                                 <h3 class="mb-1">
-                                    <a href="tour-grid.html">Santorini, Oia</a>
+                                    <a href="#">Santorini, Oia</a>
                                 </h3>
                                 <div class="rating-main d-flex align-items-center pb-2">
                                     <div class="rating">
@@ -970,7 +970,7 @@
                                     <i class="flaticon-location-pin"></i> Maldives
                                 </h5>
                                 <h3 class="mb-1">
-                                    <a href="tour-grid.html">Hurawalhi Island</a>
+                                    <a href="#">Hurawalhi Island</a>
                                 </h3>
                                 <div class="rating-main d-flex align-items-center pb-2">
                                     <div class="rating">

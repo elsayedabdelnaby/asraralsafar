@@ -222,7 +222,7 @@
                       <li>
                         <a
                           data-toggle="tab"
-                          href="request.booking.rtl.html"
+                          href="#"
                           class="rounded box-shadow mb-2 border-all"
                         >
                           <i class="far fa-paper-plane me-2"></i>
@@ -262,7 +262,7 @@
               <div class="trend-content mb-4 px-md-5 px-4">
                 <h5 class="mb-1 theme">شركة أسرار الطيار</h5>
                 <h2>
-                  <a href="detail-fullwidth.html"
+                  <a href="#"
                     >اكتشف نفسك !!
                     <span class="theme1">
                       سافر لأى مكان تريده حوال العالم</span
