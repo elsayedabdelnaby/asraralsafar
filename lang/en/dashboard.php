@@ -153,4 +153,5 @@ return [
     'orders-status'=>'Orders Status',
     'orders_monitoring'=>'Orders Monitoring',
     'about_us' => 'About us',
+    'partners' => 'Partners',
 ];

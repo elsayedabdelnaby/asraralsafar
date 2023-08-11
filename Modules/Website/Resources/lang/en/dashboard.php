@@ -198,4 +198,12 @@ return [
     'edit_about_us' => 'Edit About Us',
     'enter_about_us_details_and_submit' => 'Enter About Us Details and Submit',
     'about_us_title' => 'About Us Title',
+    'the_about_us_toggle_was_successfully' => 'About Us Toggle Was Successfully',
+    //partners
+    'partners' => 'Partners',
+    'new_partner' => 'New Partner',
+    'edit_partner' => 'Edit Partner',
+    'enter_partner_details_and_submit' => 'Enter Partner Details and Submit',
+    'the_partner_toggle_was_successfully' => 'The Partner toggle was successfully',
+    'logo' => 'Logo',
 ];

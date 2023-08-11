@@ -14,6 +14,7 @@ use Modules\Website\Http\Controllers\WebsiteController;
 use Modules\Website\Http\Controllers\Dashboard\FAQController;
 use Modules\Website\Http\Controllers\Dashboard\BlogController;
 use Modules\Website\Http\Controllers\Dashboard\AboutUsController;
+use Modules\Website\Http\Controllers\Dashboard\PartnerController;
 use Modules\Website\Http\Controllers\Dashboard\MetaPageController;
 use Modules\Website\Http\Controllers\Dashboard\FooterLinkController;
 use Modules\Website\Http\Controllers\Dashboard\MainSliderController;
@@ -158,6 +159,18 @@ Route::name('dashboard.')->middleware(['isAdmin'])->prefix("dashboard")->group(f
             Route::put('{id}', 'update')->middleware('hasPermission:update-about-us')->name('update');
             Route::delete('{id}', 'destroy')->middleware('hasPermission:delete-about-us')->name('destroy');
             Route::put('{id}/toggle', 'toggle')->middleware('hasPermission:update-about-us')->name('toggle-status');
+        });
+
+        // routes of partners
+        Route::prefix('partners')->name('partners.')->controller(PartnerController::class)->group(function () {
+            Route::get('', 'index')->middleware('hasPermission:listing-partners')->name('index');
+            Route::get('create', 'create')->middleware('hasPermission:create-partner')->name('create');
+            Route::post('', 'store')->middleware('hasPermission:create-partner')->name('store');
+            Route::get('{id}', 'show')->middleware('hasPermission:view-partner')->name('show');
+            Route::get('{id}/edit', 'edit')->middleware('hasPermission:update-partner')->name('edit');
+            Route::put('{id}', 'update')->middleware('hasPermission:update-partner')->name('update');
+            Route::delete('{id}', 'destroy')->middleware('hasPermission:delete-partner')->name('destroy');
+            Route::put('{id}/toggle', 'toggle')->middleware('hasPermission:update-partner')->name('toggle-status');
         });
     });
 });

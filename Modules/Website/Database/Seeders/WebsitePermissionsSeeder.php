@@ -183,6 +183,34 @@ class WebsitePermissionsSeeder extends Seeder
                     'view-about-us'
                 ]
             );
+
+
+            // create the Testimonail type model and insert basics permissions of it
+            $model_service->createModelAndAssignPermissions(
+                'Testimonail',
+                $module->id,
+                [
+                    'listing-testimonails',
+                    'create-testimonail',
+                    'update-testimonail',
+                    'delete-testimonail',
+                    'view-testimonail'
+                ]
+            );
+
+
+            // create the Partner type model and insert basics permissions of it
+            $model_service->createModelAndAssignPermissions(
+                'Partner',
+                $module->id,
+                [
+                    'listing-partners',
+                    'create-partner',
+                    'update-partner',
+                    'delete-partner',
+                    'view-partner'
+                ]
+            );
         }
     }
 }

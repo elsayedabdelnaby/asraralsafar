@@ -113,6 +113,15 @@
                     <span class="menu-text">{{ __('dashboard.about_us') }}</span>
                 </a>
             </li>
+            <li class="menu-item {{ request()->routeIs('dashboard.website.partners.*') ? 'menu-item-active' : null }}"
+                aria-haspopup="true">
+                <a href="{{ route('dashboard.website.partners.index') }}" class="menu-link">
+                    <i class="menu-bullet menu-bullet-line">
+                        <span></span>
+                    </i>
+                    <span class="menu-text">{{ __('dashboard.partners') }}</span>
+                </a>
+            </li>
             <li class="menu-item {{ request()->routeIs('dashboard.website.main-sliders.*') ? 'menu-item-active' : null }}"
                 aria-haspopup="true">
                 <a href="{{ route('dashboard.website.main-sliders.index') }}" class="menu-link">
