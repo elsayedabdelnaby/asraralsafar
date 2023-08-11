@@ -21,6 +21,8 @@ use Modules\Website\Observers\PrivacyPolicyObserver;
 use Modules\Website\Observers\TermConditionObserver;
 use Modules\Website\Observers\WebsiteInformationObserver;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
+use Modules\Website\Entities\Testimonail;
+use Modules\Website\Observers\TestimonailObserver;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -46,6 +48,7 @@ class EventServiceProvider extends ServiceProvider
         FAQ::class => [FAQObserver::class],
         Blog::class => [BlogObserver::class],
         AboutUs::class => [AboutUsObserver::class],
+        Testimonail::class => [TestimonailObserver::class],
     ];
 
     /**

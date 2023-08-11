@@ -20,6 +20,7 @@ use Modules\Website\Http\Controllers\Dashboard\FooterLinkController;
 use Modules\Website\Http\Controllers\Dashboard\MainSliderController;
 use Modules\Website\Http\Controllers\Dashboard\SocialLinkController;
 use Modules\Website\Http\Controllers\Dashboard\InformationController;
+use Modules\Website\Http\Controllers\Dashboard\TestimonailController;
 use Modules\Website\Http\Controllers\Dashboard\FooterSectionController;
 use Modules\Website\Http\Controllers\Dashboard\PrivacyPolicyController;
 use Modules\Website\Http\Controllers\Dashboard\TermConditionController;
@@ -171,6 +172,18 @@ Route::name('dashboard.')->middleware(['isAdmin'])->prefix("dashboard")->group(f
             Route::put('{id}', 'update')->middleware('hasPermission:update-partner')->name('update');
             Route::delete('{id}', 'destroy')->middleware('hasPermission:delete-partner')->name('destroy');
             Route::put('{id}/toggle', 'toggle')->middleware('hasPermission:update-partner')->name('toggle-status');
+        });
+
+        // routes of testimonails
+        Route::prefix('testimonails')->name('testimonails.')->controller(TestimonailController::class)->group(function () {
+            Route::get('', 'index')->middleware('hasPermission:listing-testimonails')->name('index');
+            Route::get('create', 'create')->middleware('hasPermission:create-testimonail')->name('create');
+            Route::post('', 'store')->middleware('hasPermission:create-testimonail')->name('store');
+            Route::get('{id}', 'show')->middleware('hasPermission:view-testimonail')->name('show');
+            Route::get('{id}/edit', 'edit')->middleware('hasPermission:update-testimonail')->name('edit');
+            Route::put('{id}', 'update')->middleware('hasPermission:update-testimonail')->name('update');
+            Route::delete('{id}', 'destroy')->middleware('hasPermission:delete-testimonail')->name('destroy');
+            Route::put('{id}/toggle', 'toggle')->middleware('hasPermission:update-testimonail')->name('toggle-status');
         });
     });
 });

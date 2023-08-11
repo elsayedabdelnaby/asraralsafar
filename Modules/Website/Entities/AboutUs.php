@@ -27,7 +27,7 @@ class AboutUs extends Model
      *
      * @return \Illuminate\Database\Eloquent\Casts\Attribute
      */
-    protected function termConditionTitle(): Attribute
+    protected function aboutusTitle(): Attribute
     {
         $aboutUs = $this;
         return new Attribute(
@@ -43,7 +43,7 @@ class AboutUs extends Model
      *
      * @return \Illuminate\Database\Eloquent\Casts\Attribute
      */
-    protected function termConditionDescription(): Attribute
+    protected function aboutusDescription(): Attribute
     {
         $aboutUs = $this;
         return new Attribute(

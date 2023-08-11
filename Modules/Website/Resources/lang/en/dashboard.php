@@ -206,4 +206,15 @@ return [
     'enter_partner_details_and_submit' => 'Enter Partner Details and Submit',
     'the_partner_toggle_was_successfully' => 'The Partner toggle was successfully',
     'logo' => 'Logo',
+    //Testimonails
+    'testimonail' => 'Testimonail',
+    'testimonails' => 'Testimonails',
+    'client_name' => 'Client Name',
+    'client_name_is_required' => 'Client Name is Required',
+    'testimonail_client_name' => 'Testimonail Client Name',
+    'new_testimonail' => 'New Testimonail',
+    'the_language_of_the_testimonail_client_name_and_testimonail' => 'The Language of the Testimonail Client Name and Testimonail',
+    'the_testimonail_toggle_was_successfully' => 'The Testimonail Toggle Was Successfully',
+    'edit_testimonail' => 'Edit Testimonail',
+    'enter_testimonail_details_and_submit' => 'Enter Testimonail Details and Submit',
 ];
