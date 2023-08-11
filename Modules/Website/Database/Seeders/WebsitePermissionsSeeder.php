@@ -170,6 +170,19 @@ class WebsitePermissionsSeeder extends Seeder
                     'view-main-slider'
                 ]
             );
+
+            // create the Term Condition type model and insert basics permissions of it
+            $model_service->createModelAndAssignPermissions(
+                'About Us',
+                $module->id,
+                [
+                    'listing-about-us',
+                    'create-about-us',
+                    'update-about-us',
+                    'delete-about-us',
+                    'view-about-us'
+                ]
+            );
         }
     }
 }

@@ -60,7 +60,7 @@
                     <i class="icon-arrow-down" aria-hidden="true"></i></a>
                   <ul class="dropdown-menu">
                     <li>
-                      <a href="{{ route('package.index') }}">Offers</a> 
+                      <a href="{{ route('package.index') }}">Offers</a>
                     </li>
                     <li>
                       <a href="{{ route('package.index') }}">Packages</a>

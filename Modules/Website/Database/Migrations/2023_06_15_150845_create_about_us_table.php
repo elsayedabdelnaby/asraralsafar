@@ -16,7 +16,14 @@ return new class extends Migration
     {
         Schema::create('about_us', function (Blueprint $table) {
             $table->id();
+            $table->smallInteger('display_order')->default(0);
+            $table->boolean('is_active')->default(false);
             $table->timestamps();
+            $table->softDeletes();
+            // userstamps
+            $table->foreignId('created_by')->references('id')->on('users')->after('created_at');
+            $table->foreignId('updated_by')->references('id')->on('users')->after('updated_at');
+            $table->foreignId('deleted_by')->nullable();
         });
     }
 

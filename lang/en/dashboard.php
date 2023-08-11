@@ -151,5 +151,6 @@ return [
     'in_delivery' => 'In Delivery',
     'delivered' => 'Delivered',
     'orders-status'=>'Orders Status',
-    'orders_monitoring'=>'Orders Monitoring'
+    'orders_monitoring'=>'Orders Monitoring',
+    'about_us' => 'About us',
 ];

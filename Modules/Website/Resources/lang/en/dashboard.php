@@ -188,6 +188,14 @@ return [
     'create_main_slider' => 'Create main slider',
     'the_main_slider_toggle_was_successfully' => 'The main slider toggle was successfully',
     'edit_main_slider' => 'Edit main slider',
-    'slug_is_required'=>'Slug Is Required',
-    'short_description_is_required'=>'Short Description Is Required',
- ];
+    'slug_is_required' => 'Slug Is Required',
+    'short_description_is_required' => 'Short Description Is Required',
+    // about us
+    'about_us' => 'About Us',
+    'aboutus' => 'About us',
+    'new_about_us' => 'New About us',
+    'the_language_of_the_about_us_title_and_description' => 'The Language Of The About Us titla and the Description',
+    'edit_about_us' => 'Edit About Us',
+    'enter_about_us_details_and_submit' => 'Enter About Us Details and Submit',
+    'about_us_title' => 'About Us Title',
+];
