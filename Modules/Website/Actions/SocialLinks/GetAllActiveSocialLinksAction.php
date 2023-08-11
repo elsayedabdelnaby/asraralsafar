@@ -21,6 +21,6 @@ class GetAllActiveSocialLinksAction
             'is_active',
             DB::raw('CONCAT("' . asset(Storage::url('website/social_links')) . '/' . '", icon) as icon_url'),
             DB::raw('null as Actions')
-        )->active()->get();
+        )->active();
     }
 }

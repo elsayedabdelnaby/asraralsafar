@@ -94,10 +94,14 @@
           </div>
           <div class="social-links">
             <ul>
-              <li>
-                <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-              </li>
-              <li>
+                @foreach ($socialLinks as $link)
+                <li>
+                    <a href="{{ $link->url }}" class="white" target="_blank">
+                        <img src="{{ $link->icon_url }}" alt="social" />
+                    </a>
+                </li>
+            @endforeach
+              {{-- <li>
                 <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
               </li>
               <li>
@@ -105,7 +109,7 @@
               </li>
               <li>
                 <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
-              </li>
+              </li> --}}
             </ul>
           </div>
         </div>
