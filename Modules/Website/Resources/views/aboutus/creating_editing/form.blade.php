@@ -86,11 +86,11 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-10">
                                         <div class="row">
                                             <label
-                                                class="col-lg-3 col-form-label text-right">{{ __('website::dashboard.description') }}:</label>
-                                            <div class="col-lg-9">
+                                                class="col-lg-1 col-form-label">{{ __('website::dashboard.description') }}:</label>
+                                            <div class="col-lg-11">
                                                 @if (is_array($translation))
                                                     <x-dashboard.form.inputs.text-area :id="''" :class="'form-control rtf'"
                                                         :name="'description'" :placeholder="__('website::dashboard.description')" :value="$translation['description']"
@@ -137,11 +137,11 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-10">
                                         <div class="row">
                                             <label
-                                                class="col-lg-3 col-form-label text-right">{{ __('website::dashboard.description') }}:</label>
-                                            <div class="col-lg-9">
+                                                class="col-lg-1 col-form-label">{{ __('website::dashboard.description') }}:</label>
+                                            <div class="col-lg-11">
                                                 <x-dashboard.form.inputs.text-area :id="''" :class="'form-control rtf'"
                                                     :name="'description'" :placeholder="__('website::dashboard.description')" :value="''"
                                                     :isRequired="true" :requiredMessage="__('website::dashboard.description_is_required')" />

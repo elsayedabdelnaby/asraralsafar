@@ -2,6 +2,7 @@
 
 namespace Modules\Website\Entities;
 
+use App\Scopes\IsActive;
 use Illuminate\Support\Facades\App;
 use Wildside\Userstamps\Userstamps;
 use Illuminate\Support\Facades\Cache;
@@ -13,7 +14,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Testimonail extends Model
 {
-    use HasFactory, SoftDeletes, Userstamps, CurrentLanguageTranslation;
+    use HasFactory, SoftDeletes, Userstamps, CurrentLanguageTranslation, IsActive;
 
     /**
      * The table associated with the model.

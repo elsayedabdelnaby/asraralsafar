@@ -6,9 +6,10 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Modules\Website\Entities\Blog;
 use Modules\Website\Entities\MetaPage;
-use Modules\Locations\Entities\Country;
 use Modules\Website\Entities\Statistic;
 use Illuminate\Contracts\Support\Renderable;
+use Modules\Website\Actions\Partners\GetAllActivePartnersAction;
+use Modules\Website\Actions\Testimonails\GetAllActiveTestimonailsAction;
 
 class IndexPageController extends Controller
 {
@@ -27,6 +28,8 @@ class IndexPageController extends Controller
         return view('website::website.index_page.index', [
             'statistics' => Statistic::with('translations')->get(),
             'blogs' => Blog::with('translations')->latest()->take(3)->get(),
+            'testimonails' => (new GetAllActiveTestimonailsAction)->handle()->orderBy('display_order')->get(),
+            'partners' => (new GetAllActivePartnersAction)->handle()->orderBy('display_order')->get(),
             'metaPage' => $metaPage
         ]);
     }

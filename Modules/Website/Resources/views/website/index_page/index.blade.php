@@ -89,8 +89,7 @@
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="form-group mb-0 text-center">
-                                            <a href="#" class="nir-btn w-100"><i
-                                                    class="fa fa-search me-2"></i> Search
+                                            <a href="#" class="nir-btn w-100"><i class="fa fa-search me-2"></i> Search
                                                 Now</a>
                                         </div>
                                     </div>
@@ -608,46 +607,24 @@
                 </div>
                 <div class="col-lg-7 ps-4">
                     <div class="row review-slider">
-                        <div class="col-sm-4 item">
-                            <div class="testimonial-item1 rounded">
-                                <div class="author-info d-flex align-items-center mb-4">
-                                    <img src="{{ asset('website/') }}/images/og-icon.jpg" alt="" />
-                                    <div class="author-title ms-3">
-                                        <h5 class="m-0 theme">Ahmed Ali Mohamed</h5>
-                                        <span>Client</span>
+                        @foreach ($testimonails as $testimonail)
+                            <div class="col-sm-4 item">
+                                <div class="testimonial-item1 rounded">
+                                    <div class="author-info d-flex align-items-center mb-4">
+                                        <img src="{{ asset('website/') }}/images/og-icon.jpg" alt="" />
+                                        <div class="author-title ms-3">
+                                            <h5 class="m-0 theme">{{ $testimonail->client_name }}</h5>
+                                            <span>{{ __('website::website.client') }}</span>
+                                        </div>
+                                    </div>
+                                    <div class="details">
+                                        <p class="m-0">
+                                            <i class="fa fa-quote-left me-2 fs-1"></i>{{ $testimonail->testimonail }}
+                                        </p>
                                     </div>
                                 </div>
-                                <div class="details">
-                                    <p class="m-0">
-                                        <i class="fa fa-quote-left me-2 fs-1"></i>Lorem Ipsum is
-                                        simply dummy text of the printing andypesetting industry.
-                                        Lorem ipsum a simple Lorem Ipsum has been the industry's
-                                        standard dummy hic et quidem. Dignissimos maxime velit
-                                        unde inventore quasi vero dolorem.
-                                    </p>
-                                </div>
                             </div>
-                        </div>
-                        <div class="col-sm-4 item">
-                            <div class="testimonial-item1 rounded">
-                                <div class="author-info d-flex align-items-center mb-4">
-                                    <img src="{{ asset('website/') }}/images/og-icon.jpg" alt="" />
-                                    <div class="author-title ms-3">
-                                        <h5 class="m-0 theme">Ahmed Ali Mohamed</h5>
-                                        <span>Client</span>
-                                    </div>
-                                </div>
-                                <div class="details">
-                                    <p class="m-0">
-                                        <i class="fa fa-quote-left me-2 fs-1"></i>Lorem Ipsum is
-                                        simply dummy text of the printing andypesetting industry.
-                                        Lorem ipsum a simple Lorem Ipsum has been the industry's
-                                        standard dummy hic et quidem. Dignissimos maxime velit
-                                        unde inventore quasi vero dolorem.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -660,14 +637,9 @@
         <div class="container">
             <div class="partners_inner">
                 <ul>
-                    <li class="mb-2"><img src="{{ asset('website/') }}/images/logo.jpg" alt="Partner 1" /></li>
-                    <li class="mb-2"><img src="{{ asset('website/') }}/images/logo.jpg" alt="Partner 2" /></li>
-                    <li class="mb-2"><img src="{{ asset('website/') }}/images/logo.jpg" alt="Partner 3" /></li>
-                    <li class="mb-2"><img src="{{ asset('website/') }}/images/logo.jpg" alt="Partner 4" /></li>
-                    <li class="mb-2"><img src="{{ asset('website/') }}/images/logo.jpg" alt="Partner 5" /></li>
-                    <li class="mb-2"><img src="{{ asset('website/') }}/images/logo.jpg" alt="Partner 6" /></li>
-                    <li class="mb-2"><img src="{{ asset('website/') }}/images/logo.jpg" alt="Partner 7" /></li>
-                    <li class="mb-2"><img src="{{ asset('website/') }}/images/logo.jpg" alt="Partner 8" /></li>
+                    @foreach ($partners as $partner)
+                        <li class="mb-2"><img src="{{ $partner->logo_url }}" alt="Partner" /></li>
+                    @endforeach
                 </ul>
             </div>
         </div>

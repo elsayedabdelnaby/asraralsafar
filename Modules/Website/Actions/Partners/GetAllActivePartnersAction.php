@@ -20,6 +20,6 @@ class GetAllActivePartnersAction
             'is_active',
             DB::raw('CONCAT("' . asset(Storage::url('website/partners')) . '/' . '", logo) as logo_url'),
             DB::raw('null as Actions')
-        )->active()->get();
+        )->active();
     }
 }
