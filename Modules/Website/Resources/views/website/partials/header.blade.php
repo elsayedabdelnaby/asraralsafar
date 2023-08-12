@@ -48,7 +48,7 @@
                 <div class="navbar-flex d-flex align-items-center justify-content-between w-100 pb-3 pt-3">
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="#">
+                        <a class="navbar-brand" href="{{ url('/') }}">
                             <img src="{{ asset("storage/website/$websiteInfo->main_logo") }}" width="150"
                                 alt="image" />
                         </a>
