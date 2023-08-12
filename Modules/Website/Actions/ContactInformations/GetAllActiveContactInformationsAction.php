@@ -12,6 +12,6 @@ class GetAllActiveContactInformationsAction
 {
     public function handle()
     {
-        return ContactInformation::select('id', 'type', 'value', 'is_active', DB::raw('null as Actions'))->active()->get();
+        return ContactInformation::select('id', 'type', 'value', 'is_active', DB::raw('null as Actions'))->active();
     }
 }

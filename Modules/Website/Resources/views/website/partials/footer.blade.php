@@ -13,7 +13,7 @@
               <ul>
                 <li class="text-white d-block">
                   <img class="me-1" width="20" src="{{ asset('website/images/icons/phone.svg') }}" alt="phone" />
-                  <a href="#" class="text-white fs-14">+47-252-254-2542</a>
+                  <a href="tel:({{ $phoneNumber?->value }})" class="text-white fs-14">{{ $phoneNumber?->value }}</a>
                 </li>
                 <li class="text-white d-block">
                   <img class="me-1" width="20" src="{{ asset('website/images/icons/location.svg') }}" alt="location" />
@@ -23,7 +23,7 @@
                 </li>
                 <li class="text-white d-block">
                   <img class="me-1" width="20" src="{{ asset('website/images/icons/message.svg') }}" alt="mail" />
-                  <a href="mailto:info@asraraltayar.com" class="text-white fs-14">info@asraraltayar.com</a>
+                  <a href="mailto:{{ $infoMail?->value }}" class="text-white fs-14">{{ $infoMail?->value }}</a>
                 </li>
               </ul>
             </div>
