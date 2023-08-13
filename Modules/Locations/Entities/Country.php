@@ -16,6 +16,7 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Modules\Package\Entities\Package;
 
 class Country extends Model
 {
@@ -43,6 +44,16 @@ class Country extends Model
     protected $appends = ['display_name'];
 
     protected $lazyRelations = ['translations'];
+
+    public function topPackages()
+    {
+        return $this->hasMany(Package::class)->where('is_top', true);
+    }
+
+    public function topPackageImage($package)
+    {
+        return asset("storage/website/$package->image");
+    }
 
 
     /**

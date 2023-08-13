@@ -5,7 +5,7 @@
         $metaPageTitle = !empty($metaPage->first()->meta_page_title) ? $metaPage->first()->meta_page_title : '';
         $metaPageDescription = !empty($metaPage->first()->meta_page_description) ? $metaPage->first()->meta_page_description : '';
         $imageUrl = !empty($metaPage->first()->image_url) ? $metaPage->first()->image_url : '';
-
+        
     @endphp
     @section('meta_page')
         <meta property="og:title" content="{{ $metaPageTitle }}">
@@ -283,74 +283,33 @@
                 </p>
             </div>
             <div class="row align-items-center">
-                <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
-                    <div class="trend-item1">
-                        <div class="trend-image position-relative rounded">
-                            <img class="lg" src="{{ asset('website/') }}/images/destination/d1.jpg"
-                                alt="destination" />
-                            <div
-                                class="trend-content d-flex flex-md-row flex-column align-items-md-center justify-content-md-between align-items-start position-absolute bottom-0 p-4 w-100 z-index">
-                                <div class="trend-content-title">
-                                    <h4 class="mb-0">
-                                        <a href="#" class="text-white">Italy</a>
-                                    </h4>
-                                    <h3 class="mb-0 white">Caspian Valley</h3>
+                @foreach (Modules\Locations\Entities\Country::has('topPackages')->withCount('topPackages')->get()->take(3) as $country)
+                    <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
+                        <div class="trend-item1">
+                            <div class="trend-image position-relative rounded">
+                                <img class="lg" src="{{ $country->topPackageImage($country->topPackages->first()) }}"
+                                    alt="destination" />
+                                <div
+                                    class="trend-content d-flex flex-md-row flex-column align-items-md-center justify-content-md-between align-items-start position-absolute bottom-0 p-4 w-100 z-index">
+                                    <div class="trend-content-title">
+                                        <h3 class="mb-0 white">{{ $country->country_name }}</h3>
+                                    </div>
+                                    <span
+                                        class="white bg-theme1 fs-12 p-1 px-2 rounded mt-md-0 mt-3 text-center">{{ $country->top_packages_count }}
+                                        Packages</span>
                                 </div>
-                                <span class="white bg-theme1 fs-12 p-1 px-2 rounded mt-md-0 mt-3 text-center">18
-                                    Packages</span>
+                                <div class="color-overlay"></div>
                             </div>
-                            <div class="color-overlay"></div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
-                    <div class="trend-item1">
-                        <div class="trend-image position-relative rounded">
-                            <img class="lg" src="{{ asset('website/') }}/images/destination/d2.jpg"
-                                alt="destination" />
-                            <div
-                                class="trend-content d-flex flex-md-row flex-column align-items-md-center justify-content-md-between align-items-start position-absolute bottom-0 p-4 w-100 z-index">
-                                <div class="trend-content-title">
-                                    <h4 class="mb-0">
-                                        <a href="#" class="text-white">Sweden</a>
-                                    </h4>
-                                    <h3 class="mb-0 white">Plant Valley</h3>
-                                </div>
-                                <span class="white bg-theme1 fs-12 p-1 px-2 rounded mt-md-0 mt-3 text-center">14
-                                    Packages</span>
-                            </div>
-                            <div class="color-overlay"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
-                    <div class="trend-item1">
-                        <div class="trend-image position-relative rounded">
-                            <img class="lg" src="{{ asset('website/') }}/images/trending/p1.jpg"
-                                alt="destination" />
-                            <div
-                                class="trend-content d-flex flex-md-row flex-column align-items-md-center justify-content-md-between align-items-start position-absolute bottom-0 p-4 w-100 z-index">
-                                <div class="trend-content-title">
-                                    <h4 class="mb-0">
-                                        <a href="#" class="text-white">Egypt</a>
-                                    </h4>
-                                    <h3 class="mb-0 white">The Pyramids</h3>
-                                </div>
-                                <span class="white bg-theme1 fs-12 p-1 px-2 rounded mt-md-0 mt-3 text-center">10
-                                    Packages</span>
-                            </div>
-                            <div class="color-overlay"></div>
-                        </div>
-                    </div>
+                @endforeach
+                <div class="action text-center mt-5">
+                    <a class="nir-btn" href="#">
+                        <i class="fa fa-plane me-1"></i>
+                        View All Destinations
+                    </a>
                 </div>
             </div>
-            <div class="action text-center mt-5">
-                <a class="nir-btn" href="#">
-                    <i class="fa fa-plane me-1"></i>
-                    View All Destinations
-                </a>
-            </div>
-        </div>
     </section>
     <!-- top Destination ends -->
 
@@ -438,10 +397,11 @@
             </div>
             <div class="trend-box">
                 <div class="row">
+                    @foreach (Modules\Package\Entities\Package::where('is_top', true)->get() as $package)
                     <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
                         <div class="trend-item rounded box-shadow bg-white">
                             <div class="trend-image position-relative">
-                                <img src="{{ asset('website/') }}/images/trending/p1.jpg" alt="image"
+                                <img src="{{ asset("storage/website/$package->image") }}" alt="image"
                                     class="" />
                                 <div class="ribbon ribbon-top-left">
                                     <span class="fw-bold">20% OFF</span>
@@ -449,137 +409,16 @@
                                 <div class="color-overlay"></div>
                             </div>
                             <div class="trend-content p-4 pt-5 position-relative">
-                                <div class="trend-meta bg-theme white px-3 py-2 rounded">
-                                    <div class="entry-author fs-14">
-                                        <i class="far fa-calendar-alt me-1"></i>
-                                        <span class="fw-bold"> 9 Days</span>
-                                    </div>
-                                </div>
                                 <h5 class="theme mb-1">
-                                    <i class="flaticon-location-pin"></i> Egypt
+                                    <i class="flaticon-location-pin"></i> {{ $package->country->country_name }}
                                 </h5>
                                 <h3 class="mb-1">
-                                    <a href="#">The Pyramids</a>
+                                    <a href="#">{{ $package->title }}</a>
                                 </h3>
-                                <div class="rating-main d-flex align-items-center pb-2">
-                                    <div class="rating">
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                    </div>
-                                    <span class="ms-2">(12)</span>
-                                </div>
-                                <p class="border-b pb-2 mb-2">
-                                    Duis aute irure dolor in reprehenderit in voluptate velit
-                                    esse cillum
-                                </p>
-                                <div class="entry-meta">
-                                    <div class="entry-author d-flex align-items-center">
-                                        <p class="mb-0">
-                                            <span class="theme fw-bold fs-5"> $170.00</span> /
-                                            <s> $280.00 </s>
-                                        </p>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
-                        <div class="trend-item box-shadow rounded bg-white">
-                            <div class="trend-image position-relative">
-                                <img src="{{ asset('website/') }}/images/trending/p2.jpg" alt="image" />
-                                <div class="ribbon ribbon-top-left">
-                                    <span class="fw-bold">30% OFF</span>
-                                </div>
-                                <div class="color-overlay"></div>
-                            </div>
-                            <div class="trend-content p-4 pt-5 position-relative">
-                                <div class="trend-meta bg-theme white px-3 py-2 rounded">
-                                    <div class="entry-author fs-14">
-                                        <i class="far fa-calendar-alt me-1"></i>
-                                        <span class="fw-bold"> 9 Days</span>
-                                    </div>
-                                </div>
-                                <h5 class="theme mb-1">
-                                    <i class="flaticon-location-pin"></i> Greece
-                                </h5>
-                                <h3 class="mb-1">
-                                    <a href="#">Santorini, Oia</a>
-                                </h3>
-                                <div class="rating-main d-flex align-items-center pb-2">
-                                    <div class="rating">
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                    </div>
-                                    <span class="ms-2">(38)</span>
-                                </div>
-                                <p class="border-b pb-2 mb-2">
-                                    Duis aute irure dolor in reprehenderit in voluptate velit
-                                    esse cillum
-                                </p>
-                                <div class="entry-meta">
-                                    <div class="entry-author d-flex align-items-center">
-                                        <p class="mb-0">
-                                            <span class="theme fw-bold fs-5"> $180.00</span> /
-                                            <s> $320.00 </s>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mb-4">
-                        <div class="trend-item box-shadow rounded bg-white">
-                            <div class="trend-image position-relative">
-                                <img src="{{ asset('website/') }}/images/trending/p3.jpg" alt="image" />
-                                <div class="ribbon ribbon-top-left">
-                                    <span class="fw-bold">15% OFF</span>
-                                </div>
-                                <div class="color-overlay"></div>
-                            </div>
-                            <div class="trend-content p-4 pt-5 position-relative">
-                                <div class="trend-meta bg-theme white px-3 py-2 rounded">
-                                    <div class="entry-author fs-14">
-                                        <i class="far fa-calendar-alt me-1"></i>
-                                        <span class="fw-bold"> 9 Days</span>
-                                    </div>
-                                </div>
-                                <h5 class="theme mb-1">
-                                    <i class="flaticon-location-pin"></i> Maldives
-                                </h5>
-                                <h3 class="mb-1">
-                                    <a href="#">Hurawalhi Island</a>
-                                </h3>
-                                <div class="rating-main d-flex align-items-center pb-2">
-                                    <div class="rating">
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                    </div>
-                                    <span class="ms-2">(18)</span>
-                                </div>
-                                <p class="border-b pb-2 mb-2">
-                                    Duis aute irure dolor in reprehenderit in voluptate velit
-                                    esse cillum
-                                </p>
-                                <div class="entry-meta">
-                                    <div class="entry-author d-flex align-items-center">
-                                        <p class="mb-0">
-                                            <span class="theme fw-bold fs-5"> $260.00</span> /
-                                            <s> $400.00 </s>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -587,7 +426,7 @@
     <!-- offer Packages Ends -->
 
     <!-- testomonial start -->
-    <section class="testimonial pt-9" style="background-image: url(images/testimonial.png)">
+    {{-- <section class="testimonial pt-9" style="background-image: url(images/testimonial.png)">
         <div class="container">
             <div class="section-title mb-6 text-center w-75 mx-auto">
                 <h4 class="mb-1 theme1">Our Testimonails</h4>
@@ -629,7 +468,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- testimonial ends -->
 
     <!-- partner starts -->
