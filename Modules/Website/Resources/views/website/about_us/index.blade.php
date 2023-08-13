@@ -27,14 +27,14 @@
         <div class="breadcrumb-outer">
             <div class="container">
                 <div class="breadcrumb-content text-center">
-                    <h1 class="mb-3 fs-2">عن الشركة</h1>
+                    <h1 class="mb-3 fs-2">@lang('website.about company')</h1>
                     <nav aria-label="breadcrumb" class="d-block">
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item">
-                                <a class="text-white" href="#">الرئيسية</a>
+                                <a class="text-white" href="#">@lang('website.home page')</a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">
-                                عن الشركة
+                                @lang('website.about company')
                             </li>
                         </ul>
                     </nav>
@@ -52,9 +52,9 @@
     <section class="testimonial pt-9" style="background-image: url(images/testimonial.png)">
         <div class="container">
             <div class="section-title mb-6 text-center w-75 mx-auto">
-                <h4 class="mb-1 theme1">ماذا يقول العملاء عنا ؟</h4>
-                <h2 class="mb-1">استكشف آراء <span class="theme">العملاء </span></h2>
-                <p>استكشف آراء العملاء ومدى رضائهم عن خدماتنا</p>
+                <h4 class="mb-1 theme1">@lang('website.what clients say about us?')</h4>
+                <h2 class="mb-1">@lang('website.discover opinions') <span class="theme">@lang('website.clients') </span></h2>
+                <p>استكشف آراء العملاء ومدى رضائهم عن خدماتنا@lang('website.')</p>
             </div>
             <div class="row align-items-center">
                 <div class="col-lg-5 pe-4">
@@ -93,13 +93,12 @@
     <section class="our-partner pb-6 pt-6">
         <div class="container">
             <div class="section-title mb-6 w-75 mx-auto text-center">
-                <h4 class="mb-1 theme1">شركاء أسرار الطيار</h4>
+                <h4 class="mb-1 theme1">@lang('website.')شركاء أسرار الطيار</h4>
                 <h2 class="mb-1">
-                    تعرف على <span class="theme">شركائنا</span> المميزين
+                    تعرف على@lang('website.') <span class="theme">@lang('website.our parteners')</span> المميزين
                 </h2>
                 <p>
-                    تقدم أسرار الطيار خدمات الحجز الالكترونى للطيران والفنادق و الرحلات
-                    البحرية و التأشيرات و الرخص الدولية بأفضل الأسعار
+                    @lang('website.asrar altayran represents services of electronic reservations for flights , hotels , visa and international licencses')
                 </p>
             </div>
             <div class="our-partner p-0">
