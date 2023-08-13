@@ -14,7 +14,7 @@
                     <!-- Render of these according to language. -->
                     <li>
                         <a href="{{ route('set-locale') }}" class="text-white fs-12"><img class="me-1" width="20"
-                                height="auto" src="{{ asset('website/images/egypt.svg') }}" alt="Arabic" />
+                                height="auto" src="{{global_asset('website/images/egypt.svg') }}" alt="Arabic" />
                             {{ app()->getLocale() == 'en' ? 'Arabic' : 'English' }}</a>
                     </li>
                 </ul>
@@ -49,7 +49,7 @@
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
                         <a class="navbar-brand" href="{{ url('/') }}">
-                            <img src="{{ asset("storage/website/$websiteInfo->main_logo") }}" width="150"
+                            <img src="{{global_asset("storage/website/$websiteInfo->main_logo") }}" width="150"
                                 alt="image" />
                         </a>
                     </div>

@@ -5,7 +5,7 @@
         $metaPageTitle = !empty($metaPage->first()->meta_page_title) ? $metaPage->first()->meta_page_title : '';
         $metaPageDescription = !empty($metaPage->first()->meta_page_description) ? $metaPage->first()->meta_page_description : '';
         $imageUrl = !empty($metaPage->first()->image_url) ? $metaPage->first()->image_url : '';
-        
+
     @endphp
     @section('meta_page')
         <meta property="og:title" content="{{ $metaPageTitle }}">
@@ -64,7 +64,7 @@
                                 <div class="col-lg-4 col-md-6">
                                     <div class="info-item bg-lgrey px-4 py-5 border-all text-center rounded-3 h-100">
                                         <div class="info-icon mb-2">
-                                            <img src="{{ asset('website') }}/images/icons/location-marker.svg"
+                                            <img src="{{ global_asset('website') }}/images/icons/location-marker.svg"
                                                 alt="Location" width="80" />
                                         </div>
                                         <div class="info-content">
@@ -80,7 +80,7 @@
                                 <div class="col-lg-4 col-md-6">
                                     <div class="info-item bg-lgrey px-4 py-5 border-all text-center rounded-3 h-100">
                                         <div class="info-icon mb-2">
-                                            <img src="{{ asset('website') }}/images/icons/phone-color.svg" alt="Phone"
+                                            <img src="{{ global_asset('website') }}/images/icons/phone-color.svg" alt="Phone"
                                                 width="80" />
                                         </div>
                                         <div class="info-content">
@@ -96,7 +96,7 @@
                                 <div class="col-lg-4 col-md-12">
                                     <div class="info-item bg-lgrey px-4 py-5 border-all text-center rounded-3 h-100">
                                         <div class="info-icon mb-2">
-                                            <img src="{{ asset('website') }}/images/icons/email.svg" alt="Email"
+                                            <img src="{{ global_asset('website') }}/images/icons/email.svg" alt="Email"
                                                 width="80" />
                                         </div>
                                         <div class="info-content ps-4">

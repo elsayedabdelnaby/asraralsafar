@@ -87,7 +87,7 @@
                             <div class="author-news mb-4 box-shadow p-5 text-center border-all rounded">
                                 <div class="author-news-content">
                                     <div class="author-thumb mb-1">
-                                        <img src="{{ asset('website/') }}/images/icon.png" alt="Asrar Altayar" />
+                                        <img src="{{ global_asset('website/') }}/images/icon.png" alt="Asrar Altayar" />
                                     </div>
                                     <div class="author-content">
                                         <h3 class="title mb-1"><a href="#">أسرار الطيار</a></h3>
@@ -132,7 +132,7 @@
                                         <article class="post mb-3 border-b pb-3">
                                             <div class="s-content d-flex align-items-center justify-space-between">
                                                 <div class="sidebar-image w-25 me-3">
-                                                    <a href="#"><img src="{{ asset('website/') }}/images/blog/b2.jpg"
+                                                    <a href="#"><img src="{{ global_asset('website/') }}/images/blog/b2.jpg"
                                                             alt="Blog title" /></a>
                                                 </div>
                                                 <div class="content-list w-75">
@@ -147,7 +147,7 @@
                                             <div class="s-content d-flex align-items-center justify-space-between">
                                                 <div class="sidebar-image w-25 me-3">
                                                     <a href="#"><img
-                                                            src="{{ asset('website/') }}/images/blog/b1.jpg"
+                                                            src="{{ global_asset('website/') }}/images/blog/b1.jpg"
                                                             alt="Blog title" /></a>
                                                 </div>
                                                 <div class="content-list w-75">
@@ -162,7 +162,7 @@
                                             <div class="s-content d-flex align-items-center justify-space-between">
                                                 <div class="sidebar-image w-25 me-3">
                                                     <a href="#"><img
-                                                            src="{{ asset('website/') }}/images/blog/b2.jpg"
+                                                            src="{{ global_asset('website/') }}/images/blog/b2.jpg"
                                                             alt="Blog title" /></a>
                                                 </div>
                                                 <div class="content-list w-75">

@@ -5,7 +5,7 @@
                                             <div class="trend-item2 rounded">
                                                 <a href="#"
                                                     style="
-background-image: url({{ asset('website') }}/images/destination/d1.jpg);
+background-image: url({{global_asset('website') }}/images/destination/d1.jpg);
 background-size: cover;
 background-repeat: no-repeat;
 "></a>

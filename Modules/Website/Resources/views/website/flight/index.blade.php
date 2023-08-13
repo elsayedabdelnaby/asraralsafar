@@ -44,7 +44,7 @@
                                     <div class="row g-lg-2 g-3 d-flex align-items-center justify-content-between">
                                         <div class="col-lg-3 col-md-3 col-sm-12">
                                             <div class="item-inner-image text-start">
-                                                <img src="{{ asset("storage/website/$flight->image") }}" width="60"
+                                                <img src="{{ global_asset("storage/website/$flight->image") }}" width="60"
                                                     alt="image" />
                                                 <h5 class="mb-0"> {{ $flight->company_name }}</h5>
                                                 <small> {{ $flight->from_location }} - {{ $flight->to_location }}</small>

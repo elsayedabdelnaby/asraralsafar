@@ -9,15 +9,15 @@
     </title>
     <meta />
     <!-- Favicon -->
-    <link rel="icon shortcut" type="image/png" href="{{ asset('website/images/icon.png') }}" sizes="32x32" />
-    <link rel="icon shortcut" type="image/png" href="{{ asset('website/images/icon.png') }}" sizes="192x192" />
-    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('website/images/icon.png') }}" />
-    <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('website/images/icon.png') }}" />
-    <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('website/images/icon.png') }}" />
-    <meta name="msapplication-TileImage" content="{{ asset('website/images/icon.png') }}" />
-    <meta name="msapplication-square70x70logo" content="{{ asset('website/images/icon.png') }}" />
-    <meta name="msapplication-square150x150logo" content="{{ asset('website/images/icon.png') }}" />
-    <meta name="msapplication-wide310x150logo" content="{{ asset('website/images/icon.png') }}" />
+    <link rel="icon shortcut" type="image/png" href="{{ global_asset('website/images/icon.png') }}" sizes="32x32" />
+    <link rel="icon shortcut" type="image/png" href="{{ global_asset('website/images/icon.png') }}" sizes="192x192" />
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ global_asset('website/images/icon.png') }}" />
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ global_asset('website/images/icon.png') }}" />
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ global_asset('website/images/icon.png') }}" />
+    <meta name="msapplication-TileImage" content="{{ global_asset('website/images/icon.png') }}" />
+    <meta name="msapplication-square70x70logo" content="{{ global_asset('website/images/icon.png') }}" />
+    <meta name="msapplication-square150x150logo" content="{{ global_asset('website/images/icon.png') }}" />
+    <meta name="msapplication-wide310x150logo" content="{{ global_asset('website/images/icon.png') }}" />
     <!-- Website Meta Tags -->
     <meta name="google-site-verification" content="" />
     <meta name="description" content="أسرار الطيار | حجز طيران تأشيرات و رحلات بحرية - رخص دولية - حجز الفنادق" />
@@ -26,26 +26,26 @@
     <meta name="og:title" content="أسرار الطيار | حجز طيران تأشيرات و رحلات بحرية - رخص دولية - حجز الفنادق" />
     <meta name="og:description" content="أسرار الطيار | حجز طيران تأشيرات و رحلات بحرية - رخص دولية - حجز الفنادق" />
     @yield('meta_page')
-    <meta name="og:image" content="{{ asset('website/images/og-icon.jpg') }}" />
+    <meta name="og:image" content="{{ global_asset('website/images/og-icon.jpg') }}" />
     @if (app()->getLocale() == 'ar')
         <!-- Bootstrap core CSS -->
-        <link href="{{ asset('website/css/bootstrap.rtl.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ global_asset('website/css/bootstrap.rtl.min.css') }}" rel="stylesheet" type="text/css" />
         <!--Plugin CSS-->
-        <link href="{{ asset('website/css/plugin.rtl.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ global_asset('website/css/plugin.rtl.css') }}" rel="stylesheet" type="text/css" />
         <!--Custom CSS-->
-        <link href="{{ asset('website/css/style.rtl.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ global_asset('website/css/style.rtl.css') }}" rel="stylesheet" type="text/css" />
     @else
         <!-- Bootstrap core CSS -->
-        <link href="{{ asset('website/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ global_asset('website/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
         <!--Custom CSS-->
-        <link href="{{ asset('website/css/style.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ global_asset('website/css/style.css') }}" rel="stylesheet" type="text/css" />
         <!--Plugin CSS-->
-        <link href="{{ asset('website/css/plugin.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ global_asset('website/css/plugin.css') }}" rel="stylesheet" type="text/css" />
     @endif
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
-    <link rel="stylesheet" href="{{ asset('website/fonts/line-icons.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ global_asset('website/fonts/line-icons.css') }}" type="text/css" />
     <script>
         {{ $websiteInfo->facebook_pixel_code }}
     </script>
@@ -222,16 +222,16 @@
     <!-- Whatsapp -->
 
     <a href="#" class="fixed-whatsapp">
-        <img src="{{ asset('website/images/icons/whatsapp.svg') }}" alt="Whatsapp" />
+        <img src="{{ global_asset('website/images/icons/whatsapp.svg') }}" alt="Whatsapp" />
     </a>
 
     <!-- *Scripts* -->
-    <script src="{{ asset('website/js/jquery-3.5.1.min.js') }}"></script>
-    <script src="{{ asset('website/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('website/js/plugin.js') }}"></script>
-    <script src="{{ asset('website/js/main.js') }}"></script>
-    <script src="{{ asset('website/js/custom-swiper.js') }}"></script>
-    <script src="{{ asset('website/js/custom-nav.js') }}"></script>
+    <script src="{{ global_asset('website/js/jquery-3.5.1.min.js') }}"></script>
+    <script src="{{ global_asset('website/js/bootstrap.min.js') }}"></script>
+    <script src="{{ global_asset('website/js/plugin.js') }}"></script>
+    <script src="{{ global_asset('website/js/main.js') }}"></script>
+    <script src="{{ global_asset('website/js/custom-swiper.js') }}"></script>
+    <script src="{{ global_asset('website/js/custom-nav.js') }}"></script>
     @stack('js')
 </body>
 

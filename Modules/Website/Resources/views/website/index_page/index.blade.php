@@ -5,7 +5,7 @@
         $metaPageTitle = !empty($metaPage->first()->meta_page_title) ? $metaPage->first()->meta_page_title : '';
         $metaPageDescription = !empty($metaPage->first()->meta_page_description) ? $metaPage->first()->meta_page_description : '';
         $imageUrl = !empty($metaPage->first()->image_url) ? $metaPage->first()->image_url : '';
-        
+
     @endphp
     @section('meta_page')
         <meta property="og:title" content="{{ $metaPageTitle }}">
@@ -99,7 +99,7 @@
                     </div>
                     <div class="col-lg-6 mb-4">
                         <div class="banner-image">
-                            <img src="{{ asset('website') }}/images/travel.png" alt="travel" />
+                            <img src="{{global_asset('website') }}/images/travel.png" alt="travel" />
                         </div>
                     </div>
                 </div>
@@ -109,7 +109,7 @@
                             <div
                                 class="category-item box-shadow p-3 py-4 text-center bg-white rounded overflow-hidden h-100">
                                 <div class="trending-topic-content">
-                                    <img width="20" src="{{ asset('website') }}/images/hotel.svg"
+                                    <img width="20" src="{{global_asset('website') }}/images/hotel.svg"
                                         class="mb-1 d-inline-block" alt="Book Hotel" />
                                     <h4 class="mb-0 fs-18">
                                         <a href="#">Hotels</a>
@@ -121,7 +121,7 @@
                             <div
                                 class="category-item box-shadow p-3 py-4 text-center bg-white rounded overflow-hidden h-100">
                                 <div class="trending-topic-content text-center">
-                                    <img src="{{ asset('website') }}/images/plane.svg" class="mb-1 d-inline-block"
+                                    <img src="{{global_asset('website') }}/images/plane.svg" class="mb-1 d-inline-block"
                                         alt="Flight" />
                                     <h4 class="mb-0 fs-18">
                                         <a href="#">Flights</a>
@@ -133,7 +133,7 @@
                             <div
                                 class="category-item box-shadow p-3 py-4 text-center bg-white rounded overflow-hidden h-100">
                                 <div class="trending-topic-content">
-                                    <img src="{{ asset('website') }}/images/cruise.svg" class="mb-1 d-inline-block"
+                                    <img src="{{global_asset('website') }}/images/cruise.svg" class="mb-1 d-inline-block"
                                         alt="Cruise" />
                                     <h4 class="mb-0 fs-18">
                                         <a href="#">Cruise</a>
@@ -145,7 +145,7 @@
                             <div
                                 class="category-item box-shadow p-3 py-4 text-center bg-white rounded overflow-hidden h-100">
                                 <div class="trending-topic-content">
-                                    <img src="{{ asset('website') }}/images/boarding-pass.svg" class="mb-1 d-inline-block"
+                                    <img src="{{global_asset('website') }}/images/boarding-pass.svg" class="mb-1 d-inline-block"
                                         alt="Visa" />
                                     <h4 class="mb-0 fs-18"><a href="#">Visa</a></h4>
                                 </div>
@@ -155,7 +155,7 @@
                             <div
                                 class="category-item box-shadow p-3 py-4 text-center bg-white rounded overflow-hidden h-100">
                                 <div class="trending-topic-content">
-                                    <img src="{{ asset('website') }}/images/icons/drivers-license.svg"
+                                    <img src="{{global_asset('website') }}/images/icons/drivers-license.svg"
                                         class="mb-1 d-inline-block" alt="license" />
                                     <h4 class="mb-0 fs-18">
                                         <a href="#">International License</a>
@@ -197,7 +197,7 @@
                             <div class="why-us-item text-center p-4 py-5 border rounded bg-white h-100">
                                 <div class="why-us-content">
                                     <div class="why-us-icon mb-3">
-                                        <img src="{{ asset('website/') }}/images/icons/easy.svg" alt="Easy"
+                                        <img src="{{global_asset('website/') }}/images/icons/easy.svg" alt="Easy"
                                             width="70" />
                                     </div>
                                     <h4>
@@ -213,7 +213,7 @@
                             <div class="why-us-item text-center p-4 py-5 border rounded bg-white h-100">
                                 <div class="why-us-content">
                                     <div class="why-us-icon mb-3">
-                                        <img src="{{ asset('website/') }}/images/icons/trust.svg" alt="Trusted"
+                                        <img src="{{global_asset('website/') }}/images/icons/trust.svg" alt="Trusted"
                                             width="70" />
                                     </div>
                                     <h4>
@@ -230,7 +230,7 @@
                             <div class="why-us-item text-center p-4 py-5 border rounded bg-white h-100">
                                 <div class="why-us-content">
                                     <div class="why-us-icon mb-3">
-                                        <img src="{{ asset('website/') }}/images/icons/customer-review.svg"
+                                        <img src="{{global_asset('website/') }}/images/icons/customer-review.svg"
                                             alt="Review" width="70" />
                                     </div>
                                     <h4>
@@ -247,7 +247,7 @@
                             <div class="why-us-item text-center p-4 py-5 border rounded bg-white h-100">
                                 <div class="why-us-content">
                                     <div class="why-us-icon mb-3">
-                                        <img src="{{ asset('website/') }}/images/icons/customer-service.svg"
+                                        <img src="{{global_asset('website/') }}/images/icons/customer-service.svg"
                                             alt="customer service" width="70" />
                                     </div>
                                     <h4>
@@ -320,7 +320,7 @@
                 <div class="row d-flex align-items-center justify-content-between">
                     <div class="col-lg-6 mb-4 pe-4">
                         <div class="about-image overflow-hidden">
-                            <img src="{{ asset('website/') }}/images/travel1.png" alt="" />
+                            <img src="{{global_asset('website/') }}/images/travel1.png" alt="" />
                         </div>
                     </div>
                     <div class="col-lg-6 mb-4 ps-4">
@@ -401,7 +401,7 @@
                     <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
                         <div class="trend-item rounded box-shadow bg-white">
                             <div class="trend-image position-relative">
-                                <img src="{{ asset("storage/website/$package->image") }}" alt="image"
+                                <img src="{{global_asset("storage/website/$package->image") }}" alt="image"
                                     class="" />
                                 <div class="ribbon ribbon-top-left">
                                     <span class="fw-bold">20% OFF</span>
@@ -441,7 +441,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-5 pe-4">
                     <div class="testimonial-image">
-                        <img src="{{ asset('website/') }}/images/travel2.png" alt="" />
+                        <img src="{{global_asset('website/') }}/images/travel2.png" alt="" />
                     </div>
                 </div>
                 <div class="col-lg-7 ps-4">
@@ -450,7 +450,7 @@
                             <div class="col-sm-4 item">
                                 <div class="testimonial-item1 rounded">
                                     <div class="author-info d-flex align-items-center mb-4">
-                                        <img src="{{ asset('website/') }}/images/og-icon.jpg" alt="" />
+                                        <img src="{{global_asset('website/') }}/images/og-icon.jpg" alt="" />
                                         <div class="author-title ms-3">
                                             <h5 class="m-0 theme">{{ $testimonail->client_name }}</h5>
                                             <span>{{ __('website::website.client') }}</span>
@@ -514,7 +514,7 @@
                                         </p>
                                         <div class="entry-meta d-flex align-items-center justify-content-between">
                                             <div class="entry-author mb-2">
-                                                <img src="{{ asset('website/') }}/images/og-icon.jpg" alt=""
+                                                <img src="{{global_asset('website/') }}/images/og-icon.jpg" alt=""
                                                     class="rounded-circle me-1" />
                                                 <span>Asrar Altayar</span>
                                             </div>

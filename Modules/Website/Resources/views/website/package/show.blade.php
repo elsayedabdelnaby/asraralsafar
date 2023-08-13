@@ -54,7 +54,7 @@
 
                 <div class="description-images mb-4">
                   <img
-                    src="{{ asset("storage/website/$package->image") }}"
+                    src="{{global_asset("storage/website/$package->image") }}"
                     alt=""
                     class="w-100 rounded"
                   />
@@ -141,12 +141,12 @@
                     <div class="col-lg-6 col-md-6 mb-2">
                       <div class="desc-box bg-grey p-4 rounded">
                         <h5 class="mb-2"> {{ __('website::website.departure_time') }}</h5>
-                        <p class="mb-0">{{ $package->departure_time }}</p> 
+                        <p class="mb-0">{{ $package->departure_time }}</p>
                       </div>
                     </div>
                     <div class="col-12 mb-2">
                       <div class="desc-box bg-grey p-4 rounded">
-                        <h5 class="mb-2"> {{ __('website::website.price_includes') }} </h5> 
+                        <h5 class="mb-2"> {{ __('website::website.price_includes') }} </h5>
                         <ul>
                             @foreach (json_decode($package->price_includes) as $item)
                             <li class="d-block pb-1">

@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-12 mb-4 pe-4">
                     <div class="footer-about">
-                        <img class="rounded-pill" src="{{ asset("storage/website/$websiteInfo->footer_logo") }}"
+                        <img class="rounded-pill" src="{{global_asset("storage/website/$websiteInfo->footer_logo") }}"
                             width="200" alt="" />
                         <p class="mt-3 mb-3 white fs-14">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Odio
@@ -13,20 +13,20 @@
                         </p>
                         <ul>
                             <li class="text-white d-block">
-                                <img class="me-1" width="20" src="{{ asset('website/images/icons/phone.svg') }}"
+                                <img class="me-1" width="20" src="{{global_asset('website/images/icons/phone.svg') }}"
                                     alt="phone" />
                                 <a href="tel:({{ $phoneNumber?->value }})"
                                     class="text-white fs-14">{{ $phoneNumber?->value }}</a>
                             </li>
                             <li class="text-white d-block">
                                 <img class="me-1" width="20"
-                                    src="{{ asset('website/images/icons/location.svg') }}" alt="location" />
+                                    src="{{global_asset('website/images/icons/location.svg') }}" alt="location" />
                                 <span class="fs-14">
                                     12/13 A Dokki Tahrir ,Cairo, Egypt
                                 </span>
                             </li>
                             <li class="text-white d-block">
-                                <img class="me-1" width="20" src="{{ asset('website/images/icons/message.svg') }}"
+                                <img class="me-1" width="20" src="{{global_asset('website/images/icons/message.svg') }}"
                                     alt="mail" />
                                 <a href="mailto:{{ $infoMail?->value }}"
                                     class="text-white fs-14">{{ $infoMail?->value }}</a>

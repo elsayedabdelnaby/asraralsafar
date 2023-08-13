@@ -43,7 +43,7 @@
                                             <div class="trend-item2 rounded">
                                                 <a href="#"
                                                     style="
-background-image: url({{ asset('website') }}/images/destination/d1.jpg);
+background-image: url({{ global_asset('website') }}/images/destination/d1.jpg);
 background-size: cover;
 background-repeat: no-repeat;
 "></a>
@@ -285,7 +285,7 @@ background-repeat: no-repeat;
                                     <div class="why-us-item text-center p-4 py-5 border rounded bg-white">
                                         <div class="why-us-content">
                                             <div class="why-us-icon mb-3">
-                                                <img src="{{ asset('website') }}/images/icons/easy.svg" alt="Easy"
+                                                <img src="{{global_asset('website') }}/images/icons/easy.svg" alt="Easy"
                                                     width="70" />
                                             </div>
                                             <h4>
@@ -302,7 +302,7 @@ background-repeat: no-repeat;
                                     <div class="why-us-item text-center p-4 py-5 border rounded bg-white h-100">
                                         <div class="why-us-content">
                                             <div class="why-us-icon mb-3">
-                                                <img src="{{ asset('website') }}/images/icons/trust.svg" alt="Trusted"
+                                                <img src="{{global_asset('website') }}/images/icons/trust.svg" alt="Trusted"
                                                     width="70" />
                                             </div>
                                             <h4>
@@ -319,7 +319,7 @@ background-repeat: no-repeat;
                                     <div class="why-us-item text-center p-4 py-5 border rounded bg-white h-100">
                                         <div class="why-us-content">
                                             <div class="why-us-icon mb-3">
-                                                <img src="{{ asset('website') }}/images/icons/customer-review.svg"
+                                                <img src="{{global_asset('website') }}/images/icons/customer-review.svg"
                                                     alt="Review" width="70" />
                                             </div>
                                             <h4>
@@ -335,7 +335,7 @@ background-repeat: no-repeat;
                                     <div class="why-us-item text-center p-4 py-5 border rounded bg-white h-100">
                                         <div class="why-us-content">
                                             <div class="why-us-icon mb-3">
-                                                <img src="{{ asset('website') }}/images/icons/customer-service.svg"
+                                                <img src="{{global_asset('website') }}/images/icons/customer-service.svg"
                                                     alt="customer service" width="70" />
                                             </div>
                                             <h4>
@@ -377,28 +377,28 @@ background-repeat: no-repeat;
                     <div class="partners_inner">
                         <ul>
                             <li class="mb-2">
-                                <img src="{{ asset('website') }}/images/logo.jpg" alt="Partner 1" />
+                                <img src="{{global_asset('website') }}/images/logo.jpg" alt="Partner 1" />
                             </li>
                             <li class="mb-2">
-                                <img src="{{ asset('website') }}/images/logo.jpg" alt="Partner 2" />
+                                <img src="{{global_asset('website') }}/images/logo.jpg" alt="Partner 2" />
                             </li>
                             <li class="mb-2">
-                                <img src="{{ asset('website') }}/images/logo.jpg" alt="Partner 3" />
+                                <img src="{{global_asset('website') }}/images/logo.jpg" alt="Partner 3" />
                             </li>
                             <li class="mb-2">
-                                <img src="{{ asset('website') }}/images/logo.jpg" alt="Partner 4" />
+                                <img src="{{global_asset('website') }}/images/logo.jpg" alt="Partner 4" />
                             </li>
                             <li class="mb-2">
-                                <img src="{{ asset('website') }}/images/logo.jpg" alt="Partner 5" />
+                                <img src="{{global_asset('website') }}/images/logo.jpg" alt="Partner 5" />
                             </li>
                             <li class="mb-2">
-                                <img src="{{ asset('website') }}/images/logo.jpg" alt="Partner 6" />
+                                <img src="{{global_asset('website') }}/images/logo.jpg" alt="Partner 6" />
                             </li>
                             <li class="mb-2">
-                                <img src="{{ asset('website') }}/images/logo.jpg" alt="Partner 7" />
+                                <img src="{{global_asset('website') }}/images/logo.jpg" alt="Partner 7" />
                             </li>
                             <li class="mb-2">
-                                <img src="{{ asset('website') }}/images/logo.jpg" alt="Partner 8" />
+                                <img src="{{global_asset('website') }}/images/logo.jpg" alt="Partner 8" />
                             </li>
                         </ul>
                     </div>

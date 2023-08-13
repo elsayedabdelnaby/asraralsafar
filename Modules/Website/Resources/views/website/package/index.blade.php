@@ -3,7 +3,7 @@
     <!-- BreadCrumb Starts -->
     <section class="breadcrumb-main pb-8 pt-8 no-radius"
         style="
-  background-image: url({{ asset('website') }}/images/tourism1.webp);
+  background-image: url({{global_asset('website') }}/images/tourism1.webp);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top;
@@ -109,7 +109,7 @@
                                             <!-- Package content goes here -->
                                             <!-- Replace this with your package HTML structure -->
                                             <div class="trend-image position-relative">
-                                                <img src="{{ asset("storage/website/$package->image") }}" alt="image"
+                                                <img src="{{global_asset("storage/website/$package->image") }}" alt="image"
                                                     class="package" />
                                                 <div class="color-overlay"></div>
                                             </div>
@@ -285,7 +285,7 @@
         <div class="col-xl-6">
           <div class="trend-item rounded box-shadow">
             <div class="trend-image position-relative">
-              <img src="{{ asset("storage/website/$package->image") }}" alt="image" class="package" />
+              <img src="{{global_asset("storage/website/$package->image") }}" alt="image" class="package" />
               <div class="color-overlay"></div>
             </div>
             <div class="trend-content p-4 pt-5 position-relative">

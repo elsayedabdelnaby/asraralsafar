@@ -59,7 +59,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-5 pe-4">
                     <div class="testimonial-image">
-                        <img src="{{ asset('website') }}/images/travel2.png" alt="" />
+                        <img src="{{ global_asset('website') }}/images/travel2.png" alt="" />
                     </div>
                 </div>
                 <div class="col-lg-7 ps-4">
@@ -68,7 +68,7 @@
                             <div class="col-sm-4 item">
                                 <div class="testimonial-item1 rounded">
                                     <div class="author-info d-flex align-items-center mb-4">
-                                        <img src="{{ asset('website/') }}/images/og-icon.jpg" alt="" />
+                                        <img src="{{ global_asset('website/') }}/images/og-icon.jpg" alt="" />
                                         <div class="author-title ms-3">
                                             <h5 class="m-0 theme">{{ $testimonail->client_name }}</h5>
                                             <span>{{ __('website::website.client') }}</span>
