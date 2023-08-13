@@ -57,57 +57,57 @@
                     <div class="navbar-collapse1 d-flex align-items-center" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav" id="responsive-menu">
                             <li class="dropdown submenu active">
-                                <a href="{{ route('website.index') }}" class="dropdown-toggle">Home</a>
+                                <a href="{{ route('website.index') }}" class="dropdown-toggle">@lang('website.Home')</a>
                             </li>
 
                             <li class="submenu dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                    aria-haspopup="true" aria-expanded="false">Programs
+                                    aria-haspopup="true" aria-expanded="false">@lang('website.Programs')
                                     <i class="icon-arrow-down" aria-hidden="true"></i></a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="{{ route('package.index') }}">Offers</a>
+                                        <a href="{{ route('package.index') }}">@lang('website.Offers')</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('package.index') }}">Packages</a>
+                                        <a href="{{ route('package.index') }}">@lang('website.Packages')</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('package.index') }}">Package / Offer Details</a>
+                                        <a href="{{ route('package.index') }}">@lang('website.Package / Offer Details')</a>
                                     </li>
                                 </ul>
                             </li>
 
                             <li class="submenu dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                    aria-haspopup="true" aria-expanded="false">Bookings
+                                    aria-haspopup="true" aria-expanded="false">@lang('website.Bookings')
                                     <i class="icon-arrow-down" aria-hidden="true"></i></a>
                                 <ul class="dropdown-menu">
                                     <li class="submenu">
-                                        <a href="{{ route('flight.index') }}">Flights</a>
+                                        <a href="{{ route('flight.index') }}">@lang('website.Flights')</a>
                                     </li>
                                     <li class="submenu">
-                                        <a href="{{ route('flight.index') }}">Hotels</a>
+                                        <a href="{{ route('flight.index') }}">@lang('website.Hotels')</a>
                                     </li>
                                     <li class="submenu">
-                                        <a href="{{ route('cruise.index') }}">Cruises</a>
+                                        <a href="{{ route('cruise.index') }}">@lang('website.Cruises')</a>
                                     </li>
                                     <li class="submenu dropdown">
-                                        <a href="{{ route('request.index') }}">Medical Tourism</a>
+                                        <a href="{{ route('request.index') }}">@lang('website.Medical Tourism')</a>
                                     </li>
                                     <li class="submenu dropdown">
                                         <a href="{{ route('request.index') }}">
-                                            Educational Tourism</a>
+                                            @lang('website.Educational Tourism')</a>
                                     </li>
                                 </ul>
                             </li>
                             <li class="submenu">
-                                <a href="{{ route('website.blog.index') }}">Blogs</a>
+                                <a href="{{ route('website.blog.index') }}">@lang('website.Blogs')</a>
                             </li>
                             <li class="submenu">
-                                <a href="{{ route('contact.index') }}">Contact Us</a>
+                                <a href="{{ route('contact.index') }}">@lang('website.Contact Us')</a>
                             </li>
                             <li class="submenu">
-                                <a href="{{ route('about-us.index') }}">About Us</a>
+                                <a href="{{ route('about-us.index') }}">@lang('website.About Us')</a>
                             </li>
                             <li class="search-main">
                                 <a href="#search1" class="mt_search"><i class="fa fa-search"></i></a>
@@ -117,7 +117,7 @@
                     <!-- /.navbar-collapse -->
                     <div class="register-login d-flex align-items-center">
                         <!-- <a href="#" class="nir-btn nir-btn-outline me-2">Book Now</a> -->
-                        <a href="{{ route('request.index') }}" class="nir-btn white">Book Now</a>
+                        <a href="{{ route('request.index') }}" class="nir-btn white">@lang('website.Book Now')</a>
                     </div>
 
                     <div id="slicknav-mobile"></div>

@@ -38,13 +38,13 @@
                     <div class="footer-links">
                         <h3 class="white">Quick link</h3>
                         <ul>
-                            <li><a href="{{ route('package.index') }}">Packages</a></li>
-                            <li><a href="{{ route('package.index') }}">Offers</a></li>
-                            <li><a href="{{ route('cruise.index') }}">Book A Cruise</a></li>
-                            <li><a href="{{ route('flight.index') }}">Book A Flight</a></li>
-                            <li><a href="{{ route('website.index') }}">International Licensing</a></li>
-                            <li><a href="{{ route('website.index') }}">Visa</a></li>
-                            <li><a href="{{ route('website.index') }}">Blogs & News</a></li>
+                            <li><a href="{{ route('package.index') }}"> @lang('website.Packages')</a></li>
+                            <li><a href="{{ route('package.index') }}"> @lang('website.Offers')</a></li>
+                            <li><a href="{{ route('cruise.index') }}"> @lang('website.Book A Cruise')</a></li>
+                            <li><a href="{{ route('flight.index') }}"> @lang('website.Book A Flight')</a></li>
+                            <li><a href="{{ route('website.index') }}"> @lang('website.International Licensing')</a></li>
+                            <li><a href="{{ route('website.index') }}"> @lang('website.Visa')</a></li>
+                            <li><a href="{{ route('website.index') }}"> @lang('website.Blogs & News')</a></li>
                         </ul>
                     </div>
                 </div>
@@ -52,23 +52,21 @@
                     <div class="footer-links">
                         <h3 class="white">Pages</h3>
                         <ul>
-                            <li><a href="{{ route('about-us.index') }}">About Us</a></li>
-                            <li><a href="{{ route('contact.index') }}">Contact Us</a></li>
-                            <li><a href="{{ route('website.index') }}">FAQ</a></li>
-                            <li><a href="{{ route('website.index') }}">Privacy Policy</a></li>
-                            <li><a href="{{ route('website.index') }}">Terms & Conditions</a></li>
-                            <li><a href="{{ route('website.index') }}">Testimonials</a></li>
+                            <li><a href="{{ route('about-us.index') }}"> @lang('website.About Us')</a></li>
+                            <li><a href="{{ route('contact.index') }}"> @lang('website.Contact Us')</a></li>
+                            <li><a href="{{ route('website.index') }}"> @lang('website.FAQ')</a></li>
+                            <li><a href="{{ route('website.index') }}"> @lang('website.Privacy Policy')</a></li>
+                            <li><a href="{{ route('website.index') }}"> @lang('website.Terms & Conditions')</a></li>
+                            <li><a href="{{ route('website.index') }}"> @lang('website.Testimonials')</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                     <div class="footer-links">
-                        <h3 class="white">Newsletter</h3>
+                        <h3 class="white">@lang('website.Newsletter')</h3>
                         <div class="newsletter-form">
                             <p class="mb-3">
-                                Jin our community of over 200,000 global readers who
-                                receives emails filled with news, promotions, and other good
-                                stuff.
+                                 @lang('website.Join our community of over 200,000 global readers who receives emails filled with news, promotions, and other good stuff.')
                             </p>
                             <div class="row g-2">
                                 @if (session()->has('message'))
@@ -84,7 +82,7 @@
                                     <div class="col-12">
                                         <button class="nir-btn no-shadow w-100" type="submit">
                                             <i class="fa fa-envelope me-1"></i>
-                                            Subscribe
+                                            @lang('website.Subscribe')
                                         </button>
                                     </div>
                                 </form>
@@ -101,7 +99,7 @@
             <div class="copyright-inner rounded p-3 d-md-flex align-items-center justify-content-between">
                 <div class="copyright-text">
                     <p class="m-0 white fs-14">
-                        2023 Asrar Altayar. &copy; All rights reserved.
+                        @lang('website.2023 Asrar Altayar.')  &copy; @lang('website.All rights reserved.')
                     </p>
                 </div>
                 <div class="social-links">

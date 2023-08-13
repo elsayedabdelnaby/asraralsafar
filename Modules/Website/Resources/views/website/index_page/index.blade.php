@@ -36,10 +36,10 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6 mb-4">
                         <div class="banner-content text-lg-start text-center">
-                            <h4 class="theme mb-0">Explore The World</h4>
-                            <h1>Start Planning Your Dream Trip Today!</h1>
+                            <h4 class="theme mb-0">@lang('website.Explore The World')</h4>
+                            <h1>@lang('website.Start Planning Your Dream Trip Today!')</h1>
                             <p class="mb-4">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                @lang('website.')Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                                 do eiusmod tempor incididunt ut labore
                             </p>
                             <div class="book-form">
@@ -48,11 +48,11 @@
                                         <div class="form-group">
                                             <div class="input-box">
                                                 <select class="niceSelect">
-                                                    <option value="1">Destination</option>
-                                                    <option value="2">Argentina</option>
-                                                    <option value="3">Belgium</option>
-                                                    <option value="4">Canada</option>
-                                                    <option value="5">Denmark</option>
+                                                    <option value="1">@lang('website.Destination')</option>
+                                                    <option value="2">@lang('website.Argentina')</option>
+                                                    <option value="3">@lang('website.Belgium')</option>
+                                                    <option value="4">@lang('website.Canada')</option>
+                                                    <option value="5">@lang('website.Denmark')</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -69,9 +69,9 @@
                                         <div class="form-group">
                                             <div class="input-box">
                                                 <select class="niceSelect">
-                                                    <option value="1">Travel Type</option>
-                                                    <option value="2">City Tour</option>
-                                                    <option value="3">Family Tour</option>
+                                                    <option value="1">@lang('website.Travel Type')</option>
+                                                    <option value="2">@lang('website.City Tour')</option>
+                                                    <option value="3">@lang('website.Family Tour')</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -80,17 +80,16 @@
                                         <div class="form-group">
                                             <div class="input-box">
                                                 <select class="niceSelect">
-                                                    <option value="1">Tour Duration</option>
-                                                    <option value="2">5 days</option>
-                                                    <option value="3">7 Days</option>
+                                                    <option value="1">@lang('website.Tour Duration')</option>
+                                                    <option value="2">@lang('website.5 days')</option>
+                                                    <option value="3">@lang('website.7 Days')</option>
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="form-group mb-0 text-center">
-                                            <a href="#" class="nir-btn w-100"><i class="fa fa-search me-2"></i> Search
-                                                Now</a>
+                                            <a href="#" class="nir-btn w-100"><i class="fa fa-search me-2"></i> @lang('website.Search Now')</a>
                                         </div>
                                     </div>
                                 </div>
@@ -112,7 +111,7 @@
                                     <img width="20" src="{{ asset('website') }}/images/hotel.svg"
                                         class="mb-1 d-inline-block" alt="Book Hotel" />
                                     <h4 class="mb-0 fs-18">
-                                        <a href="#">Hotels</a>
+                                        <a href="#">@lang('website.Hotels')</a>
                                     </h4>
                                 </div>
                             </div>
@@ -124,7 +123,7 @@
                                     <img src="{{ asset('website') }}/images/plane.svg" class="mb-1 d-inline-block"
                                         alt="Flight" />
                                     <h4 class="mb-0 fs-18">
-                                        <a href="#">Flights</a>
+                                        <a href="#">@lang('website.Flights')</a>
                                     </h4>
                                 </div>
                             </div>
@@ -136,7 +135,7 @@
                                     <img src="{{ asset('website') }}/images/cruise.svg" class="mb-1 d-inline-block"
                                         alt="Cruise" />
                                     <h4 class="mb-0 fs-18">
-                                        <a href="#">Cruise</a>
+                                        <a href="#">@lang('website.Cruise')</a>
                                     </h4>
                                 </div>
                             </div>
@@ -147,7 +146,7 @@
                                 <div class="trending-topic-content">
                                     <img src="{{ asset('website') }}/images/boarding-pass.svg" class="mb-1 d-inline-block"
                                         alt="Visa" />
-                                    <h4 class="mb-0 fs-18"><a href="#">Visa</a></h4>
+                                    <h4 class="mb-0 fs-18"><a href="#">@lang('website.Visa')</a></h4>
                                 </div>
                             </div>
                         </div>
@@ -158,7 +157,7 @@
                                     <img src="{{ asset('website') }}/images/icons/drivers-license.svg"
                                         class="mb-1 d-inline-block" alt="license" />
                                     <h4 class="mb-0 fs-18">
-                                        <a href="#">International License</a>
+                                        <a href="#">@lang('website.International License')</a>
                                     </h4>
                                 </div>
                             </div>
@@ -181,10 +180,10 @@
                 <h4 class="mb-1 theme1">
                     {{ $websiteInfo->translations->where('language_id', getCurrentLanguage()->id)->first()->name }}</h4>
                 <h2 class="mb-1">
-                    <span class="theme">Your Optimal Choice</span>
+                    <span class="theme">@lang('website.Your Optimal Choice')</span>
                 </h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                    @lang('website.')Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                     eiusmod tempor incididunt ut labore.
                 </p>
             </div>
@@ -201,10 +200,10 @@
                                             width="70" />
                                     </div>
                                     <h4>
-                                        <a href="#">Flexible And Easy</a>
+                                        <a href="#">@lang('website.Flexible And Easy')</a>
                                     </h4>
                                     <p class="mb-0 fs-14">
-                                        You can make your reservation easily through our website.
+                                        @lang('website.You can make your reservation easily through our website.')
                                     </p>
                                 </div>
                             </div>
@@ -217,11 +216,10 @@
                                             width="70" />
                                     </div>
                                     <h4>
-                                        <a href="#">Trusted And Credibile</a>
+                                        <a href="#">@lang('website.Trusted And Credibile')</a>
                                     </h4>
                                     <p class="mb-0 fs-14">
-                                        Asrar Altayar is Trusted by all its clients, Explore
-                                        Testimonails.
+                                        @lang('website.Asrar Altayar is Trusted by all its clients, Explore Testimonails.')
                                     </p>
                                 </div>
                             </div>
@@ -234,11 +232,10 @@
                                             alt="Review" width="70" />
                                     </div>
                                     <h4>
-                                        <a href="#">Client Focus</a>
+                                        <a href="#">@lang('website.Client Focus')</a>
                                     </h4>
                                     <p class="mb-0 fs-14">
-                                        Asrar Altayar focuses mainly on client's satisfaction and
-                                        happiness.
+                                        @lang('website.Asrar Altayar focuses mainly on clients satisfaction and happiness.')
                                     </p>
                                 </div>
                             </div>
@@ -251,11 +248,10 @@
                                             alt="customer service" width="70" />
                                     </div>
                                     <h4>
-                                        <a href="#">24 Hours Support</a>
+                                        <a href="#">@lang('website.24 Hours Support')</a>
                                     </h4>
                                     <p class="mb-0 fs-14">
-                                        Asrar Altayar is supporting clients 24 hrs/day & 7
-                                        days/week.
+                                        @lang('website.Asrar Altayar is supporting clients 24 hrs/day & 7 days/week.')
                                     </p>
                                 </div>
                             </div>
@@ -273,12 +269,12 @@
     <section class="trending pb-5 pt-0">
         <div class="container">
             <div class="section-title mb-6 w-50 mx-auto text-center">
-                <h4 class="mb-1 theme1">Trending Destinations</h4>
+                <h4 class="mb-1 theme1">@lang('website.Trending Destinations')</h4>
                 <h2 class="mb-1">
-                    Explore <span class="theme">Top Destinations</span>
+                    Explore <span class="theme">@lang('website.Top Destinations')</span>
                 </h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                    @lang('website.')Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                     eiusmod tempor incididunt ut labore.
                 </p>
             </div>
@@ -296,7 +292,7 @@
                                     </div>
                                     <span
                                         class="white bg-theme1 fs-12 p-1 px-2 rounded mt-md-0 mt-3 text-center">{{ $country->top_packages_count }}
-                                        Packages</span>
+                                        @lang('Packages')</span>
                                 </div>
                                 <div class="color-overlay"></div>
                             </div>
@@ -306,7 +302,7 @@
                 <div class="action text-center mt-5">
                     <a class="nir-btn" href="#">
                         <i class="fa fa-plane me-1"></i>
-                        View All Destinations
+                        @lang('website.View All Destinations')
                     </a>
                 </div>
             </div>
@@ -325,11 +321,11 @@
                     </div>
                     <div class="col-lg-6 mb-4 ps-4">
                         <div class="about-content text-center text-lg-start mb-4 pb-100">
-                            <h4 class="theme d-inline-block mb-0">Get To Know Us</h4>
+                            <h4 class="theme d-inline-block mb-0">@lang('website.Get To Know Us')</h4>
                             <h2 class="border-b mb-2 pb-1">
-                                Explore All Tour of the world with us.
+                                @lang('website.Explore All Tour of the world with us.')
                             </h2>
-                            <p class="border-b mb-2 pb-2">
+                            <p class="border-b mb-2 pb-2">@lang('website.')
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                                 do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                                 Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -340,14 +336,13 @@
                             <div class="about-listing">
                                 <ul class="d-flex justify-content-between">
                                     <li class="fs-14">
-                                        <i class="fa fa-binoculars theme me-1"></i> Excellent
-                                        Packages
+                                        <i class="fa fa-binoculars theme me-1"></i> @lang('website.Excellent Packages')
                                     </li>
                                     <li class="fs-14">
-                                        <i class="fa fa-dollar-sign me-1"></i> Competitive Prices
+                                        <i class="fa fa-dollar-sign me-1"></i> @lang('website.Competitive Prices')
                                     </li>
                                     <li class="fs-14">
-                                        <i class="fa fa-shield-alt me-1"></i> Trust & Credibility
+                                        <i class="fa fa-shield-alt me-1"></i> @lang('website.Trust & Credibility')
                                     </li>
                                 </ul>
                             </div>
@@ -386,12 +381,12 @@
     <section class="trending pb-0 pt-4">
         <div class="container">
             <div class="section-title mb-6 w-75 mx-auto text-center">
-                <h4 class="mb-1 theme1">Top Offers</h4>
+                <h4 class="mb-1 theme1">@lang('website.Top Offers')</h4>
                 <h2 class="mb-1">
-                    Special <span class="theme">Offers & Discount </span> Packages
+                    @lang('website.Special') <span class="theme">@lang('website.Offers & Discount') </span> @lang('website.Packages')
                 </h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                    @lang('website.')Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                     eiusmod tempor incididunt ut labore.
                 </p>
             </div>
@@ -404,7 +399,7 @@
                                 <img src="{{ asset("storage/website/$package->image") }}" alt="image"
                                     class="" />
                                 <div class="ribbon ribbon-top-left">
-                                    <span class="fw-bold">20% OFF</span>
+                                    <span class="fw-bold">20% @lang('website.')OFF</span>
                                 </div>
                                 <div class="color-overlay"></div>
                             </div>
@@ -489,12 +484,12 @@
     <section class="trending recent-articles pb-6">
         <div class="container">
             <div class="section-title mb-6 w-75 mx-auto text-center">
-                <h4 class="mb-1 theme1">Our Blogs Offers</h4>
+                <h4 class="mb-1 theme1">@lang('website.Our Blogs Offers')</h4>
                 <h2 class="mb-1">
-                    Recent <span class="theme">Articles & Posts</span>
+                    @lang('website.Recent') <span class="theme">@lang('website.Articles & Posts')</span>
                 </h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                    @lang('website.') Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                     eiusmod tempor incididunt ut labore.
                 </p>
             </div>
@@ -516,11 +511,11 @@
                                             <div class="entry-author mb-2">
                                                 <img src="{{ asset('website/') }}/images/og-icon.jpg" alt=""
                                                     class="rounded-circle me-1" />
-                                                <span>Asrar Altayar</span>
+                                                <span>@lang('website.Asrar Altayar')</span>
                                             </div>
                                             <div class="entry-button d-flex align-items-centermb-2">
-                                                <a href="{{ route('blog.show', $blog->id) }}" class="nir-btn">Read
-                                                    More</a>
+                                                <a href="{{ route('blog.show', $blog->id) }}" class="nir-btn">@lang('website.Read More')
+                                                    </a>
                                             </div>
                                         </div>
                                     </div>
