@@ -1,4 +1,4 @@
-<div id="#flight-list">
+<div id="flight-list">
     @foreach ($flights as $flight)
         <div class="item mb-2 border-all p-3 px-4 rounded">
             <div class="row g-lg-2 g-3 d-flex align-items-center justify-content-between">
@@ -34,7 +34,7 @@
                     <div class="item-inner text-end">
                         <p class="theme2 fs-4 fw-bold fs-18">{{ $flight->price }}
                             {{ $flight->price_currency }}</p>
-                        <a href="#" class="nir-btn-black">احجز الآن</a>
+                        <a href="#" class="nir-btn-black">@lang('website.book_now')</a>
                     </div>
                 </div>
                 <div class="col-lg-12">
@@ -43,14 +43,13 @@
                 <div class="col-12">
                     <ul class="list-inline d-flex flex-wrap">
                         <li class="list-inline-item">
-                            <span class="badge bg-danger rounded-2 px-2 fs-12">{{ $flight->type }}
-                            </span>
+                            <span class="badge bg-danger rounded-2 px-2 fs-12">{{ $flight->type }}</span>
                         </li>
                         <li class="list-inline-item">
-                            <span class="badge bg-success rounded-2 px-2 fs-12">Airbus 320</span>
+                            <span class="badge bg-success rounded-2 px-2 fs-12">@lang('website.airbus_320')</span>
                         </li>
                         <li class="list-inline-item">
-                            <span class="badge bg-secondary rounded-2 px-2 fs-12">وجبات طازجة</span>
+                            <span class="badge bg-secondary rounded-2 px-2 fs-12">@lang('website.fresh_meals')</span>
                         </li>
                     </ul>
                 </div>

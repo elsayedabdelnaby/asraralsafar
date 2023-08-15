@@ -271,7 +271,7 @@
             <div class="section-title mb-6 w-50 mx-auto text-center">
                 <h4 class="mb-1 theme1">@lang('website.Trending Destinations')</h4>
                 <h2 class="mb-1">
-                    Explore <span class="theme">@lang('website.Top Destinations')</span>
+                    @lang('website.Explore') <span class="theme">@lang('website.Top Destinations')</span>
                 </h2>
                 <p>
                     @lang('website.')Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

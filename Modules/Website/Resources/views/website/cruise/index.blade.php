@@ -1,4 +1,5 @@
 @extends('website::website.layouts.master')
+
 @section('content')
     <!-- BreadCrumb Starts -->
     <section class="breadcrumb-main pb-8 pt-8 no-radius"
@@ -11,14 +12,14 @@
         <div class="breadcrumb-outer">
             <div class="container">
                 <div class="breadcrumb-content text-center">
-                    <h1 class="mb-3 fs-2">الرحلات البحرية</h1>
+                    <h1 class="mb-3 fs-2">@lang('website.cruise_page_title')</h1>
                     <nav aria-label="breadcrumb" class="d-block">
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item">
-                                <a class="text-white" href="#">الرئيسية</a>
+                                <a class="text-white" href="#">@lang('website.home')</a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">
-                                حجز الرحلات البحرية
+                                @lang('website.cruise_reservation')
                             </li>
                         </ul>
                     </nav>
@@ -59,21 +60,20 @@ background-repeat: no-repeat;
                                                 <ul
                                                     class="featured-meta border-b pb-2 mb-2 d-flex flex-sm-row flex-column gap-3 align-items-center justify-content-between">
                                                     <li>
-                                                        <strong class="d-block"> تاريخ الرحلة</strong>
+                                                        <strong class="d-block"> @lang('website.trip_date')</strong>
                                                         {{ $cruise->date }}
                                                     </li>
                                                     <li>
-                                                        <strong class="d-block"> المغادرة</strong>
+                                                        <strong class="d-block"> @lang('website.departure')</strong>
                                                         {{ $cruise->take_off_location }}
                                                     </li>
                                                 </ul>
 
-
                                                 <div
                                                     class="entry-author d-flex flex-sm-row flex-column align-items-center justify-content-between gap-3">
-                                                    <a href="#" class="nir-btn-black py-1">احجز الآن</a>
+                                                    <a href="#" class="nir-btn-black py-1">@lang('website.book_now')</a>
                                                     <p class="mb-0">
-                                                        تبدأ من :
+                                                        @lang('website.starting_from') :
                                                         <span class="theme fw-bold fs-6">{{ $cruise->start_from_price }}
                                                             {{ getCurrentLanguage()->id == 1 ? 'EGP' : 'ج.م' }}</span>
                                                     </p>
@@ -113,14 +113,14 @@ background-repeat: no-repeat;
                                 <div class="book-form w-100 bg-white box-shadow p-4 pb-1 z-index1 rounded">
                                     <div class="row d-flex align-items-center justify-content-between">
                                         <div class="col-lg-12">
-                                            <h3>بحث البيانات</h3>
+                                            <h3>@lang('website.data_search')</h3>
                                         </div>
                                         <form action="{{ route('cruise.index') }}" method="GET">
                                             <div class="col-lg-12 mb-2">
                                                 <div class="form-group">
                                                     <div class="input-box">
-                                                        <label> البحث</label>
-                                                        <input type="text" placeholder="ادخل مفتاح البحث"
+                                                        <label>@lang('website.search')</label>
+                                                        <input type="text" placeholder="@lang('website.enter_search_key')"
                                                             name="search" />
                                                     </div>
                                                 </div>
@@ -128,7 +128,7 @@ background-repeat: no-repeat;
                                             <div class="col-lg-12 mb-2">
                                                 <div class="form-group">
                                                     <div class="input-box">
-                                                        <label>المقصد السياحى</label>
+                                                        <label>@lang('website.destination')</label>
                                                         <select class="niceSelect" name="country_id">
                                                             @foreach ($countries as $country)
                                                                 <option value="{{ $country->id }}">
@@ -141,7 +141,7 @@ background-repeat: no-repeat;
                                             <div class="col-lg-12 mb-2">
                                                 <div class="form-group">
                                                     <div class="input-box">
-                                                        <label>تاريخ الرحلة</label>
+                                                        <label>@lang('website.trip_date')</label>
                                                         <input type="date" name="date"
                                                             value="{{ Carbon\Carbon::now()->format('Y-m-d') }}" />
                                                     </div>
@@ -150,7 +150,7 @@ background-repeat: no-repeat;
                                             <div class="col-lg-6 mb-2">
                                                 <div class="form-group">
                                                     <div class="input-box">
-                                                        <label>عدد الأفراد</label>
+                                                        <label>@lang('website.number_of_individuals')</label>
                                                         <select class="niceSelect">
                                                             <option value="1">1</option>
                                                             <option value="2">2</option>
@@ -164,7 +164,7 @@ background-repeat: no-repeat;
                                             <div class="col-lg-6 mb-2">
                                                 <div class="form-group">
                                                     <div class="input-box">
-                                                        <label>عدد الغرف</label>
+                                                        <label>@lang('website.number_of_rooms')</label>
                                                         <select class="niceSelect">
                                                             <option value="1">1</option>
                                                             <option value="2">2</option>
@@ -178,8 +178,8 @@ background-repeat: no-repeat;
                                             <div class="col-lg-12">
                                                 <div class="form-group mb-0 text-center">
                                                     <button href="#" class="nir-btn w-100" type="submit"><i
-                                                            class="fa fa-search me-2 mirror-ar"></i> بحث
-                                                        الرحلات</button>
+                                                            class="fa fa-search me-2 mirror-ar"></i>
+                                                        @lang('website.search_trips')</button>
                                                 </div>
                                             </div>
                                         </form>
@@ -187,7 +187,7 @@ background-repeat: no-repeat;
                                 </div>
                             </div>
                             <div class="sidebar-item mb-4">
-                                <h4 class="">سعر الرحلة</h4>
+                                <h4 class="">@lang('website.trip_price')</h4>
                                 <div class="range-slider mt-0">
                                     <div data-min="0" data-max="20000" data-unit="$" data-min-name="min_price"
                                         data-max-name="max_price"
@@ -225,22 +225,21 @@ background-repeat: no-repeat;
                 <div class="call-banner-inner w-75 mx-auto text-center px-5">
                     <div class="trend-content-main">
                         <div class="trend-content mb-4 px-md-5 px-4">
-                            <h5 class="mb-1 theme">شركة أسرار الطيار</h5>
+                            <h5 class="mb-1 theme">@lang('website.company_name')</h5>
                             <h2>
-                                <a href="#">اكتشف نفسك !!
+                                <a href="#">@lang('website.discover_yourself') !!
                                     <span class="theme1">
-                                        سافر لأى مكان تريده حوال العالم</span></a>
+                                        @lang('website.travel_anywhere')</span></a>
                             </h2>
                             <p>
-                                تقدم أسرار الطيار خدمات الحجز الالكترونى للطيران والفنادق و
-                                الرحلات البحرية و التأشيرات و الرخص الدولية بأفضل الأسعار
+                                @lang('website.secret_pilot_services')
                             </p>
                         </div>
                         <div class="video-button text-center position-relative">
                             <div class="text-center">
                                 <a href="#" type="button" class="play-btn nir-btn">
                                     <i class="fa fa-plane me-1"></i>
-                                    <span>استكشف العروض</span>
+                                    <span>@lang('website.explore_offers')</span>
                                 </a>
                             </div>
                             <div class="video-figure"></div>
@@ -263,17 +262,12 @@ background-repeat: no-repeat;
             <div class="row align-items-center d-flex">
                 <div class="col-lg-6 mb-4">
                     <div class="section-title">
-                        <h4 class="mb-1 theme1">لماذا تختار أسرار الطيار ؟</h4>
-                        <h2 class="mb-4">أفضل شركة خدمات سياحية داخل مصر</h2>
+                        <h4 class="mb-1 theme1">@lang('website.why_choose_pilot_secrets')</h4>
+                        <h2 class="mb-4">@lang('website.best_tourism_services')</h2>
                         <p class="mb-4">
-                            تقدم أسرار الطيار خدمات الحجز الالكترونى للطيران والفنادق و
-                            الرحلات البحرية و التأشيرات و الرخص الدولية بأفضل الأسعار تقدم
-                            أسرار الطيار خدمات الحجز الالكترونى للطيران والفنادق و الرحلات
-                            البحرية و التأشيرات و الرخص الدولية بأفضل الأسعار تقدم أسرار
-                            الطيار خدمات الحجز الالكترونى للطيران والفنادق و الرحلات البحرية
-                            و التأشيرات و الرخص الدولية بأفضل الأسعار
+                            @lang('website.pilot_secret_services_description')
                         </p>
-                        <a href="{{ route('website.index') }}" class="nir-btn">المزيد عن الشركة</a>
+                        <a href="{{ route('website.index') }}" class="nir-btn">@lang('website.more_about_company')</a>
                     </div>
                 </div>
                 <div class="col-lg-6 mb-4">
@@ -285,15 +279,14 @@ background-repeat: no-repeat;
                                     <div class="why-us-item text-center p-4 py-5 border rounded bg-white">
                                         <div class="why-us-content">
                                             <div class="why-us-icon mb-3">
-                                                <img src="{{global_asset('website') }}/images/icons/easy.svg" alt="Easy"
-                                                    width="70" />
+                                                <img src="{{ global_asset('website') }}/images/icons/easy.svg"
+                                                    alt="Easy" width="70" />
                                             </div>
                                             <h4>
-                                                <a href="#">السهولة و المرونة</a>
+                                                <a href="#">@lang('website.ease_and_flexibility')</a>
                                             </h4>
                                             <p class="mb-0 fs-14">
-                                                يمكنك إجراء الحجز الخاص بك بسهولة من خلال موقعنا على
-                                                الإنترنت.
+                                                @lang('website.book_your_trip_easily_online').
                                             </p>
                                         </div>
                                     </div>
@@ -302,15 +295,14 @@ background-repeat: no-repeat;
                                     <div class="why-us-item text-center p-4 py-5 border rounded bg-white h-100">
                                         <div class="why-us-content">
                                             <div class="why-us-icon mb-3">
-                                                <img src="{{global_asset('website') }}/images/icons/trust.svg" alt="Trusted"
-                                                    width="70" />
+                                                <img src="{{ global_asset('website') }}/images/icons/trust.svg"
+                                                    alt="Trusted" width="70" />
                                             </div>
                                             <h4>
-                                                <a href="#">الثقة و المصداقية</a>
+                                                <a href="#">@lang('website.trust_and_credibility')</a>
                                             </h4>
                                             <p class="mb-0 fs-14">
-                                                أسرار الطيار هي شركة موثوق بها من قبل جميع عملائها ،
-                                                اكتشف الشهادات.
+                                                @lang('website.secret_pilot_trusted_by_all_clients').
                                             </p>
                                         </div>
                                     </div>
@@ -319,14 +311,14 @@ background-repeat: no-repeat;
                                     <div class="why-us-item text-center p-4 py-5 border rounded bg-white h-100">
                                         <div class="why-us-content">
                                             <div class="why-us-icon mb-3">
-                                                <img src="{{global_asset('website') }}/images/icons/customer-review.svg"
+                                                <img src="{{ global_asset('website') }}/images/icons/customer-review.svg"
                                                     alt="Review" width="70" />
                                             </div>
                                             <h4>
-                                                <a href="#">التركيز على العميل</a>
+                                                <a href="#">@lang('website.customer_focus')</a>
                                             </h4>
                                             <p class="mb-0 fs-14">
-                                                أسرار الطيار تركز بشكل رئيسي على رضا العميل و سعادة.
+                                                @lang('website.pilot_secret_focuses_on_customer_satisfaction').
                                             </p>
                                         </div>
                                     </div>
@@ -335,15 +327,14 @@ background-repeat: no-repeat;
                                     <div class="why-us-item text-center p-4 py-5 border rounded bg-white h-100">
                                         <div class="why-us-content">
                                             <div class="why-us-icon mb-3">
-                                                <img src="{{global_asset('website') }}/images/icons/customer-service.svg"
+                                                <img src="{{ global_asset('website') }}/images/icons/customer-service.svg"
                                                     alt="customer service" width="70" />
                                             </div>
                                             <h4>
-                                                <a href="#">دعم 24 ساعة يومياً</a>
+                                                <a href="#">@lang('website.24_7_support')</a>
                                             </h4>
                                             <p class="mb-0 fs-14">
-                                                أسرار الطيار تدعم العملاء 24 ساعة في اليوم & 7 أيام
-                                                أسبوعياً.
+                                                @lang('website.pilot_secret_supports_customers_24_7').
                                             </p>
                                         </div>
                                     </div>
@@ -360,46 +351,24 @@ background-repeat: no-repeat;
     <!-- about-us ends -->
 
     <!-- partner starts -->
-    <section class="our-partner pb-6 pt-6 px-3">
+    <section class="our-partner pb-6 pt-6">
         <div class="container">
             <div class="section-title mb-6 w-75 mx-auto text-center">
-                <h4 class="mb-1 theme1">شركاء أسرار الطيار</h4>
+                <h4 class="mb-1 theme1">@lang('website.our partners')</h4>
                 <h2 class="mb-1">
-                    تعرف على <span class="theme">شركائنا</span> المميزين
+                     @lang('website.know about') <span class="theme">@lang('website.our parteners')</span>
                 </h2>
                 <p>
-                    تقدم أسرار الطيار خدمات الحجز الالكترونى للطيران والفنادق و الرحلات
-                    البحرية و التأشيرات و الرخص الدولية بأفضل الأسعار
+                    @lang('website.asrar altayran represents services of electronic reservations for flights , hotels , visa and international licencses')
                 </p>
             </div>
             <div class="our-partner p-0">
                 <div class="container">
                     <div class="partners_inner">
                         <ul>
-                            <li class="mb-2">
-                                <img src="{{global_asset('website') }}/images/logo.jpg" alt="Partner 1" />
-                            </li>
-                            <li class="mb-2">
-                                <img src="{{global_asset('website') }}/images/logo.jpg" alt="Partner 2" />
-                            </li>
-                            <li class="mb-2">
-                                <img src="{{global_asset('website') }}/images/logo.jpg" alt="Partner 3" />
-                            </li>
-                            <li class="mb-2">
-                                <img src="{{global_asset('website') }}/images/logo.jpg" alt="Partner 4" />
-                            </li>
-                            <li class="mb-2">
-                                <img src="{{global_asset('website') }}/images/logo.jpg" alt="Partner 5" />
-                            </li>
-                            <li class="mb-2">
-                                <img src="{{global_asset('website') }}/images/logo.jpg" alt="Partner 6" />
-                            </li>
-                            <li class="mb-2">
-                                <img src="{{global_asset('website') }}/images/logo.jpg" alt="Partner 7" />
-                            </li>
-                            <li class="mb-2">
-                                <img src="{{global_asset('website') }}/images/logo.jpg" alt="Partner 8" />
-                            </li>
+                            @foreach ($partners as $partner)
+                                <li class="mb-2"><img src="{{ $partner->logo_url }}" alt="Partner" /></li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>

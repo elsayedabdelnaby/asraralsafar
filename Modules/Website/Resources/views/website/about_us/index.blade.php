@@ -54,7 +54,7 @@
             <div class="section-title mb-6 text-center w-75 mx-auto">
                 <h4 class="mb-1 theme1">@lang('website.what clients say about us?')</h4>
                 <h2 class="mb-1">@lang('website.discover opinions') <span class="theme">@lang('website.clients') </span></h2>
-                <p>استكشف آراء العملاء ومدى رضائهم عن خدماتنا@lang('website.')</p>
+                <p>@lang('website.discover clients opinions and how much they are satisfied')</p>
             </div>
             <div class="row align-items-center">
                 <div class="col-lg-5 pe-4">
@@ -93,9 +93,9 @@
     <section class="our-partner pb-6 pt-6">
         <div class="container">
             <div class="section-title mb-6 w-75 mx-auto text-center">
-                <h4 class="mb-1 theme1">@lang('website.')شركاء أسرار الطيار</h4>
+                <h4 class="mb-1 theme1">@lang('website.our partners')</h4>
                 <h2 class="mb-1">
-                    تعرف على@lang('website.') <span class="theme">@lang('website.our parteners')</span> المميزين
+                     @lang('website.know about') <span class="theme">@lang('website.our parteners')</span>
                 </h2>
                 <p>
                     @lang('website.asrar altayran represents services of electronic reservations for flights , hotels , visa and international licencses')

@@ -3,7 +3,7 @@
     <!-- BreadCrumb Starts -->
     <section class="breadcrumb-main pb-8 pt-8 no-radius"
         style="
-  background-image: url({{global_asset('website') }}/images/tourism1.webp);
+  background-image: url({{ global_asset('website') }}/images/tourism1.webp);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top;
@@ -11,14 +11,14 @@
         <div class="breadcrumb-outer">
             <div class="container">
                 <div class="breadcrumb-content text-center">
-                    <h1 class="mb-3 fs-2">الرحلات السياحية</h1>
+                    <h1 class="mb-3 fs-2">@lang('website.tourism trips')</h1>
                     <nav aria-label="breadcrumb" class="d-block">
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item">
-                                <a class="text-white" href="#">الرئيسية</a>
+                                <a class="text-white" href="#">@lang('website.home page')</a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">
-                                الباقات و العروض
+                                @lang('website.Offers')
                             </li>
                         </ul>
                     </nav>
@@ -39,7 +39,7 @@
                             <div id="form-container">
                                 <form action="{{ route('package.index') }}" method="GET" id="my-form">
                                     <div class="sidebar-item mb-4">
-                                        <h4>المقصد السياحى</h4>
+                                        <h4>@lang('website.destination')</h4>
                                         <ul class="sidebar-category1">
                                             @foreach ($countryCounts as $countryId => $count)
                                                 <li>
@@ -53,7 +53,7 @@
                                     </div>
 
                                     <div class="sidebar-item mb-4">
-                                        <h4 class="">مدة الرحلة</h4>
+                                        <h4 class="">@lang('website.trip time')</h4>
                                         <ul class="sidebar-category1">
                                             <li>
                                                 <input type="checkbox" name="period[]" value="1-3 days" /> من 1 - 3 أيام
@@ -79,9 +79,9 @@
                                     </div>
 
                                     <div class="sidebar-item mb-4">
-                                        <h4 class="">سعر الرحلة</h4>
+                                        <h4 class="">@lang('website.trip price')</h4>
                                         <div class="range-slider mt-0">
-                                            <p class="text-start mb-2">نطاق السعر</p>
+                                            <p class="text-start mb-2">@lang('website.price scope')</p>
                                             <div data-min="0" data-max="2000" data-unit="$" data-min-name="min_price"
                                                 data-max-name="max_price"
                                                 class="range-slider-ui ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"
@@ -109,8 +109,8 @@
                                             <!-- Package content goes here -->
                                             <!-- Replace this with your package HTML structure -->
                                             <div class="trend-image position-relative">
-                                                <img src="{{global_asset("storage/website/$package->image") }}" alt="image"
-                                                    class="package" />
+                                                <img src="{{ global_asset("storage/website/$package->image") }}"
+                                                    alt="image" class="package" />
                                                 <div class="color-overlay"></div>
                                             </div>
                                             <div class="trend-content p-4 pt-5 position-relative">
@@ -187,22 +187,21 @@
                 <div class="call-banner-inner w-75 mx-auto text-center px-5">
                     <div class="trend-content-main">
                         <div class="trend-content mb-4 px-md-5 px-4">
-                            <h5 class="mb-1 theme">شركة أسرار الطيار</h5>
+                            <h5 class="mb-1 theme">@lang('website.company_name')</h5>
                             <h2>
-                                <a href="#">اكتشف نفسك !!
+                                <a href="#">@lang('website.discover_yourself') !!
                                     <span class="theme1">
-                                        سافر لأى مكان تريده حوال العالم</span></a>
+                                        @lang('website.travel_anywhere')</span></a>
                             </h2>
                             <p>
-                                تقدم أسرار الطيار خدمات الحجز الالكترونى للطيران والفنادق و
-                                الرحلات البحرية و التأشيرات و الرخص الدولية بأفضل الأسعار
+                                @lang('website.secret_pilot_services')
                             </p>
                         </div>
                         <div class="video-button text-center position-relative">
                             <div class="text-center">
                                 <a href="#" type="button" class="play-btn nir-btn">
                                     <i class="fa fa-plane me-1"></i>
-                                    <span>استكشف العروض</span>
+                                    <span>@lang('website.explore_offers')</span>
                                 </a>
                             </div>
                             <div class="video-figure"></div>
@@ -219,43 +218,21 @@
     <section class="our-partner pb-6 pt-6">
         <div class="container">
             <div class="section-title mb-6 w-75 mx-auto text-center">
-                <h4 class="mb-1 theme1">شركاء أسرار الطيار</h4>
+                <h4 class="mb-1 theme1">@lang('website.our partners')</h4>
                 <h2 class="mb-1">
-                    تعرف على <span class="theme">شركائنا</span> المميزين
+                     @lang('website.know about') <span class="theme">@lang('website.our parteners')</span>
                 </h2>
                 <p>
-                    تقدم أسرار الطيار خدمات الحجز الالكترونى للطيران والفنادق و الرحلات
-                    البحرية و التأشيرات و الرخص الدولية بأفضل الأسعار
+                    @lang('website.asrar altayran represents services of electronic reservations for flights , hotels , visa and international licencses')
                 </p>
             </div>
             <div class="our-partner p-0">
                 <div class="container">
                     <div class="partners_inner">
                         <ul>
-                            <li class="mb-2">
-                                <img src="images/logo.jpg" alt="Partner 1" />
-                            </li>
-                            <li class="mb-2">
-                                <img src="images/logo.jpg" alt="Partner 2" />
-                            </li>
-                            <li class="mb-2">
-                                <img src="images/logo.jpg" alt="Partner 3" />
-                            </li>
-                            <li class="mb-2">
-                                <img src="images/logo.jpg" alt="Partner 4" />
-                            </li>
-                            <li class="mb-2">
-                                <img src="images/logo.jpg" alt="Partner 5" />
-                            </li>
-                            <li class="mb-2">
-                                <img src="images/logo.jpg" alt="Partner 6" />
-                            </li>
-                            <li class="mb-2">
-                                <img src="images/logo.jpg" alt="Partner 7" />
-                            </li>
-                            <li class="mb-2">
-                                <img src="images/logo.jpg" alt="Partner 8" />
-                            </li>
+                            @foreach ($partners as $partner)
+                                <li class="mb-2"><img src="{{ $partner->logo_url }}" alt="Partner" /></li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
@@ -285,7 +262,7 @@
         <div class="col-xl-6">
           <div class="trend-item rounded box-shadow">
             <div class="trend-image position-relative">
-              <img src="{{global_asset("storage/website/$package->image") }}" alt="image" class="package" />
+              <img src="{{ global_asset("storage/website/$package->image") }}" alt="image" class="package" />
               <div class="color-overlay"></div>
             </div>
             <div class="trend-content p-4 pt-5 position-relative">

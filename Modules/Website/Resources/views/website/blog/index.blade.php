@@ -21,7 +21,7 @@
             <div class="listing-inner">
                 <div class="row">
                     <div class="col-12 text-sm-start text-center">
-                        <h1 class="fs-2 fw-bold">المقالات و الأخبار</h1>
+                        <h1 class="fs-2 fw-bold">@lang('website.articles ans news')</h1>
                     </div>
 
                     <div class="col-12">

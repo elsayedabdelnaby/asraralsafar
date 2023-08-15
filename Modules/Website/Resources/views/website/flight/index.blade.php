@@ -11,14 +11,14 @@
         <div class="breadcrumb-outer">
             <div class="container">
                 <div class="breadcrumb-content text-center">
-                    <h1 class="mb-3 fs-2">الرحلات الجوية</h1>
+                    <h1 class="mb-3 fs-2">@lang('website.air_trips')</h1>
                     <nav aria-label="breadcrumb" class="d-block">
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item">
-                                <a class="text-white" href="#">الرئيسية</a>
+                                <a class="text-white" href="#">@lang('website.home')</a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">
-                                حجز الرحلات الجوية
+                                @lang('website.book_air_trips')
                             </li>
                         </ul>
                     </nav>
@@ -57,7 +57,6 @@
                                                         {{ $flight->day }}
                                                         <br />
                                                         {{ Carbon\Carbon::parse($flight->traveling_date)->format('d F Y') }}
-
                                                     </h6>
                                                 </div>
                                             </div>
@@ -74,7 +73,7 @@
                                             <div class="item-inner text-end">
                                                 <p class="theme2 fs-4 fw-bold fs-18">{{ $flight->price }}
                                                     {{ $flight->price_currency }}</p>
-                                                <a href="#" class="nir-btn-black">احجز الآن</a>
+                                                <a href="#" class="nir-btn-black">@lang('website.book_now')</a>
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
@@ -87,10 +86,10 @@
                                                     </span>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <span class="badge bg-success rounded-2 px-2 fs-12">Airbus 320</span>
+                                                    <span class="badge bg-success rounded-2 px-2 fs-12">@lang('website.airbus_320')</span>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <span class="badge bg-secondary rounded-2 px-2 fs-12">وجبات طازجة</span>
+                                                    <span class="badge bg-secondary rounded-2 px-2 fs-12">@lang('website.fresh_meals')</span>
                                                 </li>
                                             </ul>
                                         </div>
@@ -130,11 +129,10 @@
                                                 <ul class="pb-2 mb-2 border-b">
                                                     <li class="me-1 p-2 bg-grey d-inline-block rounded">
                                                         <input type="radio" name="flight_type" value="going_and_return" />
-                                                        ذهاب / عودة
+                                                        @lang('website.going_and_return')
                                                     </li>
                                                     <li class="me-1 p-2 bg-grey d-inline-block rounded">
-                                                        <input type="radio" name="flight_type" value="going_only" /> ذهاب
-                                                        فقط
+                                                        <input type="radio" name="flight_type" value="going_only" /> @lang('website.going_only')
                                                     </li>
                                                 </ul>
                                             </div>
@@ -142,7 +140,7 @@
                                                 <div class="col-lg-6 mb-2">
                                                     <div class="form-group">
                                                         <div class="input-box">
-                                                            <label>محطة الإقلاع</label>
+                                                            <label>@lang('website.takeoff_station')</label>
                                                             <select class="niceSelect" name="takeoff_station_id">
                                                                 @foreach ($takeoffStations as $station)
                                                                     <option value="{{ $station->id }}">
@@ -156,7 +154,7 @@
                                                 <div class="col-lg-6 mb-2">
                                                     <div class="form-group">
                                                         <div class="input-box">
-                                                            <label>محطة الوصول</label>
+                                                            <label>@lang('website.arrival_station')</label>
                                                             <select class="niceSelect" name="arrival_station_id">
                                                                 @foreach ($arrivalStations as $station)
                                                                     <option value="{{ $station->id }}">
@@ -172,7 +170,7 @@
                                                 <div class="col-lg-6 mb-2">
                                                     <div class="form-group">
                                                         <div class="input-box">
-                                                            <label>تاريخ السفر</label>
+                                                            <label>@lang('website.travel_date')</label>
                                                             <input type="date" name="traveling_date" />
                                                         </div>
                                                     </div>
@@ -180,7 +178,7 @@
                                                 <div class="col-lg-6 mb-2">
                                                     <div class="form-group">
                                                         <div class="input-box">
-                                                            <label>تاريخ العودة</label>
+                                                            <label>@lang('website.return_date')</label>
                                                             <input type="date" name="return_date" />
                                                         </div>
                                                     </div>
@@ -189,8 +187,7 @@
                                             <div class="col-lg-12">
                                                 <div class="form-group mb-0 text-center">
                                                     <button type="submit" class="nir-btn w-100"><i
-                                                            class="fa fa-search me-2 mirror-ar"></i> بحث فى
-                                                        الرحلات</button>
+                                                            class="fa fa-search me-2 mirror-ar"></i> @lang('website.search_flights')</button>
                                                 </div>
                                             </div>
                                         </form>
@@ -199,7 +196,7 @@
                             </div>
                             <form action="{{ route('flight.index') }}" method="GET" id="my-form">
                                 <div class="sidebar-item mb-4">
-                                    <h5 class="">نطاق الأسعار</h5>
+                                    <h5 class="">@lang('website.price_range')</h5>
                                     <div class="range-slider mt-0">
                                         <div data-min="0" data-max="100000" data-unit="$" data-min-name="min_price"
                                             data-max-name="max_price"
@@ -215,21 +212,21 @@
                                 </div>
 
                                 <div class="sidebar-item mb-4">
-                                    <h5 class="">فئة السفر</h5>
+                                    <h5 class="">@lang('website.travel_class')</h5>
                                     <ul class="sidebar-category1">
                                         <li>
-                                            <input type="checkbox" name="categories[]" value="economic" /> إقتصادى
+                                            <input type="checkbox" name="categories[]" value="economic" /> @lang('website.economic')
                                             <span class="float-end">{{ $economicTypeCount }}</span>
                                         </li>
                                         <li>
-                                            <input type="checkbox" name="categories[]" value="business_men" /> رجال أعمال
+                                            <input type="checkbox" name="categories[]" value="business_men" /> @lang('website.business_men')
                                             <span class="float-end">{{ $businessMenTypeCount }}</span>
                                         </li>
                                     </ul>
                                 </div>
 
                                 <div class="sidebar-item mb-4" id="append">
-                                    <h5 class="">الخطوط الجوية</h5>
+                                    <h5 class="">@lang('website.airlines')</h5>
                                     <ul class="sidebar-category1">
                                         @foreach ($airLines as $airLine)
                                             <li>
@@ -240,7 +237,7 @@
                                         @endforeach
                                     </ul>
                                 </div>
-                                <form>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -265,22 +262,21 @@
                 <div class="call-banner-inner w-75 mx-auto text-center px-5">
                     <div class="trend-content-main">
                         <div class="trend-content mb-4 px-md-5 px-4">
-                            <h5 class="mb-1 theme">شركة أسرار الطيار</h5>
+                            <h5 class="mb-1 theme1">@lang('website.secrets_of_pilot_company')</h5>
                             <h2>
-                                <a href="#">اكتشف نفسك !!
+                                <a href="#">@lang('website.discover_yourself')!!
                                     <span class="theme1">
-                                        سافر لأى مكان تريده حوال العالم</span></a>
+                                        @lang('website.travel_anywhere_around_the_world')</span></a>
                             </h2>
                             <p>
-                                تقدم أسرار الطيار خدمات الحجز الالكترونى للطيران والفنادق و
-                                الرحلات البحرية و التأشيرات و الرخص الدولية بأفضل الأسعار
+                                @lang('website.secrets_of_pilot_provide_services')
                             </p>
                         </div>
                         <div class="video-button text-center position-relative">
                             <div class="text-center">
                                 <a href="#" type="button" class="play-btn nir-btn">
                                     <i class="fa fa-plane me-1"></i>
-                                    <span>استكشف العروض</span>
+                                    <span>@lang('website.explore_offers')</span>
                                 </a>
                             </div>
                             <div class="video-figure"></div>
@@ -297,43 +293,21 @@
     <section class="our-partner pb-6 pt-6">
         <div class="container">
             <div class="section-title mb-6 w-75 mx-auto text-center">
-                <h4 class="mb-1 theme1">شركاء أسرار الطيار</h4>
+                <h4 class="mb-1 theme1">@lang('website.our partners')</h4>
                 <h2 class="mb-1">
-                    تعرف على <span class="theme">شركائنا</span> المميزين
+                     @lang('website.know about') <span class="theme">@lang('website.our parteners')</span>
                 </h2>
                 <p>
-                    تقدم أسرار الطيار خدمات الحجز الالكترونى للطيران والفنادق و الرحلات
-                    البحرية و التأشيرات و الرخص الدولية بأفضل الأسعار
+                    @lang('website.asrar altayran represents services of electronic reservations for flights , hotels , visa and international licencses')
                 </p>
             </div>
             <div class="our-partner p-0">
                 <div class="container">
                     <div class="partners_inner">
                         <ul>
-                            <li class="mb-2">
-                                <img src="images/logo.jpg" alt="Partner 1" />
-                            </li>
-                            <li class="mb-2">
-                                <img src="images/logo.jpg" alt="Partner 2" />
-                            </li>
-                            <li class="mb-2">
-                                <img src="images/logo.jpg" alt="Partner 3" />
-                            </li>
-                            <li class="mb-2">
-                                <img src="images/logo.jpg" alt="Partner 4" />
-                            </li>
-                            <li class="mb-2">
-                                <img src="images/logo.jpg" alt="Partner 5" />
-                            </li>
-                            <li class="mb-2">
-                                <img src="images/logo.jpg" alt="Partner 6" />
-                            </li>
-                            <li class="mb-2">
-                                <img src="images/logo.jpg" alt="Partner 7" />
-                            </li>
-                            <li class="mb-2">
-                                <img src="images/logo.jpg" alt="Partner 8" />
-                            </li>
+                            @foreach ($partners as $partner)
+                                <li class="mb-2"><img src="{{ $partner->logo_url }}" alt="Partner" /></li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
@@ -342,6 +316,7 @@
     </section>
     <!-- partner ends -->
 @endsection
+
 @push('js')
     <script>
         $(document).ready(function() {

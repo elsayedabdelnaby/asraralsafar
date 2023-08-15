@@ -5,7 +5,6 @@
         $metaPageTitle = !empty($metaPage->first()->meta_page_title) ? $metaPage->first()->meta_page_title : '';
         $metaPageDescription = !empty($metaPage->first()->meta_page_description) ? $metaPage->first()->meta_page_description : '';
         $imageUrl = !empty($metaPage->first()->image_url) ? $metaPage->first()->image_url : '';
-
     @endphp
     @section('meta_page')
         <meta property="og:title" content="{{ $metaPageTitle }}">
@@ -27,14 +26,14 @@
         <div class="breadcrumb-outer">
             <div class="container">
                 <div class="breadcrumb-content text-center">
-                    <h1 class="mb-3 fs-2">تواصل معنــا</h1>
+                    <h1 class="mb-3 fs-2">@lang('website.Contact Us')</h1>
                     <nav aria-label="breadcrumb" class="d-block">
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item">
-                                <a class="text-white" href="#">الرئيسية</a>
+                                <a class="text-white" href="#">@lang('website.Home')</a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">
-                                تواصل معنـا
+                                @lang('website.Contact Us')
                             </li>
                         </ul>
                     </nav>
@@ -53,11 +52,9 @@
                     <div class="col-lg-10 col-offset-lg-1 mx-auto">
                         <div class="contact-info bg-white">
                             <div class="contact-info-title text-center mb-4 px-5">
-                                <h3 class="mb-1">بيانات التواصل معنـا</h3>
+                                <h3 class="mb-1">@lang('website.Contact Data')</h3>
                                 <p class="mb-0">
-                                    تواصل معنا من خلال رقم الموبايل أو الواتساب أو البريد
-                                    الإلكترونى أو قم بزيارة الشركة من خلال العنوان الموضح ـ أيضا
-                                    يمكنك ملء الاستمارة بالأسفل وارسال رسالة لنا
+                                    @lang('website.Contact us through mobile number, WhatsApp, email, or visit our company through the address provided. You can also fill out the form below and send us a message.')
                                 </p>
                             </div>
                             <div class="contact-info-content row mb-5 g-4">
@@ -68,7 +65,7 @@
                                                 alt="Location" width="80" />
                                         </div>
                                         <div class="info-content">
-                                            <h3>زيارة موقعنا</h3>
+                                            <h3>@lang('website.Visit Our Location')</h3>
                                             @foreach ($locationInfo as $info)
                                                 <p class="m-0">
                                                     {{ $info }}
@@ -84,7 +81,7 @@
                                                 width="80" />
                                         </div>
                                         <div class="info-content">
-                                            <h3>رقم الهاتف</h3>
+                                            <h3>@lang('website.Phone Number')</h3>
                                             @foreach ($phoneInfo as $info)
                                                 <p class="m-0">
                                                     {{ $info }}
@@ -100,7 +97,7 @@
                                                 width="80" />
                                         </div>
                                         <div class="info-content ps-4">
-                                            <h3>البريد الإلكترونى</h3>
+                                            <h3>@lang('website.Email')</h3>
                                             @foreach ($emailInfo as $info)
                                                 <p class="m-0 fs-18">
                                                     {{ $info }}
@@ -137,22 +134,22 @@
                                             @csrf
                                             <div class="form-group mb-2">
                                                 <input type="text" name="first_name" class="form-control"
-                                                    placeholder="الإسم الأول" />
+                                                    placeholder="@lang('website.First Name')" />
                                             </div>
                                             <div class="form-group mb-2">
                                                 <input type="text" name="last_name" class="form-control"
-                                                    placeholder="الإسم الأخير" />
+                                                    placeholder="@lang('website.Last Name')" />
                                             </div>
                                             <div class="form-group mb-2">
                                                 <input type="text" name="email" class="form-control"
-                                                    placeholder="البريد الإلكترونى" />
+                                                    placeholder="@lang('website.Email')" />
                                             </div>
                                             <div class="form-group mb-2">
                                                 <input type="text" name="phone" class="form-control"
-                                                    placeholder="رقم الموبايل أو الواتساب" />
+                                                    placeholder="@lang('website.Mobile Number or WhatsApp')" />
                                             </div>
                                             <div class="textarea mb-2">
-                                                <textarea name="message" placeholder="رسالتك إلينا"></textarea>
+                                                <textarea name="message" placeholder="@lang('website.Your Message')"></textarea>
                                             </div>
                                             <div class="comment-btn text-center">
                                                 <input type="submit" class="nir-btn w-100" />

@@ -11,7 +11,7 @@ class GetAllActiveTestimonailsAction
 {
     public function handle()
     {
-        $testimonails = Testimonail::currentLanguageTranslation('testimonails', 'Testimonail_translations', 'testimonail_id')
+        $testimonails = Testimonail::currentLanguageTranslation('testimonails', 'testimonail_translations', 'testimonail_id')
             ->active();
         return $testimonails;
     }
