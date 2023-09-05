@@ -51,15 +51,27 @@
                                             <label
                                                 class="col-lg-4 col-form-label text-right">{{ __('website::dashboard.name') }}:</label>
                                             <div class="col-lg-8">
-                                                <x-dashboard.form.inputs.text :id="''" :class="'form-control'" :name="'name'"
-                                                    :placeholder="__('website::dashboard.website_name')" :value="$translation->name" :isRequired="true" :requiredMessage="__('website::dashboard.name_is_required')"
-                                                    :maxlength="100" :maxlengthMessage="__(
+                                                <x-dashboard.form.inputs.text :id="''" :class="'form-control'"
+                                                    :name="'name'" :placeholder="__('website::dashboard.website_name')" :value="$translation->name" :isRequired="true"
+                                                    :requiredMessage="__('website::dashboard.name_is_required')" :maxlength="100" :maxlengthMessage="__(
                                                         'website::dashboard.number_of_characters_must_less_than_or_equal_100',
                                                     )" />
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-4"></div>
+                                    <div class="col-md-4 my-7">
+                                        <div class="row">
+                                            <label
+                                                class="col-lg-4 col-form-label text-right">{{ __('website::dashboard.address') }}:</label>
+                                            <div class="col-lg-8">
+                                                <x-dashboard.form.inputs.text-area :id="''" :class="'form-control'"
+                                                    :name="'address'" :placeholder="__('website::dashboard.address')" :value="$translation->address"
+                                                    :isRequired="true" :requiredMessage="__('website::dashboard.address_is_required')" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="offset-md-2 col-md-4">
                                         <a href="javascript:;" data-repeater-delete=""
                                             class="btn btn-sm font-weight-bolder btn-light-danger">
                                             <i class="la la-trash-o"></i>{{ __('website::dashboard.delete') }}
@@ -159,6 +171,16 @@
                     <!-- End Google Analytics Code -->
                 </div>
                 <!-- End Pixel Code -->
+                <div class="form-group row">
+                    <!-- Google Map Link -->
+                    <label
+                        class="col-xl-2 col-lg-2 col-form-label text-left">{{ __('website::dashboard.google_map_link') }}</label>
+                    <div class="col-3 col-xl-3 col-lg-3">
+                        <x-dashboard.form.inputs.text-area :id="''" :class="'form-control'" :name="'address_google_map_link'"
+                            :isRequired="true" :requiredMessage="__('website::dashboard.google_map_link_is_required')" :placeholder="__('website::dashboard.google_map_link')" :value="$website_information->address_google_map_link" />
+                    </div>
+                    <!-- End Google Map Link -->
+                </div>
             </div>
             <div class="card-footer">
                 <div class="row">

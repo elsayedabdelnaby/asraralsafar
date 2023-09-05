@@ -140,6 +140,15 @@
                     <span class="menu-text">{{ __('dashboard.main_sliders') }}</span>
                 </a>
             </li>
+            <li class="menu-item {{ request()->routeIs('dashboard.website.services.*') ? 'menu-item-active' : null }}"
+                aria-haspopup="true">
+                <a href="{{ route('dashboard.website.services.index') }}" class="menu-link">
+                    <i class="menu-bullet menu-bullet-line">
+                        <span></span>
+                    </i>
+                    <span class="menu-text">{{ __('dashboard.services') }}</span>
+                </a>
+            </li>
         </ul>
     </div>
 </li>

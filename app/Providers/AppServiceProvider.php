@@ -37,10 +37,12 @@ class AppServiceProvider extends ServiceProvider
         $footerSections = FooterSection::with('translations')->get();
         $socialLinks = (new GetAllActiveSocialLinksAction)->handle()->orderBy('display_order')->get();
         $infoMail = (new GetAllActiveContactInformationsAction)->handle()->where('type', 'email')->first();
-        $phoneNumber = (new GetAllActiveContactInformationsAction)->handle()->where('type', 'phone')->first();
+        $phoneNumbers = (new GetAllActiveContactInformationsAction)->handle()->where('type', 'phone')->get();
+        $whatsApp = (new GetAllActiveContactInformationsAction)->handle()->where('type', 'whatsapp')->first();
         view()->share('footerSections', $footerSections);
         view()->share('socialLinks', $socialLinks);
         view()->share('infoMail', $infoMail);
-        view()->share('phoneNumber', $phoneNumber);
+        view()->share('phoneNumbers', $phoneNumbers);
+        view()->share('whatsApp', $whatsApp);
     }
 }

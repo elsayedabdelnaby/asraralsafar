@@ -155,4 +155,5 @@ return [
     'about_us' => 'About us',
     'partners' => 'Partners',
     'testimonails' => 'Testimonials',
+    'services' => 'Services',
 ];

@@ -25,7 +25,7 @@ class WebsiteInformation extends Model
      *
      * @var array
      */
-    protected $appends = ['name', 'main_logo_url', 'footer_logo_url'];
+    protected $appends = ['name', 'main_logo_url', 'footer_logo_url', 'address_google_map_link'];
 
     /**
      * Interact with the Website's name.

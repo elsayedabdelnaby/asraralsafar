@@ -39,7 +39,10 @@ class UpdateInformationAction
             $languages[] = $translation['language_id'];
             WebsiteInformationTranslation::updateOrCreate(
                 ['language_id' => $translation['language_id'], 'website_information_id' => $website_information->id],
-                ['name' => $translation['name']]
+                [
+                    'name' => $translation['name'],
+                    'address' => $translation['address']
+                ],
             );
         }
 
@@ -56,6 +59,7 @@ class UpdateInformationAction
         $website_information->footer_logo = $footer_logo;
         $website_information->facebook_pixel_code = $request->facebook_pixel_code;
         $website_information->google_analytics_code = $request->google_analytics_code;
+        $website_information->address_google_map_link = $request->address_google_map_link;
         $website_information->save();
         return $website_information;
     }

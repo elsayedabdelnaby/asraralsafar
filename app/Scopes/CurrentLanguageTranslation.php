@@ -21,8 +21,10 @@ trait CurrentLanguageTranslation
      */
     public function scopeCurrentLanguageTranslation($query, $table, $translations_table, $id)
     {
-        return $query->leftJoin($translations_table, $translations_table . '.' . $id, '=', $table . '.id')
-            ->where($translations_table . '.language_id', getCurrentLanguage()->id);
+        return $query->leftJoin($translations_table, function ($query) use ($translations_table, $id, $table) {
+            $query->on($translations_table . '.' . $id, '=', $table . '.id')
+                ->where($translations_table . '.language_id', getCurrentLanguage()->id);
+        });
     }
 
     /**

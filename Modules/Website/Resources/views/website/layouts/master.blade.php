@@ -221,7 +221,7 @@
 
     <!-- Whatsapp -->
 
-    <a href="#" class="fixed-whatsapp">
+    <a href="https://wa.me/{{ $whatsApp }}" class="fixed-whatsapp">
         <img src="{{ global_asset('website/images/icons/whatsapp.svg') }}" alt="Whatsapp" />
     </a>
 

@@ -15,6 +15,7 @@ use Modules\Website\Http\Controllers\Dashboard\FAQController;
 use Modules\Website\Http\Controllers\Dashboard\BlogController;
 use Modules\Website\Http\Controllers\Dashboard\AboutUsController;
 use Modules\Website\Http\Controllers\Dashboard\PartnerController;
+use Modules\Website\Http\Controllers\Dashboard\ServiceController;
 use Modules\Website\Http\Controllers\Dashboard\MetaPageController;
 use Modules\Website\Http\Controllers\Dashboard\FooterLinkController;
 use Modules\Website\Http\Controllers\Dashboard\MainSliderController;
@@ -184,6 +185,18 @@ Route::name('dashboard.')->middleware(['isAdmin'])->prefix("dashboard")->group(f
             Route::put('{id}', 'update')->middleware('hasPermission:update-testimonail')->name('update');
             Route::delete('{id}', 'destroy')->middleware('hasPermission:delete-testimonail')->name('destroy');
             Route::put('{id}/toggle', 'toggle')->middleware('hasPermission:update-testimonail')->name('toggle-status');
+        });
+
+        // routes of services
+        Route::prefix('services')->name('services.')->controller(ServiceController::class)->group(function () {
+            Route::get('', 'index')->name('index');
+            Route::get('create', 'create')->middleware('hasPermission:create-service')->name('create');
+            Route::post('', 'store')->middleware('hasPermission:create-service')->name('store');
+            Route::get('{id}', 'show')->middleware('hasPermission:view-service')->name('show');
+            Route::get('{id}/edit', 'edit')->middleware('hasPermission:update-service')->name('edit');
+            Route::put('{id}', 'update')->middleware('hasPermission:update-service')->name('update');
+            Route::delete('{id}', 'destroy')->middleware('hasPermission:delete-service')->name('destroy');
+            Route::put('{id}/toggle', 'toggle')->middleware('hasPermission:update-service')->name('toggle-status');
         });
     });
 });

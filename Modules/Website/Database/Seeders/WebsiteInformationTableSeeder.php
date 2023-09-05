@@ -24,8 +24,8 @@ class WebsiteInformationTableSeeder extends Seeder
             'updated_by' => 1,
         ]);
         WebsiteInformationTranslation::insert([
-            ['website_information_id' => $website_information->id, 'language_id' => 1, 'name' => 'Wagbat'],
-            ['website_information_id' => $website_information->id, 'language_id' => 2, 'name' => 'وجبات']
+            ['website_information_id' => $website_information->id, 'language_id' => 1, 'name' => 'Asrar Altayyar'],
+            ['website_information_id' => $website_information->id, 'language_id' => 2, 'name' => 'اسرار الطيار']
         ]);
     }
 }

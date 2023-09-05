@@ -13,9 +13,9 @@ trait WithCategory
      */
     public function scopeWithCategory($query, $column_name)
     {
-        return $query->join("categorizables", "categorizables.categorizable_id", "=", $column_name)
-            ->join('categories', 'categories.id', '=', "categorizables.category_id")
-            ->join('category_translations', 'categories.id', '=', 'category_translations.category_id')
+        return $query->leftJoin("categorizables", "categorizables.categorizable_id", "=", $column_name)
+            ->leftJoin('categories', 'categories.id', '=', "categorizables.category_id")
+            ->leftJoin('category_translations', 'categories.id', '=', 'category_translations.category_id')
             ->whereNull(['categories.deleted_at', 'category_translations.deleted_at']);
     }
 }

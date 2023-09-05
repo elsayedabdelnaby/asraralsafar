@@ -22,7 +22,7 @@ class WebsiteInformationTranslation extends Model
      *
      * @var array
      */
-    protected $fillable = ['website_information_id', 'language_id', 'name'];
+    protected $fillable = ['website_information_id', 'language_id', 'name', 'address'];
 
     /**
      * return the website information which related by the current website information translations.

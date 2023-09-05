@@ -9,6 +9,7 @@ use Modules\Website\Entities\MetaPage;
 use Modules\Website\Entities\Statistic;
 use Illuminate\Contracts\Support\Renderable;
 use Modules\Website\Actions\Partners\GetAllActivePartnersAction;
+use Modules\Website\Actions\Services\GetAllActiveServicesAction;
 use Modules\Website\Actions\Testimonails\GetAllActiveTestimonailsAction;
 
 class IndexPageController extends Controller
@@ -28,9 +29,10 @@ class IndexPageController extends Controller
         return view('website::website.index_page.index', [
             'statistics' => Statistic::with('translations')->get(),
             'blogs' => Blog::with('translations')->latest()->take(3)->get(),
-            // 'testimonails' => (new GetAllActiveTestimonailsAction)->handle()->orderBy('display_order')->get(),
+            'testimonails' => (new GetAllActiveTestimonailsAction)->handle()->orderBy('display_order')->get(),
             'partners' => (new GetAllActivePartnersAction)->handle()->orderBy('display_order')->get(),
-            'metaPage' => $metaPage
+            'metaPage' => $metaPage,
+            'services' => (new GetAllActiveServicesAction)->handle()->orderBy('display_order')->get()
         ]);
     }
 

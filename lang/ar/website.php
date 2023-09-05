@@ -203,4 +203,10 @@ return [
     'secret_pilot_provide_services' => 'أسرار الطيار تقدم خدمات',
     'Explore' => 'استكشاف',
     'tourism trips' => 'رحلات سياحية',
+    'register_now' => 'سجل الان',
+    'Our Testimonails' => 'اراء عملائنا',
+    'Good Reviews By' => 'تقييمات جيدة بواسطة',
+    'Clients' => 'عملائنا',
+    'next' => 'التالى',
+    'previous' => 'السابق',
 ];

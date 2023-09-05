@@ -23,6 +23,10 @@ return [
     'website' => 'Website',
     'change_image' => 'Change image',
     'active' => 'Active',
+    'address' => 'Address',
+    'address_is_required' => 'Address is required',
+    'google_map_link' => 'Google map link',
+    'google_map_link_is_required' => 'Google map link is required',
     // privacy policy
     'privacy_policies' => 'Privacy policies',
     'title' => 'Title',
@@ -217,4 +221,12 @@ return [
     'the_testimonail_toggle_was_successfully' => 'The Testimonail Toggle Was Successfully',
     'edit_testimonail' => 'Edit Testimonail',
     'enter_testimonail_details_and_submit' => 'Enter Testimonail Details and Submit',
+    'services' => 'Services',
+    'new_service' => 'New Service',
+    'the_language_of_the_service_details' => 'The Language of the Service Details',
+    'service_title' => 'Service Title',
+    'service_slug' => 'Service Slug',
+    'enter_service_details_and_submit' => 'Enter Service Details and Submit',
+    'edit_service' => 'Edit Service',
+    'the_service_toggle_was_successfully' => 'The Service toggle was successfully',
 ];

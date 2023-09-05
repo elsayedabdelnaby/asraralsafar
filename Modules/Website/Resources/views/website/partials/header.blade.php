@@ -8,14 +8,16 @@
                             AM – 6.00 PM</span>
                     </li>
                     <li>
-                        <a href="#" class="text-white fs-12"><i class="icon-location-pin white me-1"></i> Dokki,
-                            Egypt</a>
+                        <a href="{{ $websiteInfo->address_google_map_link }}" class="text-white fs-12" target="_blank"><i
+                                class="icon-location-pin white me-1"></i>
+                            {{ $websiteInfo->translations()->where('language_id', getCurrentLanguage()->id)->first()->address }}</a>
                     </li>
                     <!-- Render of these according to language. -->
                     <li>
-                        <a href="{{ route('set-locale') }}" class="text-white fs-12"><img class="me-1" width="20"
-                                height="auto" src="{{global_asset('website/images/egypt.svg') }}" alt="Arabic" />
-                            {{ app()->getLocale() == 'en' ? 'Arabic' : 'English' }}</a>
+                        <a href="{{ LaravelLocalization::getLocalizedURL(getMainLanguage()->code) }}"
+                            class="text-white fs-12"><img class="me-1" width="20" height="auto"
+                                src="{{ global_asset('website/images/egypt.svg') }}" alt="Arabic" />
+                            {{ app()->getLocale() == 'en' ? 'Arabic' : 'Arabic' }}</a>
                     </li>
                 </ul>
             </div>
@@ -28,15 +30,6 @@
                             </a>
                         </li>
                     @endforeach
-                    {{-- <li>
-                        <a href="#" class="white"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-                    </li>
-                    <li>
-                        <a href="#" class="white"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-                    </li>
-                    <li>
-                        <a href="#" class="white"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
-                    </li> --}}
                 </ul>
             </div>
         </div>
@@ -49,7 +42,7 @@
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
                         <a class="navbar-brand" href="{{ url('/') }}">
-                            <img src="{{global_asset("storage/website/$websiteInfo->main_logo") }}" width="150"
+                            <img src="{{ global_asset("storage/website/$websiteInfo->main_logo") }}" width="150"
                                 alt="image" />
                         </a>
                     </div>

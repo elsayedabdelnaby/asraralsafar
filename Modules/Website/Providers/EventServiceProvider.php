@@ -5,24 +5,26 @@ namespace Modules\Website\Providers;
 use Modules\Website\Entities\FAQ;
 use Modules\Website\Entities\Blog;
 use Modules\Website\Entities\AboutUs;
+use Modules\Website\Entities\Service;
 use Modules\Website\Entities\MetaPage;
 use Modules\Website\Entities\FooterLink;
+use Modules\Website\Entities\Testimonail;
 use Modules\Website\Observers\FAQObserver;
 use Modules\Website\Entities\FooterSection;
 use Modules\Website\Entities\PrivacyPolicy;
 use Modules\Website\Entities\TermCondition;
 use Modules\Website\Observers\BlogObserver;
 use Modules\Website\Observers\AboutUsObserver;
+use Modules\Website\Observers\ServiceObserver;
 use Modules\Website\Observers\MetaPageObserver;
 use Modules\Website\Entities\WebsiteInformation;
 use Modules\Website\Observers\FooterLinkObserver;
+use Modules\Website\Observers\TestimonailObserver;
 use Modules\Website\Observers\FooterSectionObserver;
 use Modules\Website\Observers\PrivacyPolicyObserver;
 use Modules\Website\Observers\TermConditionObserver;
 use Modules\Website\Observers\WebsiteInformationObserver;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
-use Modules\Website\Entities\Testimonail;
-use Modules\Website\Observers\TestimonailObserver;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -49,6 +51,7 @@ class EventServiceProvider extends ServiceProvider
         Blog::class => [BlogObserver::class],
         AboutUs::class => [AboutUsObserver::class],
         Testimonail::class => [TestimonailObserver::class],
+        Service::class => [ServiceObserver::class],
     ];
 
     /**

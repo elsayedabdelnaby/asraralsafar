@@ -150,7 +150,7 @@ class Blog extends Model
     protected function categoryId(): Attribute
     {
         return new Attribute(
-            get: fn () => $this->categories()->first()->id,
+            get: fn () => $this->categories()->first()?->id,
         );
     }
 

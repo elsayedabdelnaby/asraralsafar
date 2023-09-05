@@ -21,75 +21,51 @@
     <!-- banner starts -->
     <section class="banner pt-10 pb-0 overflow-hidden"
         style="
-    background: linear-gradient(
-        to bottom left,
-        #ffffffc6,
-        #ffffffc6,
-        #d5dfffcd
-      ),
-      url(images/tourism2.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-  ">
+       background: linear-gradient(
+           to bottom left,
+           #ffffffc6,
+           #ffffffc6,
+           #d5dfffcd
+         ),
+         url(images/tourism2.jpg);
+       background-size: cover;
+       background-repeat: no-repeat;
+     ">
         <div class="container">
             <div class="banner-in">
                 <div class="row align-items-center">
                     <div class="col-lg-6 mb-4">
                         <div class="banner-content text-lg-start text-center">
-                            <h4 class="theme mb-0">@lang('website.Explore The World')</h4>
-                            <h1>@lang('website.Start Planning Your Dream Trip Today!')</h1>
+                            <h4 class="theme mb-0">شاهد العالم من خلالنا</h4>
+                            <h1 class="text-success fs-38">
+                                ابدأ التخطيط لرحلة أحلامك اليوم!
+                            </h1>
                             <p class="mb-4">
-                                @lang('website.')Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                do eiusmod tempor incididunt ut labore
+                                تقدم أسرار الطيار خدمات الحجز الالكترونى للطيران والفنادق و
+                                الرحلات البحرية و التأشيرات و الرخص الدولية بأفضل الأسعار
                             </p>
                             <div class="book-form">
                                 <div class="row d-flex align-items-center justify-content-between">
-                                    <div class="col-lg-6 mb-2">
+                                    <div class="col-12 mb-2">
                                         <div class="form-group">
                                             <div class="input-box">
                                                 <select class="niceSelect">
-                                                    <option value="1">@lang('website.Destination')</option>
-                                                    <option value="2">@lang('website.Argentina')</option>
-                                                    <option value="3">@lang('website.Belgium')</option>
-                                                    <option value="4">@lang('website.Canada')</option>
-                                                    <option value="5">@lang('website.Denmark')</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 mb-2">
-                                        <div class="form-group">
-                                            <div class="input-box">
-                                                <input class="form-control" type="datetime-local" name="date"
-                                                    placeholder="Select Date" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 mb-2">
-                                        <div class="form-group">
-                                            <div class="input-box">
-                                                <select class="niceSelect">
-                                                    <option value="1">@lang('website.Travel Type')</option>
-                                                    <option value="2">@lang('website.City Tour')</option>
-                                                    <option value="3">@lang('website.Family Tour')</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 mb-2">
-                                        <div class="form-group">
-                                            <div class="input-box">
-                                                <select class="niceSelect">
-                                                    <option value="1">@lang('website.Tour Duration')</option>
-                                                    <option value="2">@lang('website.5 days')</option>
-                                                    <option value="3">@lang('website.7 Days')</option>
+                                                    <option value="">اختر الخدمة</option>
+                                                    <option value="1">حجز طيران</option>
+                                                    <option value="2">رحلات بحرية</option>
+                                                    <option value="2">رخص دولية</option>
+                                                    <option value="2">تأشيرات</option>
+                                                    <option value="2">السياحة العلاجية</option>
+                                                    <option value="2">السياحة التعليمية</option>
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="form-group mb-0 text-center">
-                                            <a href="#" class="nir-btn w-100"><i class="fa fa-search me-2"></i> @lang('website.Search Now')</a>
+                                            <a href="./packages.rtl.html" class="nir-btn w-100"><i
+                                                    class="fa fa-search me-2"></i> ابحث / طلب التواصل
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -98,93 +74,47 @@
                     </div>
                     <div class="col-lg-6 mb-4">
                         <div class="banner-image">
-                            <img src="{{global_asset('website') }}/images/travel.png" alt="travel" />
+                            <img src="{{ global_asset('website/') }}/images/travel.png" alt="travel" />
                         </div>
                     </div>
                 </div>
                 <div class="category-main-inner border-t pt-1 mb-4">
-                    <div class="row g-4">
-                        <div class="col-xl-2 col-lg-4 col-md-6">
-                            <div
-                                class="category-item box-shadow p-3 py-4 text-center bg-white rounded overflow-hidden h-100">
-                                <div class="trending-topic-content">
-                                    <img width="20" src="{{global_asset('website') }}/images/hotel.svg"
-                                        class="mb-1 d-inline-block" alt="Book Hotel" />
-                                    <h4 class="mb-0 fs-18">
-                                        <a href="#">@lang('website.Hotels')</a>
-                                    </h4>
+                    <div class="row d-flex justify-content-center g-4">
+                        @foreach ($services as $service)
+                            <div class="col-xl-2 col-lg-4 col-md-6">
+                                <div class="category-item box-shadow p-3 py-4 text-center bg-white rounded overflow-hidden">
+                                    <div class="trending-topic-content">
+                                        <img width="20" src="{{ $service->image_url }}" class="mb-1 d-inline-block"
+                                            alt="Book Hotel" />
+                                        <h4 class="mb-0 fs-18">
+                                            <a href="./request.booking.rtl.html">{{ $service->name }}</a>
+                                        </h4>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xl-2 col-lg-4 col-md-6">
-                            <div
-                                class="category-item box-shadow p-3 py-4 text-center bg-white rounded overflow-hidden h-100">
-                                <div class="trending-topic-content text-center">
-                                    <img src="{{global_asset('website') }}/images/plane.svg" class="mb-1 d-inline-block"
-                                        alt="Flight" />
-                                    <h4 class="mb-0 fs-18">
-                                        <a href="#">@lang('website.Flights')</a>
-                                    </h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-2 col-lg-4 col-md-6">
-                            <div
-                                class="category-item box-shadow p-3 py-4 text-center bg-white rounded overflow-hidden h-100">
-                                <div class="trending-topic-content">
-                                    <img src="{{global_asset('website') }}/images/cruise.svg" class="mb-1 d-inline-block"
-                                        alt="Cruise" />
-                                    <h4 class="mb-0 fs-18">
-                                        <a href="#">@lang('website.Cruise')</a>
-                                    </h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-2 col-lg-4 col-md-6">
-                            <div
-                                class="category-item box-shadow p-3 py-4 text-center bg-white rounded overflow-hidden h-100">
-                                <div class="trending-topic-content">
-                                    <img src="{{global_asset('website') }}/images/boarding-pass.svg" class="mb-1 d-inline-block"
-                                        alt="Visa" />
-                                    <h4 class="mb-0 fs-18"><a href="#">@lang('website.Visa')</a></h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-2 col-lg-4 col-md-6">
-                            <div
-                                class="category-item box-shadow p-3 py-4 text-center bg-white rounded overflow-hidden h-100">
-                                <div class="trending-topic-content">
-                                    <img src="{{global_asset('website') }}/images/icons/drivers-license.svg"
-                                        class="mb-1 d-inline-block" alt="license" />
-                                    <h4 class="mb-0 fs-18">
-                                        <a href="#">@lang('website.International License')</a>
-                                    </h4>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
+    <!-- about-us ends -->
 
     <!-- about-us starts -->
     <section class="about-us pb-6 pt-6"
         style="
-    background-image: url(images/shape4.png);
-    background-position: center;
-  ">
+        background-image: url(images/shape4.png);
+        background-position: center;
+      ">
         <div class="container">
             <div class="section-title mb-6 w-50 mx-auto text-center">
-                <h4 class="mb-1 theme1">
-                    {{ $websiteInfo->translations->where('language_id', getCurrentLanguage()->id)->first()->name }}</h4>
+                <h4 class="mb-1 theme1">أسرار الطيار</h4>
                 <h2 class="mb-1">
-                    <span class="theme">@lang('website.Your Optimal Choice')</span>
+                    <span class="theme">إختيارك الأمثل فى مصر</span>
                 </h2>
                 <p>
-                    @lang('website.')Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                    eiusmod tempor incididunt ut labore.
+                    تقدم أسرار الطيار خدمات الحجز الالكترونى للطيران والفنادق و الرحلات
+                    البحرية و التأشيرات و الرخص الدولية بأفضل الأسعار
                 </p>
             </div>
 
@@ -196,14 +126,15 @@
                             <div class="why-us-item text-center p-4 py-5 border rounded bg-white h-100">
                                 <div class="why-us-content">
                                     <div class="why-us-icon mb-3">
-                                        <img src="{{global_asset('website/') }}/images/icons/easy.svg" alt="Easy"
+                                        <img src="{{ global_asset('website/') }}/images/icons/easy.svg" alt="Easy"
                                             width="70" />
                                     </div>
                                     <h4>
-                                        <a href="#">@lang('website.Flexible And Easy')</a>
+                                        <a href="#">السهولة و المرونة</a>
                                     </h4>
                                     <p class="mb-0 fs-14">
-                                        @lang('website.You can make your reservation easily through our website.')
+                                        يمكنك إجراء الحجز الخاص بك بسهولة من خلال موقعنا على
+                                        الإنترنت.
                                     </p>
                                 </div>
                             </div>
@@ -212,14 +143,15 @@
                             <div class="why-us-item text-center p-4 py-5 border rounded bg-white h-100">
                                 <div class="why-us-content">
                                     <div class="why-us-icon mb-3">
-                                        <img src="{{global_asset('website/') }}/images/icons/trust.svg" alt="Trusted"
+                                        <img src="{{ global_asset('website/') }}/images/icons/trust.svg" alt="Trusted"
                                             width="70" />
                                     </div>
                                     <h4>
-                                        <a href="#">@lang('website.Trusted And Credibile')</a>
+                                        <a href="#">الثقة و المصداقية</a>
                                     </h4>
                                     <p class="mb-0 fs-14">
-                                        @lang('website.Asrar Altayar is Trusted by all its clients, Explore Testimonails.')
+                                        أسرار الطيار هي شركة موثوق بها من قبل جميع عملائها ، اكتشف
+                                        الشهادات.
                                     </p>
                                 </div>
                             </div>
@@ -228,14 +160,14 @@
                             <div class="why-us-item text-center p-4 py-5 border rounded bg-white h-100">
                                 <div class="why-us-content">
                                     <div class="why-us-icon mb-3">
-                                        <img src="{{global_asset('website/') }}/images/icons/customer-review.svg"
+                                        <img src="{{ global_asset('website/') }}/images/icons/customer-review.svg"
                                             alt="Review" width="70" />
                                     </div>
                                     <h4>
-                                        <a href="#">@lang('website.Client Focus')</a>
+                                        <a href="#">التركيز على العميل</a>
                                     </h4>
                                     <p class="mb-0 fs-14">
-                                        @lang('website.Asrar Altayar focuses mainly on clients satisfaction and happiness.')
+                                        أسرار الطيار تركز بشكل رئيسي على رضا العميل و سعادة.
                                     </p>
                                 </div>
                             </div>
@@ -244,14 +176,15 @@
                             <div class="why-us-item text-center p-4 py-5 border rounded bg-white h-100">
                                 <div class="why-us-content">
                                     <div class="why-us-icon mb-3">
-                                        <img src="{{global_asset('website/') }}/images/icons/customer-service.svg"
+                                        <img src="{{ global_asset('website/') }}/images/icons/customer-service.svg"
                                             alt="customer service" width="70" />
                                     </div>
                                     <h4>
-                                        <a href="#">@lang('website.24 Hours Support')</a>
+                                        <a href="#">دعم 24 ساعة يومياً</a>
                                     </h4>
                                     <p class="mb-0 fs-14">
-                                        @lang('website.Asrar Altayar is supporting clients 24 hrs/day & 7 days/week.')
+                                        أسرار الطيار تدعم العملاء 24 ساعة في اليوم & 7 أيام
+                                        أسبوعياً.
                                     </p>
                                 </div>
                             </div>
@@ -274,8 +207,7 @@
                     @lang('website.Explore') <span class="theme">@lang('website.Top Destinations')</span>
                 </h2>
                 <p>
-                    @lang('website.')Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                    eiusmod tempor incididunt ut labore.
+
                 </p>
             </div>
             <div class="row align-items-center">
@@ -316,7 +248,7 @@
                 <div class="row d-flex align-items-center justify-content-between">
                     <div class="col-lg-6 mb-4 pe-4">
                         <div class="about-image overflow-hidden">
-                            <img src="{{global_asset('website/') }}/images/travel1.png" alt="" />
+                            <img src="{{ global_asset('website/') }}/images/travel1.png" alt="" />
                         </div>
                     </div>
                     <div class="col-lg-6 mb-4 ps-4">
@@ -393,26 +325,26 @@
             <div class="trend-box">
                 <div class="row">
                     @foreach (Modules\Package\Entities\Package::where('is_top', true)->get() as $package)
-                    <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
-                        <div class="trend-item rounded box-shadow bg-white">
-                            <div class="trend-image position-relative">
-                                <img src="{{global_asset("storage/website/$package->image") }}" alt="image"
-                                    class="" />
-                                <div class="ribbon ribbon-top-left">
-                                    <span class="fw-bold">20% @lang('website.')OFF</span>
+                        <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
+                            <div class="trend-item rounded box-shadow bg-white">
+                                <div class="trend-image position-relative">
+                                    <img src="{{ global_asset("storage/website/$package->image") }}" alt="image"
+                                        class="" />
+                                    <div class="ribbon ribbon-top-left">
+                                        <span class="fw-bold">20% @lang('website.')OFF</span>
+                                    </div>
+                                    <div class="color-overlay"></div>
                                 </div>
-                                <div class="color-overlay"></div>
-                            </div>
-                            <div class="trend-content p-4 pt-5 position-relative">
-                                <h5 class="theme mb-1">
-                                    <i class="flaticon-location-pin"></i> {{ $package->country->country_name }}
-                                </h5>
-                                <h3 class="mb-1">
-                                    <a href="#">{{ $package->title }}</a>
-                                </h3>
+                                <div class="trend-content p-4 pt-5 position-relative">
+                                    <h5 class="theme mb-1">
+                                        <i class="flaticon-location-pin"></i> {{ $package->country->country_name }}
+                                    </h5>
+                                    <h3 class="mb-1">
+                                        <a href="#">{{ $package->title }}</a>
+                                    </h3>
+                                </div>
                             </div>
                         </div>
-                    </div>
                     @endforeach
                 </div>
             </div>
@@ -421,63 +353,103 @@
     <!-- offer Packages Ends -->
 
     <!-- testomonial start -->
-    {{-- <section class="testimonial pt-9" style="background-image: url(images/testimonial.png)">
+    <section class="testimonial pt-9" style="background-image: url(images/testimonial.png)">
         <div class="container">
             <div class="section-title mb-6 text-center w-75 mx-auto">
-                <h4 class="mb-1 theme1">Our Testimonails</h4>
-                <h2 class="mb-1">
-                    Good Reviews By <span class="theme">Clients</span>
-                </h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                    eiusmod tempor incididunt ut labore.
-                </p>
+                <h4 class="mb-1 theme1">ماذا يقول العملاء عنا ؟</h4>
+                <h2 class="mb-1">استكشف آراء <span class="theme">العملاء </span></h2>
+                <p>استكشف آراء العملاء ومدى رضائهم عن خدماتنا</p>
             </div>
             <div class="row align-items-center">
                 <div class="col-lg-5 pe-4">
                     <div class="testimonial-image">
-                        <img src="{{global_asset('website/') }}/images/travel2.png" alt="" />
+                        <img src="{{ global_asset('website/') }}/images/og-icon.jpg" alt="">
                     </div>
                 </div>
                 <div class="col-lg-7 ps-4">
-                    <div class="row review-slider">
-                        @foreach ($testimonails as $testimonail)
-                            <div class="col-sm-4 item">
-                                <div class="testimonial-item1 rounded">
-                                    <div class="author-info d-flex align-items-center mb-4">
-                                        <img src="{{global_asset('website/') }}/images/og-icon.jpg" alt="" />
-                                        <div class="author-title ms-3">
-                                            <h5 class="m-0 theme">{{ $testimonail->client_name }}</h5>
-                                            <span>{{ __('website::website.client') }}</span>
+                    <div class="row review-slider slick-initialized slick-slider"><button class="slick-prev slick-arrow"
+                            aria-label="Previous" type="button" style="">Previous</button>
+                        <div class="slick-list draggable">
+                            <div class="slick-track"
+                                style="opacity: 1; width: 3805px; transform: translate3d(2283px, 0px, 0px); transition: transform 2000ms ease 0s;">
+                                @foreach ($testimonails as $testimonail)
+                                    @if ($loop->first)
+                                        <div class="col-sm-4 item slick-slide slick-cloned slick-current slick-active">
+                                            <div class="testimonial-item1 rounded">
+                                                <div class="author-info d-flex align-items-center mb-4">
+                                                    <img src="{{ global_asset('website/') }}/images/og-icon.jpg"
+                                                        alt="" />
+                                                    <div class="author-title ms-3">
+                                                        <h5 class="m-0 theme">{{ $testimonail->client_name }}</h5>
+                                                        <span>{{ __('website::website.client') }}</span>
+                                                    </div>
+                                                </div>
+                                                <div class="details">
+                                                    <p class="m-0">
+                                                        <i
+                                                            class="fa fa-quote-left me-2 fs-1"></i>{{ $testimonail->testimonail }}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endif
+                                    <div class="col-sm-4 item slick-slide slick-cloned">
+                                        <div class="testimonial-item1 rounded">
+                                            <div class="author-info d-flex align-items-center mb-4">
+                                                <img src="{{ global_asset('website/') }}/images/og-icon.jpg"
+                                                    alt="" />
+                                                <div class="author-title ms-3">
+                                                    <h5 class="m-0 theme">{{ $testimonail->client_name }}</h5>
+                                                    <span>{{ __('website::website.client') }}</span>
+                                                </div>
+                                            </div>
+                                            <div class="details">
+                                                <p class="m-0">
+                                                    <i
+                                                        class="fa fa-quote-left me-2 fs-1"></i>{{ $testimonail->testimonail }}
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="details">
-                                        <p class="m-0">
-                                            <i class="fa fa-quote-left me-2 fs-1"></i>{{ $testimonail->testimonail }}
-                                        </p>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
-                        @endforeach
+                        </div>
+
+                        <button class="slick-next slick-arrow" aria-label="Next" type="button"
+                            style="">@lang('website.next')</button>
                     </div>
                 </div>
             </div>
         </div>
-    </section> --}}
+    </section>
     <!-- testimonial ends -->
 
     <!-- partner starts -->
-    <div class="our-partner p-0">
+    <section class="our-partner pb-6 pt-6">
         <div class="container">
-            <div class="partners_inner">
-                <ul>
-                    @foreach ($partners as $partner)
-                        <li class="mb-2"><img src="{{ $partner->logo_url }}" alt="Partner" /></li>
-                    @endforeach
-                </ul>
+            <div class="section-title mb-6 w-75 mx-auto text-center">
+                <h4 class="mb-1 theme1">شركاء أسرار الطيار</h4>
+                <h2 class="mb-1">
+                    تعرف على <span class="theme">شركائنا</span> المميزين
+                </h2>
+                <p>
+                    تقدم أسرار الطيار خدمات الحجز الالكترونى للطيران والفنادق و الرحلات
+                    البحرية و التأشيرات و الرخص الدولية بأفضل الأسعار
+                </p>
+            </div>
+            <div class="our-partner p-0">
+                <div class="container">
+                    <div class="partners_inner">
+                        <ul>
+                            @foreach ($partners as $partner)
+                                <li class="mb-2"><img src="{{ $partner->logo_url }}" alt="Partner" /></li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
     <!-- partner ends -->
 
     <!-- recent-articles starts -->
@@ -509,13 +481,14 @@
                                         </p>
                                         <div class="entry-meta d-flex align-items-center justify-content-between">
                                             <div class="entry-author mb-2">
-                                                <img src="{{global_asset('website/') }}/images/og-icon.jpg" alt=""
-                                                    class="rounded-circle me-1" />
+                                                <img src="{{ global_asset('website/') }}/images/og-icon.jpg"
+                                                    alt="" class="rounded-circle me-1" />
                                                 <span>@lang('website.Asrar Altayar')</span>
                                             </div>
                                             <div class="entry-button d-flex align-items-centermb-2">
-                                                <a href="{{ route('blog.show', $blog->id) }}" class="nir-btn">@lang('website.Read More')
-                                                    </a>
+                                                <a href="{{ route('blog.show', $blog->blog_slug) }}"
+                                                    class="nir-btn">@lang('website.Read More')
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
