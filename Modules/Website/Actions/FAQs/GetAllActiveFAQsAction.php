@@ -12,7 +12,6 @@ class GetAllActiveFAQsAction
     public function handle()
     {
         $faqs = FAQ::currentLanguageTranslation('faqs', 'faq_translations', 'faq_id')
-            ->withCategory('faqs.category_id')
             ->active();
         return $faqs;
     }

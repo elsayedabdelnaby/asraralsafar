@@ -36,7 +36,7 @@ class FAQ extends Model
         $faq = $this;
         return new Attribute(
             get: fn () => Cache::rememberForever('faq_question_' . $this->id . '_' .  App::getLocale(), function () use ($faq) {
-                $faq = $faq->translation()->select('question')->where('language_id', getCurrentLanguage()->id)->first();
+                $faq = $faq->translations()->select('question')->where('language_id', getCurrentLanguage()->id)->first();
                 return $faq ? $faq->question : null;
             }),
         );
@@ -52,7 +52,7 @@ class FAQ extends Model
         $faq = $this;
         return new Attribute(
             get: fn () => Cache::rememberForever('faq_answer_' . $this->id . '_' .  App::getLocale(), function () use ($faq) {
-                $faq = $faq->translation()->select('answer')->where('language_id', getCurrentLanguage()->id)->first();
+                $faq = $faq->translations()->select('answer')->where('language_id', getCurrentLanguage()->id)->first();
                 return $faq ? $faq->answer : null;
             }),
         );

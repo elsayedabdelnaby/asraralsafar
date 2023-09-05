@@ -52,7 +52,7 @@
                         <ul>
                             <li><a href="{{ route('about-us.index') }}"> @lang('website.About Us')</a></li>
                             <li><a href="{{ route('contact.index') }}"> @lang('website.Contact Us')</a></li>
-                            <li><a href="{{ route('website.index') }}"> @lang('website.FAQ')</a></li>
+                            <li><a href="{{ route('website.faq') }}"> @lang('website.FAQ')</a></li>
                             <li><a href="{{ route('website.index') }}"> @lang('website.Privacy Policy')</a></li>
                             <li><a href="{{ route('website.index') }}"> @lang('website.Terms & Conditions')</a></li>
                         </ul>

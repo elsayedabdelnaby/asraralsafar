@@ -15,7 +15,6 @@ class StoreFAQRequest extends FormRequest
     public function rules()
     {
         return [
-            'category_id' => 'required|exists:categories,id,deleted_at,NULL',
             'translations' => ['required', 'array', new TranslationContainMainLanguage],
             'translations.*.language_id' => 'required|exists:languages,id',
             'translations.*.question' => 'required|string|max:255',

@@ -5,6 +5,7 @@ namespace Modules\Website\Http\Controllers\Website;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Modules\Website\Actions\FAQs\GetAllActiveFAQsAction;
 
 class FaqController extends Controller
 {
@@ -14,7 +15,8 @@ class FaqController extends Controller
      */
     public function index()
     {
-        return view('website::index');
+        $faqs = (new GetAllActiveFAQsAction)->handle()->orderBy('display_order')->get();
+        return view('website::website.faq.index', compact('faqs'));
     }
 
     /**

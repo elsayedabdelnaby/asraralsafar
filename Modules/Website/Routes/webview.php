@@ -32,7 +32,7 @@ Route::get('/blogs', [BlogController::class, 'index'])->name('website.blog.index
 Route::get('/blogs/{slug}', [BlogController::class, 'show'])->name('blog.show');
 Route::get('/contact-us', [ContactController::class, 'index'])->name('contact.index');
 Route::post('/contact-us', [ContactController::class, 'store'])->name('website.contact-us.store');
-Route::get('/faq', [FaqController::class, 'index']);
+Route::get('/faq', [FaqController::class, 'index'])->name('website.faq');
 Route::get('/flights', [FlightController::class, 'index'])->name('flight.index');
 Route::get('/cruises', [CruiseController::class, 'index'])->name('cruise.index');
 Route::get('/request', [RequestController::class, 'index'])->name('request.index');
