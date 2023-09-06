@@ -20,12 +20,13 @@ class WebsiteInformationTableSeeder extends Seeder
             'footer_logo' => null,
             'facebook_pixel_code' => null,
             'google_analytics_code' => null,
+            'address_google_map_link' => 'https://bit.ly/3Ppokey',
             'created_by' => 1,
             'updated_by' => 1,
         ]);
         WebsiteInformationTranslation::insert([
-            ['website_information_id' => $website_information->id, 'language_id' => 1, 'name' => 'Asrar Altayyar'],
-            ['website_information_id' => $website_information->id, 'language_id' => 2, 'name' => 'اسرار الطيار']
+            ['website_information_id' => $website_information->id, 'language_id' => 1, 'name' => 'Asrar Altayyar', 'address' => 'Saudi'],
+            ['website_information_id' => $website_information->id, 'language_id' => 2, 'name' => 'اسرار الطيار', 'address' => 'السعودية']
         ]);
     }
 }
