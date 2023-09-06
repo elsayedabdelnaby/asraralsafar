@@ -22,6 +22,8 @@ use Modules\Website\Http\Controllers\Website\ContactController;
 use Modules\Website\Http\Controllers\Website\PackageController;
 use Modules\Website\Http\Controllers\Website\RequestController;
 use Modules\Website\Http\Controllers\Website\IndexPageController;
+use Modules\Website\Http\Controllers\Website\PrivacyPolicyController;
+use Modules\Website\Http\Controllers\Website\TermConditionController;
 
 Route::get('/', [IndexPageController::class, 'index'])->name('website.index');
 Route::get('/packages', [PackageController::class, 'index'])->name('package.index');
@@ -33,6 +35,8 @@ Route::get('/blogs/{slug}', [BlogController::class, 'show'])->name('blog.show');
 Route::get('/contact-us', [ContactController::class, 'index'])->name('contact.index');
 Route::post('/contact-us', [ContactController::class, 'store'])->name('website.contact-us.store');
 Route::get('/faq', [FaqController::class, 'index'])->name('website.faq');
+Route::get('/terms-conditions', [TermConditionController::class, 'index'])->name('website.terms_conditions');
+Route::get('/privacy-policies', [PrivacyPolicyController::class, 'index'])->name('website.privacy_policies');
 Route::get('/flights', [FlightController::class, 'index'])->name('flight.index');
 Route::get('/cruises', [CruiseController::class, 'index'])->name('cruise.index');
 Route::get('/request', [RequestController::class, 'index'])->name('request.index');

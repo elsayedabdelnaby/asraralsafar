@@ -33,7 +33,7 @@ class PrivacyPolicy extends Model
         $privacy_policy = $this;
         return new Attribute(
             get: fn () => Cache::rememberForever('privacy_policy_title_' . $this->id . '_' .  App::getLocale(), function () use ($privacy_policy) {
-                $privacy_policy = $privacy_policy->translation()->select('title')->where('language_id', getCurrentLanguage()->id)->first();
+                $privacy_policy = $privacy_policy->translations()->select('title')->where('language_id', getCurrentLanguage()->id)->first();
                 return $privacy_policy ? $privacy_policy->title : null;
             }),
         );
@@ -49,7 +49,7 @@ class PrivacyPolicy extends Model
         $privacy_policy = $this;
         return new Attribute(
             get: fn () => Cache::rememberForever('privacy_policy_description_' . $this->id . '_' .  App::getLocale(), function () use ($privacy_policy) {
-                $privacy_policy = $privacy_policy->translation()->select('description')->where('language_id', getCurrentLanguage()->id)->first();
+                $privacy_policy = $privacy_policy->translations()->select('description')->where('language_id', getCurrentLanguage()->id)->first();
                 return $privacy_policy ? $privacy_policy->description : null;
             }),
         );

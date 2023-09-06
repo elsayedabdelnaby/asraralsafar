@@ -189,4 +189,8 @@ return [
     'Clients' => 'Clients',
     'next' => 'Next',
     'previous' => 'Previous',
+    'terms_conditions' => 'Terms Conditions',
+    'look_at' => 'Look At',
+    'Privacy_policies' => 'Privacy Policies',
+    'privacy_policies' => 'Privacy Policies',
 ];

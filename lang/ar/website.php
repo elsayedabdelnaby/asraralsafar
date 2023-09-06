@@ -209,4 +209,8 @@ return [
     'Clients' => 'عملائنا',
     'next' => 'التالى',
     'previous' => 'السابق',
+    'terms_conditions' => 'الشروط والاحكام',
+    'look_at' => 'تعرف على',
+    'Privacy_policies' => 'سياسات الخصوصية',
+    'privacy_policies' => 'سياسات الخصوصية',
 ];

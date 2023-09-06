@@ -33,7 +33,7 @@ class TermCondition extends Model
         $term_condition = $this;
         return new Attribute(
             get: fn () => Cache::rememberForever('term_condition_title_' . $this->id . '_' .  App::getLocale(), function () use ($term_condition) {
-                $term_condition = $term_condition->translation()->select('title')->where('language_id', getCurrentLanguage()->id)->first();
+                $term_condition = $term_condition->translations()->select('title')->where('language_id', getCurrentLanguage()->id)->first();
                 return $term_condition ? $term_condition->title : null;
             }),
         );
@@ -49,7 +49,7 @@ class TermCondition extends Model
         $term_condition = $this;
         return new Attribute(
             get: fn () => Cache::rememberForever('term_condition_description_' . $this->id . '_' .  App::getLocale(), function () use ($term_condition) {
-                $term_condition = $term_condition->translation()->select('description')->where('language_id', getCurrentLanguage()->id)->first();
+                $term_condition = $term_condition->translations()->select('description')->where('language_id', getCurrentLanguage()->id)->first();
                 return $term_condition ? $term_condition->description : null;
             }),
         );
