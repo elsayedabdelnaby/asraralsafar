@@ -12,6 +12,7 @@
 use Illuminate\Support\Facades\Route;
 use Modules\Operations\Http\Controllers\Dashboard\ContactUsController;
 use Modules\Operations\Http\Controllers\Dashboard\ActivityLogController;
+use Modules\Operations\Http\Controllers\Dashboard\BookingRequestController;
 
 Route::name('dashboard.')->middleware(['isAdmin'])->prefix("dashboard")->group(function () {
 
@@ -30,5 +31,15 @@ Route::name('dashboard.')->middleware(['isAdmin'])->prefix("dashboard")->group(f
             Route::put('{id}/update', 'update')->middleware('hasPermission:reply-on-contact-us-message')->name('update');
         });
         //End Of Contact Us Messages
+
+        //Start Booking Requests
+        Route::prefix('booking-requests')->name('booking-requests.')->controller(BookingRequestController::class)->group(function () {
+            Route::get('/', 'index')->middleware('hasPermission:listing-booking-requests')->name('index');
+            Route::get('{id}/edit', 'edit')->middleware('hasPermission:edit-booking-requests')->name('edit');
+            Route::put('{id}/update', 'update')->middleware('hasPermission:edit-booking-requests')->name('update');
+        });
+        //End Booking Requests
+
+
     });
 });

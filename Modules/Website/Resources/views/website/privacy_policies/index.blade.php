@@ -32,7 +32,7 @@
         <div class="container">
             <div class="section-title mb-6 text-start mx-auto">
                 <h2 class="mb-1 fs-2">
-                    {{ __('website.look_at') }}<span class="theme">{{ __('website.privacy_policies') }}</span>
+                    {{ __('website.look_at') }}<span class="theme"> {{ __('website.privacy_policies') }}</span>
                 </h2>
             </div>
             <div class="faq-accordian">

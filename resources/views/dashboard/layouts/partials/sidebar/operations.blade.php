@@ -43,6 +43,15 @@
                     <span class="menu-text">{{ __('dashboard.contact_us') }}</span>
                 </a>
             </li>
+            <li class="menu-item {{ request()->routeIs('dashboard.operations.booking-requests.index') ? 'menu-item-active' : null }}"
+                aria-haspopup="true">
+                <a href="{{ route('dashboard.operations.booking-requests.index') }}" class="menu-link">
+                    <i class="menu-bullet menu-bullet-line">
+                        <span></span>
+                    </i>
+                    <span class="menu-text">{{ __('dashboard.booking_requests') }}</span>
+                </a>
+            </li>
         </ul>
     </div>
 </li>

@@ -10,6 +10,7 @@ use Modules\Website\Entities\Statistic;
 use Illuminate\Contracts\Support\Renderable;
 use Modules\Website\Actions\Partners\GetAllActivePartnersAction;
 use Modules\Website\Actions\Services\GetAllActiveServicesAction;
+use Modules\Website\Actions\Statistics\GetAllActiveStatisticsAction;
 use Modules\Website\Actions\Testimonails\GetAllActiveTestimonailsAction;
 
 class IndexPageController extends Controller
@@ -27,12 +28,11 @@ class IndexPageController extends Controller
         })->where('page', 'home')->get();
 
         return view('website::website.index_page.index', [
-            'statistics' => Statistic::with('translations')->get(),
+            'statistics' => (new GetAllActiveStatisticsAction)->handle(),
             'blogs' => Blog::with('translations')->latest()->take(3)->get(),
             'testimonails' => (new GetAllActiveTestimonailsAction)->handle()->orderBy('display_order')->get(),
             'partners' => (new GetAllActivePartnersAction)->handle()->orderBy('display_order')->get(),
             'metaPage' => $metaPage,
-            'services' => (new GetAllActiveServicesAction)->handle()->orderBy('display_order')->get()
         ]);
     }
 

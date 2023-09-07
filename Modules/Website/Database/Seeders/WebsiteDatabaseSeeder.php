@@ -17,6 +17,8 @@ class WebsiteDatabaseSeeder extends Seeder
         $this->call(WebsitePermissionsSeeder::class);
         $this->call(WebsiteInformationTableSeeder::class);
         $this->call(ServicePermissionsSeeder::class);
+        $this->call(StatisticsTableSeeder::class);
+        $this->call(ContactInformationTableSeeder::class);
 
         // assign all permissions to the administrator profile
         $profile_service = new ProfileService();

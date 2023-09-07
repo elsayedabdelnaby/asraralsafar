@@ -19,7 +19,7 @@
     <!-- BreadCrumb Starts -->
     <section class="breadcrumb-main no-radius pt-8 pb-8"
         style="
-        background-image: url(images/tourism1.webp);
+        background-image: url({{ global_asset('website/') }}/images/tourism1.webp);
         background-repeat: no-repeat;
         background-size: cover;
         background-position: top;
@@ -49,7 +49,7 @@
     @endforeach
 
     <!-- testomonial start -->
-    <section class="testimonial pt-9" style="background-image: url(images/testimonial.png)">
+    <section class="testimonial pt-9" style="background-image: url({{ global_asset('website/') }}/images/testimonial.png)">
         <div class="container">
             <div class="section-title mb-6 text-center w-75 mx-auto">
                 <h4 class="mb-1 theme1">@lang('website.what clients say about us?')</h4>
@@ -95,7 +95,7 @@
             <div class="section-title mb-6 w-75 mx-auto text-center">
                 <h4 class="mb-1 theme1">@lang('website.our partners')</h4>
                 <h2 class="mb-1">
-                     @lang('website.know about') <span class="theme">@lang('website.our parteners')</span>
+                    @lang('website.know about') <span class="theme">@lang('website.our parteners')</span>
                 </h2>
                 <p>
                     @lang('website.asrar altayran represents services of electronic reservations for flights , hotels , visa and international licencses')

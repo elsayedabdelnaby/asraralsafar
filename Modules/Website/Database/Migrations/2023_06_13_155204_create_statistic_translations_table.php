@@ -18,7 +18,6 @@ return new class extends Migration
             $table->foreignId('statistic_id')->references('id')->on('statistics');
             $table->foreignId('language_id')->references('id')->on('languages');
             $table->string('title');
-            $table->string('number');
             $table->timestamps();
             $table->softDeletes();
         });

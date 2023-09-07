@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="{{ app()->getLocale() }}"
+    dir="@if (app()->getLocale() == 'ar') rtl @else ltr @endif">
 
 <head>
     <meta charset="UTF-8" />
@@ -19,12 +20,6 @@
     <meta name="msapplication-square150x150logo" content="{{ global_asset('website/images/icon.png') }}" />
     <meta name="msapplication-wide310x150logo" content="{{ global_asset('website/images/icon.png') }}" />
     <!-- Website Meta Tags -->
-    <meta name="google-site-verification" content="" />
-    <meta name="description" content="أسرار الطيار | حجز طيران تأشيرات و رحلات بحرية - رخص دولية - حجز الفنادق" />
-    <meta name="keywords" content="أسرار الطيار , حجز فنادق , حجز طيران , تأشيرات , رخص دولية , رحلات بحرية" />
-    <meta name="author" content="Ahmed Ali Mohamed" />
-    <meta name="og:title" content="أسرار الطيار | حجز طيران تأشيرات و رحلات بحرية - رخص دولية - حجز الفنادق" />
-    <meta name="og:description" content="أسرار الطيار | حجز طيران تأشيرات و رحلات بحرية - رخص دولية - حجز الفنادق" />
     @yield('meta_page')
     <meta name="og:image" content="{{ global_asset('website/images/og-icon.jpg') }}" />
     @if (app()->getLocale() == 'ar')

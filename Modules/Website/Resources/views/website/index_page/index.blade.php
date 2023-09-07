@@ -44,32 +44,36 @@
                                 تقدم أسرار الطيار خدمات الحجز الالكترونى للطيران والفنادق و
                                 الرحلات البحرية و التأشيرات و الرخص الدولية بأفضل الأسعار
                             </p>
-                            <div class="book-form">
-                                <div class="row d-flex align-items-center justify-content-between">
-                                    <div class="col-12 mb-2">
-                                        <div class="form-group">
-                                            <div class="input-box">
-                                                <select class="niceSelect">
-                                                    <option value="">اختر الخدمة</option>
-                                                    <option value="1">حجز طيران</option>
-                                                    <option value="2">رحلات بحرية</option>
-                                                    <option value="2">رخص دولية</option>
-                                                    <option value="2">تأشيرات</option>
-                                                    <option value="2">السياحة العلاجية</option>
-                                                    <option value="2">السياحة التعليمية</option>
-                                                </select>
+                            <form method="GET" action="{{ route('request.index') }}">
+                                @csrf
+                                @method('GET')
+                                <div class="book-form">
+                                    <div class="row d-flex align-items-center justify-content-between">
+                                        <div class="col-12 mb-2">
+                                            <div class="form-group">
+                                                <div class="input-box">
+                                                    <select class="niceSelect" name="service">
+                                                        <option value="" disabled>اختر الخدمة</option>
+                                                        @foreach ($services as $service)
+                                                            <option value="{{ $service->slug }}">{{ $service->name }}
+                                                            </option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="form-group mb-0 text-center">
+                                                <button type="submit" class="nir-btn w-100">
+                                                    <i class="fa fa-search me-2"></i>
+                                                    ابحث /
+                                                    طلب التواصل
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-12">
-                                        <div class="form-group mb-0 text-center">
-                                            <a href="./packages.rtl.html" class="nir-btn w-100"><i
-                                                    class="fa fa-search me-2"></i> ابحث / طلب التواصل
-                                            </a>
-                                        </div>
-                                    </div>
                                 </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
                     <div class="col-lg-6 mb-4">
@@ -87,7 +91,8 @@
                                         <img width="20" src="{{ $service->image_url }}" class="mb-1 d-inline-block"
                                             alt="Book Hotel" />
                                         <h4 class="mb-0 fs-18">
-                                            <a href="./request.booking.rtl.html">{{ $service->name }}</a>
+                                            <a
+                                                href="{{ route('website.services.show', $service->slug) }}">{{ $service->name }}</a>
                                         </h4>
                                     </div>
                                 </div>
@@ -290,9 +295,8 @@
                                             <div class="counter-item border-end pe-4">
                                                 <div class="counter-content text-sm-start text-center">
                                                     <h2 class="value mb-0 theme">
-                                                        {{ $statistic->translations->first()->number }}</h2>
-                                                    <span
-                                                        class="m-0">{{ $statistic->translations->first()->title }}</span>
+                                                        {{ $statistic->number }}</h2>
+                                                    <span class="m-0">{{ $statistic->title }}</span>
                                                 </div>
                                             </div>
                                         </div>

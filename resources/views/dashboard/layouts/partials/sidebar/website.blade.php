@@ -149,6 +149,15 @@
                     <span class="menu-text">{{ __('dashboard.services') }}</span>
                 </a>
             </li>
+            <li class="menu-item {{ request()->routeIs('dashboard.website.statistics.*') ? 'menu-item-active' : null }}"
+                aria-haspopup="true">
+                <a href="{{ route('dashboard.website.statistics.index') }}" class="menu-link">
+                    <i class="menu-bullet menu-bullet-line">
+                        <span></span>
+                    </i>
+                    <span class="menu-text">{{ __('dashboard.statistics') }}</span>
+                </a>
+            </li>
         </ul>
     </div>
 </li>

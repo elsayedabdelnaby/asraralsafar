@@ -10,6 +10,7 @@ use Modules\Website\Entities\Statistic;
 use Illuminate\Contracts\Support\Renderable;
 use Modules\Website\Actions\AboutUs\GetAllActiveAboutUsAction;
 use Modules\Website\Actions\Partners\GetAllActivePartnersAction;
+use Modules\Website\Actions\Statistics\GetAllActiveStatisticsAction;
 use Modules\Website\Actions\Testimonails\GetAllActiveTestimonailsAction;
 
 class AboutUsController extends Controller
@@ -21,7 +22,6 @@ class AboutUsController extends Controller
     public function index()
     {
         $aboutUs = AboutUs::with('translations')->get();
-        $statistics = Statistic::with('translations')->get();
         $languageId = getCurrentLanguage()->id;
 
         $metaPage = MetaPage::whereHas('translations', function ($query) use ($languageId) {
@@ -29,7 +29,7 @@ class AboutUsController extends Controller
         })->where('page', 'about')->get();
         return view('website::website.about_us.index', [
             'about_ud' => $aboutUs,
-            'statistics' => $statistics,
+            'statistics' => (new GetAllActiveStatisticsAction)->handle(),
             'metaPage' => $metaPage,
             'partners' => (new GetAllActivePartnersAction)->handle()->orderBy('display_order')->get(),
             'testimonails' => (new GetAllActiveTestimonailsAction)->handle()->orderBy('display_order')->get(),

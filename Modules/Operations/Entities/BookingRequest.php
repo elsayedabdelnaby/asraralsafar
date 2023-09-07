@@ -1,7 +1,8 @@
 <?php
 
-namespace Modules\Website\Entities;
+namespace Modules\Operations\Entities;
 
+use Modules\Website\Entities\Service;
 use Illuminate\Database\Eloquent\Model;
 
 class BookingRequest extends Model
@@ -12,8 +13,13 @@ class BookingRequest extends Model
         'phone',
         'sex',
         'dob',
-        'service',
+        'service_id',
         'service_date',
-        'service_details'
     ];
+
+
+    public function service()
+    {
+        return $this->belongsTo(Service::class, 'service_id');
+    }
 }

@@ -7,6 +7,7 @@ use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
 use Modules\Package\Entities\Package;
 use Illuminate\Contracts\Support\Renderable;
+use Modules\Website\Actions\Partners\GetAllPartnersAction;
 
 class PackageController extends Controller
 {
@@ -47,7 +48,9 @@ class PackageController extends Controller
             ]);
         }
 
-        return view('website::website.package.index', compact('packages', 'countryCounts'));
+        $partners = (new GetAllPartnersAction)->handle()->sortBy('display_order');
+
+        return view('website::website.package.index', compact('packages', 'countryCounts', 'partners'));
     }
 
     /**

@@ -92,5 +92,11 @@ return [
     'insurance_amount_is_required'=>'Insurance Amount Is required',
     'exceed_amount'=>'Exceed Amount',
     'exceed_amount_is_required'=>'exceed amount is required',
-    'allow_to_exceed'=>'Allow to exceed'
+    'allow_to_exceed'=>'Allow to exceed',
+    'booking_requests' => 'Bookings Requests',
+    'booking_requests_management' => 'Bookings Requests Management',
+    'servcie' => 'Service',
+    'select_the_status_of_request' => 'Select the status of request',
+    'status_is_required' => 'Status is required',
+    ''
 ];

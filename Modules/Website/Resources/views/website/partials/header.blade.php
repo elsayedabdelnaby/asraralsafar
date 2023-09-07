@@ -49,48 +49,17 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="navbar-collapse1 d-flex align-items-center" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav" id="responsive-menu">
-                            <li class="dropdown submenu active">
-                                <a href="{{ route('website.index') }}" class="dropdown-toggle">@lang('website.Home')</a>
-                            </li>
-
-                            <li class="submenu dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                    aria-haspopup="true" aria-expanded="false">@lang('website.Programs')
-                                    <i class="icon-arrow-down" aria-hidden="true"></i></a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="{{ route('package.index') }}">@lang('website.Offers')</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ route('package.index') }}">@lang('website.Packages')</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ route('package.index') }}">@lang('website.Package / Offer Details')</a>
-                                    </li>
-                                </ul>
-                            </li>
-
                             <li class="submenu dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                     aria-haspopup="true" aria-expanded="false">@lang('website.Bookings')
                                     <i class="icon-arrow-down" aria-hidden="true"></i></a>
                                 <ul class="dropdown-menu">
-                                    <li class="submenu">
-                                        <a href="{{ route('flight.index') }}">@lang('website.Flights')</a>
-                                    </li>
-                                    <li class="submenu">
-                                        <a href="{{ route('flight.index') }}">@lang('website.Hotels')</a>
-                                    </li>
-                                    <li class="submenu">
-                                        <a href="{{ route('cruise.index') }}">@lang('website.Cruises')</a>
-                                    </li>
-                                    <li class="submenu dropdown">
-                                        <a href="{{ route('request.index') }}">@lang('website.Medical Tourism')</a>
-                                    </li>
-                                    <li class="submenu dropdown">
-                                        <a href="{{ route('request.index') }}">
-                                            @lang('website.Educational Tourism')</a>
-                                    </li>
+                                    @foreach ($services as $service)
+                                        <li class="submenu">
+                                            <a
+                                                href="{{ route('website.services.show', $service->slug) }}">{{ $service->name }}</a>
+                                        </li>
+                                    @endforeach
                                 </ul>
                             </li>
                             <li class="submenu">
@@ -109,8 +78,7 @@
                     </div>
                     <!-- /.navbar-collapse -->
                     <div class="register-login d-flex align-items-center">
-                        <!-- <a href="#" class="nir-btn nir-btn-outline me-2">Book Now</a> -->
-                        <a href="{{ route('request.index') }}" class="nir-btn white">@lang('website.Book Now')</a>
+                        {{-- <a href="{{ route('request.index') }}" class="nir-btn white">@lang('website.Book Now')</a> --}}
                     </div>
 
                     <div id="slicknav-mobile"></div>

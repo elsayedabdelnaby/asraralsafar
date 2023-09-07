@@ -229,4 +229,13 @@ return [
     'enter_service_details_and_submit' => 'Enter Service Details and Submit',
     'edit_service' => 'Edit Service',
     'the_service_toggle_was_successfully' => 'The Service toggle was successfully',
+    'statistics' => 'Statistics',
+    'new_statistic' => 'New Statistic',
+    'number' => 'Number',
+    'edit_statistic' => 'Edit Statistic',
+    'statistic_title' => 'Statistic Title',
+    'enter_statistic_details_and_submit' => 'Enter Statistic Details and Submit',
+    'the_language_of_the_statistic_title_and_description' => 'The Language of the Statistic Title and Description',
+    'number_is_required' => 'Number is required',
+    'number_must_be_integer' => 'Number must be an integer',
 ];

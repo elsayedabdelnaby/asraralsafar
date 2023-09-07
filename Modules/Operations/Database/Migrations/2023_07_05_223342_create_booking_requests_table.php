@@ -16,13 +16,13 @@ return new class extends Migration
         Schema::create('booking_requests', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email');
+            $table->string('email')->nullable();
             $table->string('phone');
-            $table->string('sex');
-            $table->date('dob');
-            $table->string('service');
-            $table->date('service_date');
-            $table->longText('service_details');
+            $table->string('sex')->nullable();
+            $table->date('dob')->nullable();
+            $table->unsignedBigInteger('service_id');
+            $table->date('service_date')->nullable();
+            $table->enum('status', ['new', 'processing', 'done', 'cancelled'])->default('new');
             $table->timestamps();
         });
     }

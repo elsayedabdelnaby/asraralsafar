@@ -156,4 +156,5 @@ return [
     'partners' => 'Partners',
     'testimonails' => 'Testimonials',
     'services' => 'Services',
+    'booking_requests' => 'Bookings Requests',
 ];

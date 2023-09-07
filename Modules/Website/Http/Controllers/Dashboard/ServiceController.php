@@ -34,6 +34,7 @@ class ServiceController extends Controller
                 'service_translations.name',
                 'display_order',
                 'is_active',
+                'image',
                 DB::raw('NULL AS actions')
             ])->get();
             $total = count($services);

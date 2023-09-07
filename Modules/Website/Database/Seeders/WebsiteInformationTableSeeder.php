@@ -20,13 +20,13 @@ class WebsiteInformationTableSeeder extends Seeder
             'footer_logo' => null,
             'facebook_pixel_code' => null,
             'google_analytics_code' => null,
-            'address_google_map_link' => 'https://bit.ly/3Ppokey',
+            'address_google_map_link' => 'https://goo.gl/maps/XekQe2kbgw8WVrmS9',
             'created_by' => 1,
             'updated_by' => 1,
         ]);
         WebsiteInformationTranslation::insert([
-            ['website_information_id' => $website_information->id, 'language_id' => 1, 'name' => 'Asrar Altayyar', 'address' => 'Saudi'],
-            ['website_information_id' => $website_information->id, 'language_id' => 2, 'name' => 'اسرار الطيار', 'address' => 'السعودية']
+            ['website_information_id' => $website_information->id, 'language_id' => 1, 'name' => 'Asrar Altayyar', 'address' => 'Sheikh Hussein Street - King Abdullah Road - Al Hamra District - Riyadh - Saudi Arabia'],
+            ['website_information_id' => $website_information->id, 'language_id' => 2, 'name' => 'اسرار الطيار', 'address' => 'شارع الشيخ حسين - طريق الملك عبدالله - حى الحمراء - الرياض - السعودية']
         ]);
     }
 }

@@ -5,7 +5,8 @@ namespace Modules\Website\Http\Controllers\Website;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Modules\Website\Entities\BookingRequest;
+use Modules\Operations\Entities\BookingRequest;
+use Modules\Website\Entities\Service;
 
 class RequestController extends Controller
 {
@@ -15,7 +16,8 @@ class RequestController extends Controller
      */
     public function index()
     {
-        return view('website::website.request.index');
+        $service = request('service');
+        return redirect(route('website.services.show', $service), 302);
     }
 
     /**
@@ -27,24 +29,18 @@ class RequestController extends Controller
     {
         $data = $request->validate(
             [
-                'first_name' => 'required',
-                'last_name' => 'required',
-                'title' => 'required',
-                'email' => 'required',
-                'phone' => 'required',
-                'sex' => 'required',
-                'dob' => 'required',
-                'service' => 'required',
-                'service_date' => 'required',
-                'service_details' => 'required'
+                'name' => 'required',
+                'email' => 'nullable|email',
+                'phone' => 'required|',
+                'service_id' => 'required',
             ],
             $request->all()
         );
 
-        $data['name'] = $request->title . $request->first_name . $request->last_name;
+        $service = Service::with('translation')->where('id', $request->service_id)->first();
 
         BookingRequest::create($data);
 
-        return redirect()->route('request.index')->with('success', __('you will be contacted soon'));
+        return redirect()->route('website.services.show', $service->slug)->with('success', __('website.you will be contacted soon'));
     }
 }

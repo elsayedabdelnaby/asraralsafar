@@ -211,6 +211,19 @@ class WebsitePermissionsSeeder extends Seeder
                     'view-partner'
                 ]
             );
+
+            // create the Statistic type model and insert basics permissions of it
+            $model_service->createModelAndAssignPermissions(
+                'Statistic',
+                $module->id,
+                [
+                    'listing-statistics',
+                    'create-statistic',
+                    'update-statistic',
+                    'delete-statistic',
+                    'view-statistic'
+                ]
+            );
         }
     }
 }

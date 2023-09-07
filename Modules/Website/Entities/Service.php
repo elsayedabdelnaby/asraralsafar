@@ -59,6 +59,23 @@ class Service extends Model
 
 
     /**
+     * Return the name of the service dependent on the current app.
+     *
+     * @return \Illuminate\Database\Eloquent\Casts\Attribute
+     */
+    protected function slug(): Attribute
+    {
+        $service = $this;
+        return new Attribute(
+            get: fn () => Cache::rememberForever('service_slug_' . $this->id . '_' .  App::getLocale(), function () use ($service) {
+                $service = $service->translation()->select('slug')->where('language_id', getCurrentLanguage()->id)->first();
+                return $service ? $service->slug : null;
+            }),
+        );
+    }
+
+
+    /**
      * Return the description of the service dependent on the current app.
      *
      * @return \Illuminate\Database\Eloquent\Casts\Attribute

@@ -52,6 +52,15 @@ class OperationsPermissionSeederTableSeeder extends Seeder
                     'reply-on-contact-us-message',
                 ]
             );
+
+            $modelService->createModelAndAssignPermissions(
+                'Booking Request',
+                $module->id,
+                [
+                    'listing-booking-requests',
+                    'edit-booking-request',
+                ]
+            );
         }
 
         // assign all permissions to the administrator profile
