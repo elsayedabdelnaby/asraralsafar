@@ -29,7 +29,7 @@ class AboutUsTableSeeder extends Seeder
                 'description' => '<section
                 class="about-us pt-6"
                 style="
-                  background-image: url(images/background_pattern.png);
+                  background-image: url(/public/website/images/background_pattern.png);
                   background-position: bottom right;
                 "
               >
@@ -70,7 +70,7 @@ class AboutUsTableSeeder extends Seeder
                           class="about-image"
                           style="animation: none; background: transparent"
                         >
-                          <img src="images/travel.png" alt="" />
+                          <img src="/public/website/images/travel.png" alt="" />
                         </div>
                       </div>
                       <div class="col-lg-12">
@@ -135,7 +135,7 @@ class AboutUsTableSeeder extends Seeder
                 'description' => '<section
                 class="about-us pt-6"
                 style="
-                  background-image: url(images/background_pattern.png);
+                  background-image: url(/public/website/images/background_pattern.png);
                   background-position: bottom right;
                 "
               >
@@ -176,7 +176,7 @@ class AboutUsTableSeeder extends Seeder
                           class="about-image"
                           style="animation: none; background: transparent"
                         >
-                          <img src="images/travel.png" alt="" />
+                          <img src="/public/website/images/travel.png" alt="" />
                         </div>
                       </div>
                       <div class="col-lg-12">
@@ -255,7 +255,7 @@ class AboutUsTableSeeder extends Seeder
                 'description' => '<section
                 class="about-us pb-6 pt-6"
                 style="
-                  background-image: url(images/shape4.png);
+                  background-image: url(/public/website/images/shape4.png);
                   background-position: center;
                 "
               >
@@ -377,7 +377,7 @@ class AboutUsTableSeeder extends Seeder
                 'description' => '<section
                 class="about-us pb-6 pt-6"
                 style="
-                  background-image: url(images/shape4.png);
+                  background-image: url(/public/website/images/shape4.png);
                   background-position: center;
                 "
               >

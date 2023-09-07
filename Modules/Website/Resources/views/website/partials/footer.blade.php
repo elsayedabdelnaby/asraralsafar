@@ -40,9 +40,11 @@
                     <div class="footer-links">
                         <h3 class="white"></h3>
                         <ul>
-                            <li><a href="{{ route('flight.index') }}"> @lang('website.Book A Flight')</a></li>
-                            <li><a href="{{ route('website.index') }}"> @lang('website.International Licensing')</a></li>
-                            <li><a href="{{ route('website.index') }}"> @lang('website.Visa')</a></li>
+                            @foreach ($services as $service)
+                                <li><a
+                                        href="{{ route('website.services.show', $service->slug) }}">{{ $service->name }}</a>
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
