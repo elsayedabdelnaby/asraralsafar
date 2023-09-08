@@ -56,7 +56,7 @@ class Blog extends Model
         $blog = $this;
         return new Attribute(
             get: fn () => Cache::rememberForever('blog_title_' . $this->id . '_' .  App::getLocale(), function () use ($blog) {
-                $blog = $blog->translation()->select('title')->where('language_id', getCurrentLanguage()->id)->first();
+                $blog = $blog->translations()->select('title')->where('language_id', getCurrentLanguage()->id)->first();
                 return $blog ? $blog->title : null;
             }),
         );
@@ -72,7 +72,7 @@ class Blog extends Model
         $blog = $this;
         return new Attribute(
             get: fn () => Cache::rememberForever('blog_slug_' . $this->id . '_' .  App::getLocale(), function () use ($blog) {
-                $blog = $blog->translation()->select('slug')->where('language_id', getCurrentLanguage()->id)->first();
+                $blog = $blog->translations()->select('slug')->where('language_id', getCurrentLanguage()->id)->first();
                 return $blog ? $blog->slug : null;
             }),
         );
@@ -88,7 +88,7 @@ class Blog extends Model
         $blog = $this;
         return new Attribute(
             get: fn () => Cache::rememberForever('blog_short_description_' . $this->id . '_' .  App::getLocale(), function () use ($blog) {
-                $blog = $blog->translation()->select('short_description')->where('language_id', getCurrentLanguage()->id)->first();
+                $blog = $blog->translations()->select('short_description')->where('language_id', getCurrentLanguage()->id)->first();
                 return $blog ? $blog->short_description : null;
             }),
         );
@@ -104,7 +104,7 @@ class Blog extends Model
         $blog = $this;
         return new Attribute(
             get: fn () => Cache::rememberForever('blog_description_' . $this->id . '_' .  App::getLocale(), function () use ($blog) {
-                $blog = $blog->translation()->select('description')->where('language_id', getCurrentLanguage()->id)->first();
+                $blog = $blog->translations()->select('description')->where('language_id', getCurrentLanguage()->id)->first();
                 return $blog ? $blog->description : null;
             }),
         );
@@ -120,7 +120,7 @@ class Blog extends Model
         $blog = $this;
         return new Attribute(
             get: fn () => Cache::rememberForever('blog_meta_title_' . $this->id . '_' .  App::getLocale(), function () use ($blog) {
-                $blog = $blog->translation()->select('meta_title')->where('language_id', getCurrentLanguage()->id)->first();
+                $blog = $blog->translations()->select('meta_title')->where('language_id', getCurrentLanguage()->id)->first();
                 return $blog ? $blog->meta_title : null;
             }),
         );
@@ -136,7 +136,7 @@ class Blog extends Model
         $blog = $this;
         return new Attribute(
             get: fn () => Cache::rememberForever('blog_meta_description_' . $this->id . '_' .  App::getLocale(), function () use ($blog) {
-                $blog = $blog->translation()->select('meta_description')->where('language_id', getCurrentLanguage()->id)->first();
+                $blog = $blog->translations()->select('meta_description')->where('language_id', getCurrentLanguage()->id)->first();
                 return $blog ? $blog->meta_description : null;
             }),
         );

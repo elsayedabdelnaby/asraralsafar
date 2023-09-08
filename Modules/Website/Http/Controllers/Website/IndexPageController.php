@@ -29,7 +29,7 @@ class IndexPageController extends Controller
 
         return view('website::website.index_page.index', [
             'statistics' => (new GetAllActiveStatisticsAction)->handle(),
-            'blogs' => Blog::with('translations')->latest()->take(3)->get(),
+            'blogs' => Blog::with('translation')->latest()->take(3)->get(),
             'testimonails' => (new GetAllActiveTestimonailsAction)->handle()->orderBy('display_order')->get(),
             'partners' => (new GetAllActivePartnersAction)->handle()->orderBy('display_order')->get(),
             'metaPage' => $metaPage,
