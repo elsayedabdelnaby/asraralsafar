@@ -14,19 +14,21 @@
                         <div class="col-12 mb-4">
                             <div class="cover-content text-center text-md-start">
                                 <div class="author-detail mb-2">
-                                    <span class="tag white bg-theme py-1 px-3 me-2 rounded-pill">{{ $blog->category }}</span>
+                                    <span
+                                        class="tag white bg-theme py-1 px-3 me-2 rounded-pill">{{ $blog->category }}</span>
                                 </div>
                                 <h1 class="fs-3 fw-bold">
                                     {{ $blog->blog_title }}
                                 </h1>
                                 <div class="author-detail d-flex align-items-center mb-4">
-                                    <span class="me-3"><span><i class="far fa-clock"></i> {{ $blog->created_at }}</span></span>
+                                    <span class="me-3"><span><i class="far fa-clock"></i>
+                                            {{ $blog->created_at }}</span></span>
                                     <span class="me-3"><span><i class="far fa-user"></i> @lang('website.Admin')</span></span>
                                     <span><span><i class="far fa-eye"></i> {{ $blog->views_number }}</span></span>
                                 </div>
                                 <div class="blog-content mb-4">
                                     <p class="mb-3">
-                                        {{ $blog->translation->description }}
+                                        {!! $blog->translation->description !!}
                                     </p>
                                 </div>
                                 <!-- blog review -->
@@ -63,11 +65,13 @@
                                     @foreach ($blog->comments as $comment)
                                         <div class="comment-box">
                                             <div class="comment-image mt-2">
-                                                <img src="{{ $comment->author->profile_image }}" width="80" alt="@lang('website.Image')" />
+                                                <img src="{{ $comment->author->profile_image }}" width="80"
+                                                    alt="@lang('website.Image')" />
                                             </div>
                                             <div class="comment-content rounded">
                                                 <h4 class="mb-1">{{ $comment->author->name }}</h4>
-                                                <p class="comment-date">{{ $comment->created_at->formatLocalized('%B %d, %Y') }}</p>
+                                                <p class="comment-date">
+                                                    {{ $comment->created_at->formatLocalized('%B %d, %Y') }}</p>
                                                 <p class="mb-2">{{ $comment->content }}</p>
                                                 <a href="#" class="btn btn-link">@lang('website.Reply')</a>
                                             </div>
@@ -84,7 +88,8 @@
                             <div class="author-news mb-4 box-shadow p-5 text-center border-all rounded">
                                 <div class="author-news-content">
                                     <div class="author-thumb mb-1">
-                                        <img src="{{ global_asset('website/') }}/images/icon.png" alt="@lang('website.Asrar Altayar')" />
+                                        <img src="{{ global_asset('website/') }}/images/icon.png"
+                                            alt="@lang('website.Asrar Altayar')" />
                                     </div>
                                     <div class="author-content">
                                         <h3 class="title mb-1"><a href="#">@lang('website.Asrar Altayar')</a></h3>
@@ -115,7 +120,8 @@
                                     <li><a href="#">@lang('website.Newest')</a></li>
                                     <li><a href="#">@lang('website.Most Viewed')</a></li>
                                     @foreach ($blog->categories as $category)
-                                        <li class="{{ $category->id == $blog->category->id ? 'active' : '' }}"><a href="#"> {{ $category->name }}</a></li>
+                                        <li class="{{ $category->id == $blog->category->id ? 'active' : '' }}"><a
+                                                href="#"> {{ $category->name }}</a></li>
                                     @endforeach
                                 </ul>
                             </div>
@@ -127,7 +133,9 @@
                                         <article class="post mb-3 border-b pb-3">
                                             <div class="s-content d-flex align-items-center justify-space-between">
                                                 <div class="sidebar-image w-25 me-3">
-                                                    <a href="#"><img src="{{ global_asset('website/') }}/images/blog/b2.jpg" alt="@lang('website.Blog Title')" /></a>
+                                                    <a href="#"><img
+                                                            src="{{ global_asset('website/') }}/images/blog/b2.jpg"
+                                                            alt="@lang('website.Blog Title')" /></a>
                                                 </div>
                                                 <div class="content-list w-75">
                                                     <h5 class="mb-1">
@@ -140,7 +148,9 @@
                                         <article class="post mb-3 border-b pb-3">
                                             <div class="s-content d-flex align-items-center justify-space-between">
                                                 <div class="sidebar-image w-25 me-3">
-                                                    <a href="#"><img src="{{ global_asset('website/') }}/images/blog/b1.jpg" alt="@lang('website.Blog Title')" /></a>
+                                                    <a href="#"><img
+                                                            src="{{ global_asset('website/') }}/images/blog/b1.jpg"
+                                                            alt="@lang('website.Blog Title')" /></a>
                                                 </div>
                                                 <div class="content-list w-75">
                                                     <h5 class="mb-1">
@@ -153,7 +163,9 @@
                                         <article class="post mb-3">
                                             <div class="s-content d-flex align-items-center justify-space-between">
                                                 <div class="sidebar-image w-25 me-3">
-                                                    <a href="#"><img src="{{ global_asset('website/') }}/images/blog/b2.jpg" alt="@lang('website.Blog Title')" /></a>
+                                                    <a href="#"><img
+                                                            src="{{ global_asset('website/') }}/images/blog/b2.jpg"
+                                                            alt="@lang('website.Blog Title')" /></a>
                                                 </div>
                                                 <div class="content-list w-75">
                                                     <h5 class="mb-1">

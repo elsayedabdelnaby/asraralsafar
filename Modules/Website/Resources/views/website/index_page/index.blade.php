@@ -481,7 +481,7 @@
                                     <div class="trend-content">
                                         <h5 class="mb-1 fs-14">{{ $blog->blog_title }}</h5>
                                         <p class="mb-3">
-                                            {{ $blog->translation->description }}
+                                            {!! \Illuminate\Support\Str::limit($blog->translation->description ?? '', 100, '...') !!}
                                         </p>
                                         <div class="entry-meta d-flex align-items-center justify-content-between">
                                             <div class="entry-author mb-2">

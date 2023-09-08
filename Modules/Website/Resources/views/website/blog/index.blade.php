@@ -5,7 +5,7 @@
         $metaPageTitle = !empty($metaPage->first()->meta_page_title) ? $metaPage->first()->meta_page_title : '';
         $metaPageDescription = !empty($metaPage->first()->meta_page_description) ? $metaPage->first()->meta_page_description : '';
         $imageUrl = !empty($metaPage->first()->image_url) ? $metaPage->first()->image_url : '';
-        
+
     @endphp
     @section('meta_page')
         <meta property="og:title" content="{{ $metaPageTitle }}">
@@ -46,7 +46,9 @@
                                                     {{ !empty($blog->created_at) ? $blog->created_at->format('M d, Y') : '' }}</span>
                                                 {{-- <span><i class="fa fa-eye"></i> {{ $blog->views }} مشاهدة</span> --}}
                                             </p>
-                                            <p class="text-muted mb-0">{{ $blog->blog_description }}</p>
+                                            <p class="text-muted mb-0">
+                                                {!! \Illuminate\Support\Str::limit($blog->blog_description ?? '', 100, '...') !!}
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
