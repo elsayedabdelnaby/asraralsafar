@@ -51,6 +51,29 @@
 
     <section class="trending pt-8 pb-5 bg-lgrey" @if (app()->getLocale() == 'ar') style="direction: rtl;" @endif>
         <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-12 pe-lg-5">
+                    <div class="row align-items-center">
+                        <div class="col-12 mb-4">
+                            <div class="box-shadow p-3 rounded">
+                                <img src="{{ $service->image_url }}" alt="@lang('website.Image')" class="w-100 rounded" />
+                            </div>
+                        </div>
+                        <div class="col-12 mb-4">
+                            <div class="cover-content text-center text-md-start">
+                                <h1 class="fs-3 fw-bold">
+                                    {{ $service->name }}
+                                </h1>
+                                <div class="blog-content mb-4">
+                                    <p class="mb-3">
+                                        {!! $service->description !!}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-12 mb-4">
                     <div class="payment-book">
@@ -76,7 +99,7 @@
                                 <h4 class="border-b pb-4 mb-4">بيانات الحجز / طلب اتصال</h4>
                                 <form class="mb-2 form parsley-form" action="{{ route('request.store') }}" method="GET">
                                     @csrf
-                                    @method("GET")
+                                    @method('GET')
                                     <input type="hidden" name="service_id" value="{{ $service->id }}" />
                                     <div class="row">
                                         <div class="col-lg-4">
