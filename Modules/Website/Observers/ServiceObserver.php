@@ -23,7 +23,7 @@ class ServiceObserver
      */
     public function updated(Service $service)
     {
-        ClearCachedAttributes::clear($service->id, ['service_name', 'service_description', 'service_slug', 'meta_title', 'meta_description']);
+        ClearCachedAttributes::clear($service->id, ['service_name', 'service_description', 'service_slug', 'service_meta_title', 'service_meta_description']);
     }
 
     /**
@@ -34,6 +34,6 @@ class ServiceObserver
      */
     public function deleted(Service $service)
     {
-        ClearCachedAttributes::clear($service->id, ['service_name', 'service_description', 'service_slug', 'meta_title', 'meta_description']);
+        ClearCachedAttributes::clear($service->id, ['service_name', 'service_description', 'service_slug', 'service_meta_title', 'service_meta_description']);
     }
 }
