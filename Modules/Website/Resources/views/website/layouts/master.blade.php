@@ -10,18 +10,27 @@
     </title>
     <meta />
     <!-- Favicon -->
-    <link rel="icon shortcut" type="image/png" href="{{ global_asset('website/images/icon.png') }}" sizes="32x32" />
-    <link rel="icon shortcut" type="image/png" href="{{ global_asset('website/images/icon.png') }}" sizes="192x192" />
-    <link rel="apple-touch-icon" sizes="76x76" href="{{ global_asset('website/images/icon.png') }}" />
-    <link rel="apple-touch-icon" sizes="120x120" href="{{ global_asset('website/images/icon.png') }}" />
-    <link rel="apple-touch-icon" sizes="152x152" href="{{ global_asset('website/images/icon.png') }}" />
-    <meta name="msapplication-TileImage" content="{{ global_asset('website/images/icon.png') }}" />
-    <meta name="msapplication-square70x70logo" content="{{ global_asset('website/images/icon.png') }}" />
-    <meta name="msapplication-square150x150logo" content="{{ global_asset('website/images/icon.png') }}" />
-    <meta name="msapplication-wide310x150logo" content="{{ global_asset('website/images/icon.png') }}" />
+    <link rel="icon shortcut" type="image/png" href="{{ global_asset('website/images/fav-icons/favicon-32x32.png') }}"
+        sizes="32x32" />
+    <link rel="icon shortcut" type="image/png"
+        href="{{ global_asset('website/images/fav-icons/android-icon-192x192.png') }}" sizes="192x192" />
+    <link rel="apple-touch-icon" sizes="57x57"
+        href="{{ global_asset('website/images/fav-icons/apple-icon-57x57.png') }}" />
+    <link rel="apple-touch-icon" sizes="120x120"
+        href="{{ global_asset('website/images/fav-icons/apple-icon-120x120.png') }}" />
+    <link rel="apple-touch-icon" sizes="152x152"
+        href="{{ global_asset('website/images/fav-icons/apple-icon-152x152.png') }}" />
+    <meta name="msapplication-TileImage" content="{{ global_asset('website/images/fav-icons/favicon-96x96.png') }}" />
+    <meta name="msapplication-square70x70logo"
+        content="{{ global_asset('website/images/fav-icons/ms-icon-70x70.png') }}" />
+    <meta name="msapplication-square150x150logo"
+        content="{{ global_asset('website/images/fav-icons/ms-icon-150x150.png') }}" />
+    <meta name="msapplication-wide310x150logo"
+        content="{{ global_asset('website/images/fav-icons/ms-icon-310x310.png') }}" />
+    <link rel="icon" type="image/x-icon" href="{{ global_asset('website/images/fav-icons/favicon.ico') }}">
     <!-- Website Meta Tags -->
     @yield('meta_page')
-    <meta name="og:image" content="{{ global_asset('website/images/og-icon.jpg') }}" />
+    <meta name="og:image" content="{{ global_asset('website/images/fav-icons/android-icon-192x192.png') }}" />
     @if (app()->getLocale() == 'ar')
         <!-- Bootstrap core CSS -->
         <link href="{{ global_asset('website/css/bootstrap.rtl.min.css') }}" rel="stylesheet" type="text/css" />

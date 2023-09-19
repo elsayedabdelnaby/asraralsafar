@@ -17,7 +17,6 @@
 
 @section('content')
     <div class="tet"></div>
-
     <!-- banner starts -->
     <section class="banner pt-10 pb-0 overflow-hidden"
         style="
@@ -367,7 +366,8 @@
             <div class="row align-items-center">
                 <div class="col-lg-5 pe-4">
                     <div class="testimonial-image">
-                        <img src="{{ global_asset('website/') }}/images/og-icon.jpg" alt="">
+                        <img src="{{ global_asset("storage/website/$websiteInfo->main_logo") }}/images/fav-icons/android-icon-192x192.png"
+                            alt="">
                     </div>
                 </div>
                 <div class="col-lg-7 ps-4">
@@ -381,7 +381,7 @@
                                         <div class="col-sm-4 item slick-slide slick-cloned slick-current slick-active">
                                             <div class="testimonial-item1 rounded">
                                                 <div class="author-info d-flex align-items-center mb-4">
-                                                    <img src="{{ global_asset('website/') }}/images/og-icon.jpg"
+                                                    <img src="{{ global_asset('website/') }}/images/fav-icons/android-icon-192x192.png"
                                                         alt="" />
                                                     <div class="author-title ms-3">
                                                         <h5 class="m-0 theme">{{ $testimonail->client_name }}</h5>
@@ -400,7 +400,7 @@
                                     <div class="col-sm-4 item slick-slide slick-cloned">
                                         <div class="testimonial-item1 rounded">
                                             <div class="author-info d-flex align-items-center mb-4">
-                                                <img src="{{ global_asset('website/') }}/images/og-icon.jpg"
+                                                <img src="{{ global_asset('website/') }}/images/fav-icons/android-icon-192x192.png"
                                                     alt="" />
                                                 <div class="author-title ms-3">
                                                     <h5 class="m-0 theme">{{ $testimonail->client_name }}</h5>
@@ -418,7 +418,6 @@
                                 @endforeach
                             </div>
                         </div>
-
                         <button class="slick-next slick-arrow" aria-label="Next" type="button"
                             style="">@lang('website.next')</button>
                     </div>
@@ -485,7 +484,7 @@
                                         </p>
                                         <div class="entry-meta d-flex align-items-center justify-content-between">
                                             <div class="entry-author mb-2">
-                                                <img src="{{ global_asset('website/') }}/images/og-icon.jpg"
+                                                <img src="{{ global_asset('website/') }}/images/fav-icons/android-icon-192x192.png"
                                                     alt="" class="rounded-circle me-1" />
                                                 <span>@lang('website.Asrar Altayar')</span>
                                             </div>

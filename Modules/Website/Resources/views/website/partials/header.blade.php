@@ -16,7 +16,7 @@
                     <li>
                         <a href="{{ LaravelLocalization::getLocalizedURL(getMainLanguage()->code) }}"
                             class="text-white fs-12"><img class="me-1" width="20" height="auto"
-                                src="{{ global_asset('website/images/egypt.svg') }}" alt="Arabic" />
+                                src="{{ global_asset('website/images/008-saudi-arabia.svg') }}" alt="Arabic" />
                             {{ app()->getLocale() == 'en' ? 'Arabic' : 'Arabic' }}</a>
                     </li>
                 </ul>
