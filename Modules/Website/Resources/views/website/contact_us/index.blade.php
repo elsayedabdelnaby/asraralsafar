@@ -112,8 +112,9 @@
                                     <div class="col-lg-6">
                                         <div class="map rounded overflow-hiddenb rounded mb-md-4">
                                             <div style="width: 100%">
-                                                <iframe src="{{ $websiteInfo->address_google_map_link }}" height="450"
-                                                    style="border: 0" allowfullscreen="" loading="lazy"
+                                                <iframe
+                                                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7257892.319301943!2d33.7447929!3d27.3478218!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f01c79476e3b3%3A0x10ab6309deba58a5!2z2KPYs9ix2KfYsSDYp9mE2LfZitin2LEg2YTZhNiz2YHYsSDZiNin2YTYs9mK2KfYrdip!5e0!3m2!1sen!2seg!4v1695126227749!5m2!1sen!2seg"
+                                                    height="450" style="border: 0" allowfullscreen="" loading="lazy"
                                                     referrerpolicy="no-referrer-when-downgrade"></iframe>
                                             </div>
                                         </div>
