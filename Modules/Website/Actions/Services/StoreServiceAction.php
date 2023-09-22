@@ -25,6 +25,7 @@ class StoreServiceAction
         $service->is_active = $request->is_active ? true : false;
         $service->display_order = $request->display_order ? $request->display_order : 0;
         $service->image = $image;
+        $service->type = $request->type;
         $service->save();
 
         //working on translations

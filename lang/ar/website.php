@@ -224,4 +224,7 @@ return [
     'phone' => 'رقم التليفون',
     'email_must_be_in_email_format' => 'يجب ادخال الميل بشكل صحيح',
     'you will be contacted soon' => 'سوف يتم الاتصال بك',
+    'destination_from' => 'الوجهة من',
+    'to' => 'الى',
+    'select_city' => 'اختر الوجهة',
 ];

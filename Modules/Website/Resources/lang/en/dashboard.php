@@ -238,4 +238,7 @@ return [
     'the_language_of_the_statistic_title_and_description' => 'The Language of the Statistic Title and Description',
     'number_is_required' => 'Number is required',
     'number_must_be_integer' => 'Number must be an integer',
+    ///////////////
+    'flight' => 'Flight',
+    'tourism' => 'Tourism',
 ];

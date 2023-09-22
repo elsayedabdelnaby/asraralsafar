@@ -33,12 +33,12 @@ class RequestController extends Controller
                 'email' => 'nullable|email',
                 'phone' => 'required|',
                 'service_id' => 'required',
+                'from_city_id' => 'nullable|exists:cities,id,deleted_at,NULL',
+                'to_city_id' => 'nullable|exists:cities,id,deleted_at,NULL',
             ],
             $request->all()
         );
-
-        $service = Service::with('translation')->where('id', $request->service_id)->first();
-
+        $service = Service::find($request->service_id);
         BookingRequest::create($data);
 
         return redirect()->route('website.services.show', $service->slug)->with('success', __('website.you will be contacted soon'));

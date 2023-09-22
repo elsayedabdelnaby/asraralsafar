@@ -29,7 +29,7 @@ class Service extends Model
      *
      * @var array
      */
-    protected $appends = ['image_url'];
+    protected $appends = ['image_url', 'slug'];
 
     /**
      * Interact with the social link's image url.

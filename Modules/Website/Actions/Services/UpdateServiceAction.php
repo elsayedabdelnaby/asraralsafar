@@ -25,6 +25,7 @@ class UpdateServiceAction
         }
 
         $service->is_active = $request->is_active ? true : false;
+        $service->type = $request->type;
         $service->save();
 
         // update translations

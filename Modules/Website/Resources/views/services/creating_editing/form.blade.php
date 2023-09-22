@@ -248,13 +248,26 @@
                             :integerValidationMessage="__('website::dashboard.display_order_must_be_integer')" :placeholder="__('website::dashboard.display_order')" :value="old('display_order', $service->display_order ?? '')" />
                     </div>
                     <div class="col-1"></div>
+                    <label class="col-1 col-form-label font-weight-bold">{{ __('website::dashboard.type') }}</label>
+                    <div class="col-2">
+                        <select id="type" name="type" isRequired="true" class="form-control select2" required
+                            data-parsley-required-message="{{ __('website::dashboard.type_is_required') }}">
+                            <option value="">{{ __('website::dashboard.select_type') }}
+                            </option>
+                            <option value="flight" @if ($service->type == 'flight') selected @endif>
+                                {{ __('website::dashboard.flight') }}</option>
+                            <option value="tourism" @if ($service->type == 'tourism') selected @endif>
+                                {{ __('website::dashboard.tourism') }}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
                     <label class="col-1 col-form-label font-weight-bold">{{ __('website::dashboard.is_active') }}</label>
                     <div class="col-1">
                         <x-dashboard.form.inputs.success-switch class="mx-2" :id="'is_active'" :name="'is_active'"
                             :isChecked="old('is_active', $service->is_active ?? '')" />
                     </div>
-                </div>
-                <div class="form-group row">
+                    <div class="col-1"></div>
                     <label class="col-xl-2 col-2 col-form-label text-center">{{ __('website::dashboard.image') }}</label>
                     <div class="col-2 col-xl-2">
                         <div class="image-input image-input-empty image-input-outline"

@@ -98,5 +98,6 @@ return [
     'servcie' => 'Service',
     'select_the_status_of_request' => 'Select the status of request',
     'status_is_required' => 'Status is required',
-    ''
+    'from' => 'From',
+    'to' => 'To',
 ];

@@ -205,4 +205,9 @@ return [
     'phone' => 'Phone',
     'email_must_be_in_email_format' => 'Email Must Be In Email Format',
     'you will be contacted soon' => 'you will be contacted soon',
+    'destination_from' => 'Destination From',
+    'to' => 'To',
+    'select_city' => 'Select City',
+    ''
 ];
+

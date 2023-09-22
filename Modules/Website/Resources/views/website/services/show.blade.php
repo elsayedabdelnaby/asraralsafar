@@ -100,7 +100,7 @@
                                 <form class="mb-2 form parsley-form" action="{{ route('request.store') }}" method="GET">
                                     @csrf
                                     @method('GET')
-                                    <input type="hidden" name="service_id" value="{{ $service->id }}" />
+                                    <input type="hidden" name="service_id" value="{{ $service->service_id }}" />
                                     <div class="row">
                                         <div class="col-lg-4">
                                             <div class="form-group mb-2">
@@ -143,6 +143,26 @@
                                             </div>
                                         </div>
                                     </div>
+                                    @if ($service->type == 'flight')
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group mb-2">
+                                                    <label>@lang('website.destination_from')</label>
+                                                    <x-dashboard.form.inputs.select :id="'from_city_id'" :name="'from_city_id'"
+                                                        :class="'niceSelect'" :options="$cities" :isMultiple="false"
+                                                        :defaultOptionName="__('website.select_city')" :selectedOption="old('from_city_id')" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group mb-2">
+                                                    <label>@lang('website.to')</label>
+                                                    <x-dashboard.form.inputs.select :id="'to_city_id'" :name="'to_city_id'"
+                                                        :class="'niceSelect'" :options="$cities" :isMultiple="false"
+                                                        :defaultOptionName="__('website.select_city')" :selectedOption="old('to_city_id')" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endif
                                     <button type="submit" class="btn btn-primary mt-3">@lang('website.register_now')</button>
                                 </form>
                             </div>

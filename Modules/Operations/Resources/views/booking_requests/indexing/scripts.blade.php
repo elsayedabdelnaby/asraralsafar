@@ -38,6 +38,14 @@
                     data: 'phone'
                 },
                 {
+                    name: 'from',
+                    data: 'from_city_name'
+                },
+                {
+                    name: 'to',
+                    data: 'to_city_name'
+                },
+                {
                     name: 'status',
                     data: 'status'
                 },

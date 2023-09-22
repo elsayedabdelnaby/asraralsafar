@@ -54,6 +54,8 @@
                         <th>{{ __('operations::dashboard.name') }}</th>
                         <th>{{ __('operations::dashboard.email') }}</th>
                         <th>{{ __('operations::dashboard.phone') }}</th>
+                        <th>{{ __('operations::dashboard.from') }}</th>
+                        <th>{{ __('operations::dashboard.to') }}</th>
                         <th>{{ __('operations::dashboard.status') }}</th>
                         <th>{{ __('operations::dashboard.servcie') }}</th>
                         <th>{{ __('operations::dashboard.created_at') }}</th>
