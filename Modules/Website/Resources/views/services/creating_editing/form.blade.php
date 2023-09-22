@@ -254,9 +254,9 @@
                             data-parsley-required-message="{{ __('website::dashboard.type_is_required') }}">
                             <option value="">{{ __('website::dashboard.select_type') }}
                             </option>
-                            <option value="flight" @if ($service->type == 'flight') selected @endif>
+                            <option value="flight" @if (isset($service) && $service->type == 'flight') selected @endif>
                                 {{ __('website::dashboard.flight') }}</option>
-                            <option value="tourism" @if ($service->type == 'tourism') selected @endif>
+                            <option value="tourism" @if (isset($service) && $service->type == 'tourism') selected @endif>
                                 {{ __('website::dashboard.tourism') }}</option>
                         </select>
                     </div>

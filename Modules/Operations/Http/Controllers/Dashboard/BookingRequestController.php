@@ -30,8 +30,8 @@ class BookingRequestController extends Controller
                 'phone',
                 'status',
                 DB::raw('service_translations.name AS service_name'),
-                DB::raw('from_cities.name AS from_city_name'),
-                DB::raw('to_cities.name AS to_city_name'),
+                DB::raw('from_states.name AS from_state_name'),
+                DB::raw('to_states.name AS to_state_name'),
                 'booking_requests.created_at',
                 'booking_requests.updated_at',
                 DB::raw('NULL AS actions')

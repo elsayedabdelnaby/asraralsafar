@@ -33,8 +33,10 @@ class RequestController extends Controller
                 'email' => 'nullable|email',
                 'phone' => 'required|',
                 'service_id' => 'required',
-                'from_city_id' => 'nullable|exists:cities,id,deleted_at,NULL',
-                'to_city_id' => 'nullable|exists:cities,id,deleted_at,NULL',
+                'from_state_id' => 'nullable|exists:states,id,deleted_at,NULL',
+                'to_state_id' => 'nullable|exists:states,id,deleted_at,NULL',
+                'departure_date' => 'nullable|date',
+                'persons_number' => 'nullable|numeric',
             ],
             $request->all()
         );

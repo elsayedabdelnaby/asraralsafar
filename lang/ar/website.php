@@ -227,4 +227,10 @@ return [
     'destination_from' => 'الوجهة من',
     'to' => 'الى',
     'select_city' => 'اختر الوجهة',
+    'destination_to' => 'الوجهة الى',
+    'select' => 'اختر',
+    'number_of_persons' => 'عدد الافراد',
+    'number_of_persons_must_be_integer' => 'عدد الافراد يجب ان يكون رقم',
+    'departure_date' => 'تاريخ المغادرة',
+    'persons_number' => 'عدد الافراد',
 ];

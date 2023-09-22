@@ -39,11 +39,11 @@
                 },
                 {
                     name: 'from',
-                    data: 'from_city_name'
+                    data: 'from_state_name'
                 },
                 {
                     name: 'to',
-                    data: 'to_city_name'
+                    data: 'to_state_name'
                 },
                 {
                     name: 'status',

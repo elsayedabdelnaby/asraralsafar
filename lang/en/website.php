@@ -208,6 +208,11 @@ return [
     'destination_from' => 'Destination From',
     'to' => 'To',
     'select_city' => 'Select City',
-    ''
+    'destination_to' => 'Destination To',
+    'select' => 'Select',
+    'number_of_persons' => 'Number Of persons',
+    'number_of_persons_must_be_integer' => 'Number Of persons must be an integer',
+    'departure_date' => 'Departure Date',
+    'persons_number' => 'Persons Number',
 ];
 

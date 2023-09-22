@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Contracts\Support\Renderable;
 use Modules\Locations\Actions\City\FilterCitiesAction;
+use Modules\Locations\Actions\State\FilterStatesActions;
 use Modules\Website\Actions\Services\GetAllServicesAction;
 
 class ServiceController extends Controller
@@ -18,8 +19,8 @@ class ServiceController extends Controller
      */
     public function show(Request $request, $slug)
     {
-        $cities = (new FilterCitiesAction)->handle($request)->select(['cities.id', 'city_translations.name'])->where('cities.is_active', 1)->get();
+        $states = (new FilterStatesActions)->handle($request)->select(['states.id', 'state_translations.name'])->where('states.is_active', 1)->get();
         $service = (new GetAllServicesAction)->handle()->where('slug', $slug)->first();
-        return view('website::website.services.show', compact('service', 'cities'));
+        return view('website::website.services.show', compact('service', 'states'));
     }
 }
