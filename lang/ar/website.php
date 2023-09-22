@@ -233,4 +233,9 @@ return [
     'number_of_persons_must_be_integer' => 'عدد الافراد يجب ان يكون رقم',
     'departure_date' => 'تاريخ المغادرة',
     'persons_number' => 'عدد الافراد',
+    'economy' => 'السياحية',
+    'perimum_economy' => 'المتميزة السياحية',
+    'business' => 'رجال الاعمال',
+    'first' => 'الاولى',
+    'class' => 'الدرجة',
 ];

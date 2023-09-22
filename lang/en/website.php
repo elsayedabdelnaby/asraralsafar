@@ -214,5 +214,10 @@ return [
     'number_of_persons_must_be_integer' => 'Number Of persons must be an integer',
     'departure_date' => 'Departure Date',
     'persons_number' => 'Persons Number',
+    'economy' => 'Economy',
+    'perimum_economy' => 'Perimum Economy',
+    'business' => 'Business',
+    'first' => 'First',
+    'class' => 'Class',
 ];
 

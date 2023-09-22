@@ -14,8 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('booking_requests', function (Blueprint $table) {
-            $table->date('departure_date')->nullable();
-            $table->smallInteger('persons_number')->nullable();
+            $table->string('class')->nullable();
         });
     }
 
@@ -27,8 +26,7 @@ return new class extends Migration
     public function down()
     {
         Schema::table('booking_requests', function (Blueprint $table) {
-            $table->dropColumn('departure_date');
-            $table->dropColumn('persons_number');
+            $table->dropColumn('class');
         });
     }
 };

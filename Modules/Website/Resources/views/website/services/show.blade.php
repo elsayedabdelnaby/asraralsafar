@@ -159,6 +159,22 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>@lang('website.class')</label>
+                                                <div class="input-box">
+                                                    <select class="niceSelect" name="class">
+                                                        <option>@lang('website.select')</option>
+                                                        <option value="economy">@lang('website.economy')</option>
+                                                        <option value="perimum_economy">@lang('website.perimum_economy')</option>
+                                                        <option value="business">@lang('website.business')</option>
+                                                        <option value="first">@lang('website.first')</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                             </div>
                         </div>
                         @if ($service->type == 'flight')

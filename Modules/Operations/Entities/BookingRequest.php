@@ -26,6 +26,7 @@ class BookingRequest extends Model
         'to_city_id',
         'departure_date',
         'persons_number',
+        'class',
     ];
 
 
