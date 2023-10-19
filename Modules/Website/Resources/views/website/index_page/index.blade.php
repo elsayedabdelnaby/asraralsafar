@@ -81,14 +81,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="category-main-inner border-t pt-1 mb-4">
+                <div class="border-t pt-1 mb-4">
                     <div class="row d-flex justify-content-center g-4">
                         @foreach ($services as $service)
-                            <div class="col-xl-2 col-lg-4 col-md-6">
-                                <div class="category-item box-shadow p-3 py-4 text-center bg-white rounded overflow-hidden">
+                            <div class="col-xl-4 col-lg-4 col-md-6">
+                                <div class="box-shadow p-3 py-4 text-center bg-white rounded overflow-hidden">
                                     <div class="trending-topic-content">
-                                        <img width="20" src="{{ $service->image_url }}" class="mb-1 d-inline-block"
-                                            alt="Book Hotel" />
+                                        <img src="{{ $service->image_url }}" class="mb-1 d-inline-block" alt="Book Hotel" />
                                         <h4 class="mb-0 fs-18">
                                             <a
                                                 href="{{ route('website.services.show', $service->slug) }}">{{ $service->name }}</a>
