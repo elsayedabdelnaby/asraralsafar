@@ -85,7 +85,7 @@
 
     <!-- Whatsapp -->
 
-    <a href="https://wa.me/{{ $whatsApp }}" class="fixed-whatsapp" target="_blank">
+    <a href="https://wa.me/{{ $whatsApp->value }}" class="fixed-whatsapp" target="_blank">
         <img src="{{ global_asset('website/images/icons/whatsapp.svg') }}" alt="Whatsapp" />
     </a>
 
