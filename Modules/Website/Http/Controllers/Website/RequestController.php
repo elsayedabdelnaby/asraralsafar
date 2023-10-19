@@ -2,9 +2,12 @@
 
 namespace Modules\Website\Http\Controllers\Website;
 
+use App\Mail\NewLead;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Mail;
+use Modules\Locations\Entities\State;
 use Modules\Operations\Entities\BookingRequest;
 use Modules\Website\Entities\Service;
 
@@ -41,7 +44,17 @@ class RequestController extends Controller
             $request->all()
         );
         $service = Service::find($request->service_id);
+
         BookingRequest::create($data);
+
+        Mail::to('info@asraraltayyar.com')->send(new NewLead(
+            $data['name'],
+            isset($data['email']) ? $data['email'] : null,
+            $data['phone'],
+            isset($data['from_state_id']) ? State::find($data['from_state_id'])->state_name : null,
+            isset($data['to_state_id']) ? State::find($data['to_state_id'])->state_name : null,
+            $service->service_name
+        ));
 
         return redirect()->route('website.services.show', $service->slug)->with('success', __('website.you will be contacted soon'));
     }
