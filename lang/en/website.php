@@ -219,5 +219,6 @@ return [
     'business' => 'Business',
     'first' => 'First',
     'class' => 'Class',
+    'home' => 'Home',
 ];
 

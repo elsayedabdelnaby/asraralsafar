@@ -101,13 +101,93 @@
                                     @csrf
                                     @method('GET')
                                     <input type="hidden" name="service_id" value="{{ $service->service_id }}" />
+                                    @if ($service->type == 'flight')
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group mb-2">
+                                                    <label>@lang('website.destination_from')</label>
+                                                    <x-dashboard.form.inputs.select :id="'from_state_id'" :name="'from_state_id'"
+                                                        :class="'niceSelect'" :options="$states" :isMultiple="false"
+                                                        :defaultOptionName="__('website.select')" :selectedOption="old('from_state_id')" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group mb-2">
+                                                    <label>@lang('website.to')</label>
+                                                    <x-dashboard.form.inputs.select :id="'to_state_id'" :name="'to_state_id'"
+                                                        :class="'niceSelect'" :options="$states" :isMultiple="false"
+                                                        :defaultOptionName="__('website.select')" :selectedOption="old('to_state_id')" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endif
+                                    @if ($service->type == 'tourism')
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group mb-2">
+                                                    <label>@lang('website.destination_to')</label>
+                                                    <x-dashboard.form.inputs.select :id="'to_state_id'" :name="'to_state_id'"
+                                                        :class="'niceSelect'" :options="$states" :isMultiple="false"
+                                                        :defaultOptionName="__('website.select')" :selectedOption="old('to_state_id')" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>@lang('website.class')</label>
+                                                    <div class="input-box">
+                                                        <select class="niceSelect" name="class">
+                                                            <option>@lang('website.select')</option>
+                                                            <option value="economy">@lang('website.economy')</option>
+                                                            <option value="perimum_economy">@lang('website.perimum_economy')</option>
+                                                            <option value="business">@lang('website.business')</option>
+                                                            <option value="first">@lang('website.first')</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @else
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>@lang('website.class')</label>
+                                                    <div class="input-box">
+                                                        <select class="niceSelect" name="class">
+                                                            <option>@lang('website.select')</option>
+                                                            <option value="economy">@lang('website.economy')</option>
+                                                            <option value="perimum_economy">@lang('website.perimum_economy')</option>
+                                                            <option value="business">@lang('website.business')</option>
+                                                            <option value="first">@lang('website.first')</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endif
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group mb-2">
+                                                <label>@lang('website.departure_date')</label>
+                                                <input id="date-range" name="departure_date" type="date" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group mb-2">
+                                                <label>@lang('website.number_of_persons')</label>
+                                                <x-dashboard.form.inputs.number :id="'persons_number'" :class="'form-control'"
+                                                    :name="'persons_number'" :integerValidationMessage="__('website.number_of_persons_must_be_integer')" :placeholder="__('website.persons_number')"
+                                                    :value="old('persons_number')" />
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="row">
                                         <div class="col-lg-4">
                                             <div class="form-group mb-2">
                                                 <label>الإسم</label>
                                                 <x-dashboard.form.inputs.text :id="'name'" :class="'form-control'"
-                                                    :name="'name'" :placeholder="__('website.name')" :value="old('name')" :isRequired="true"
-                                                    :requiredMessage="__('website.name_is_required')" :maxlength="255" :maxlengthMessage="__(
+                                                    :name="'name'" :placeholder="__('website.name')" :value="old('name')"
+                                                    :isRequired="true" :requiredMessage="__('website.name_is_required')" :maxlength="255"
+                                                    :maxlengthMessage="__(
                                                         'website::dashboard.number_of_characters_must_less_than_or_equal_255',
                                                     )" />
                                             </div>
@@ -143,72 +223,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="form-group mb-2">
-                                                <label>@lang('website.departure_date')</label>
-                                                <input id="date-range" name="departure_date" type="date" />
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group mb-2">
-                                                <label>@lang('website.number_of_persons')</label>
-                                                <x-dashboard.form.inputs.number :id="'persons_number'" :class="'form-control'"
-                                                    :name="'persons_number'" :integerValidationMessage="__('website.number_of_persons_must_be_integer')" :placeholder="__('website.persons_number')"
-                                                    :value="old('persons_number')" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label>@lang('website.class')</label>
-                                                <div class="input-box">
-                                                    <select class="niceSelect" name="class">
-                                                        <option>@lang('website.select')</option>
-                                                        <option value="economy">@lang('website.economy')</option>
-                                                        <option value="perimum_economy">@lang('website.perimum_economy')</option>
-                                                        <option value="business">@lang('website.business')</option>
-                                                        <option value="first">@lang('website.first')</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+
                             </div>
                         </div>
-                        @if ($service->type == 'flight')
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group mb-2">
-                                        <label>@lang('website.destination_from')</label>
-                                        <x-dashboard.form.inputs.select :id="'from_state_id'" :name="'from_state_id'"
-                                            :class="'niceSelect'" :options="$states" :isMultiple="false" :defaultOptionName="__('website.select')"
-                                            :selectedOption="old('from_state_id')" />
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group mb-2">
-                                        <label>@lang('website.to')</label>
-                                        <x-dashboard.form.inputs.select :id="'to_state_id'" :name="'to_state_id'"
-                                            :class="'niceSelect'" :options="$states" :isMultiple="false" :defaultOptionName="__('website.select')"
-                                            :selectedOption="old('to_state_id')" />
-                                    </div>
-                                </div>
-                            </div>
-                        @endif
-                        @if ($service->type == 'tourism')
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group mb-2">
-                                        <label>@lang('website.destination_to')</label>
-                                        <x-dashboard.form.inputs.select :id="'to_state_id'" :name="'to_state_id'"
-                                            :class="'niceSelect'" :options="$states" :isMultiple="false" :defaultOptionName="__('website.select')"
-                                            :selectedOption="old('to_state_id')" />
-                                    </div>
-                                </div>
-                            </div>
-                        @endif
                         <button type="submit" class="btn btn-primary mt-3">@lang('website.register_now')</button>
                         </form>
                     </div>

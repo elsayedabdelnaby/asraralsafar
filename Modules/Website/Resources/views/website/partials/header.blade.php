@@ -71,8 +71,11 @@
                             <li class="submenu">
                                 <a href="{{ route('about-us.index') }}">@lang('website.About Us')</a>
                             </li>
-                            <li class="search-main">
+                            {{-- <li class="search-main">
                                 <a href="#search1" class="mt_search"><i class="fa fa-search"></i></a>
+                            </li> --}}
+                            <li class="submenu">
+                                <a href="{{ url('/') }}">@lang('website.home')</a>
                             </li>
                         </ul>
                     </div>
